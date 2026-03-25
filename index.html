@@ -39,7 +39,6 @@
     .item{display:flex;gap:10px;align-items:flex-start;padding:10px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);border-radius:10px}
     .badge{font-size:12px;font-weight:900;padding:3px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.14);white-space:nowrap}
     .badge.k{color:var(--kundig);border-color:rgba(25,118,210,.45);background:rgba(25,118,210,.10)}
-    .badge.a{color:var(--auffr);border-color:rgba(211,47,47,.45);background:rgba(211,47,47,.10)}
     .badge.n{color:rgba(40,40,40,.9);border-color:rgba(0,0,0,.18);background:rgba(255,255,255,.85)}
 
     /* Druck: A3 quer, nur Karte */
@@ -80,13 +79,13 @@
     </div>
 
     <div class="card sidebar">
-      <h2>Ortskunde (alle Einträge)</h2>
+      <h2>Ortskunde – Tanklager (aus stations_by_line.json)</h2>
       <div class="body">
         <div class="search"><input id="search" placeholder="Suchen … (Name, Linie)"></div>
         <div class="small" id="tlCount">0 Einträge</div>
         <div id="tlList" class="list"></div>
       </div>
-      <div class="small" style="padding:10px 12px;border-top:1px solid rgba(255,255,255,.08)">Quelle: JSON → ortskunde</div>
+      <div class="small" style="padding:10px 12px;border-top:1px solid rgba(255,255,255,.08)">Quelle: JSON → ortskunde, gefiltert gegen assets/stations_by_line.json</div>
     </div>
   </div>
 
