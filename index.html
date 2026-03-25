@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+  <meta charset="utf-8" />
+  <title>Streckenkunde – Auslesekarte</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:#0b1220; color:#e8eefc; }
+    .header{padding:12px;border-bottom:1px solid rgba(255,255,255,.1)}
+    .controls{display:flex;gap:8px;padding:12px}
+    button,label{padding:8px 14px;border-radius:8px;border:1px solid #555;background:#1a2440;color:#fff;cursor:pointer}
+    #svgHost{height:85vh;background:#fff;margin:12px;border-radius:8px;overflow:hidden}
+
+    /* Druck immer A3 Quer */
+    @page { size: A3 landscape; margin: 10mm; }
+    @media print {
+      .header,.controls{display:none !important;}
+      body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      #svgHost{margin:0;height:auto}
+    }
+  </style>
+</head>
+<body>
+  <div class="header"><strong>Streckenkunde – JSON Viewer</strong></div>
+  <div class="controls">
+    <label>SVG laden<input id="svgFile" type="file" accept=".svg" hidden></label>
+    <label>JSON laden<input id="jsonFile" type="file" accept=".json" hidden></label>
+    <button onclick="window.print()">A3 PDF drucken</button>
+  </div>
+  <div id="svgHost">SVG laden…</div>
+
+<script src="js/viewer.js"></script>
+</body>
+</html>
