@@ -4431,6 +4431,14 @@
       "line": "502"
     },
     {
+      "id": "station_eow_haltingen",
+      "label": "EOW Haltingen",
+      "code": null,
+      "typ": "unoccupied_station",
+      "tanklager": "Haltingen EOW",
+      "line": "502"
+    },
+    {
       "id": "station_gellert",
       "label": "Gellert",
       "code": null,
@@ -5259,6 +5267,14 @@
   ],
   "601": [
     {
+      "id": "station_ang_siggenthal",
+      "label": "ANG Siggenthal-W.",
+      "code": null,
+      "typ": "unoccupied_station",
+      "tanklager": "Siggenthal Holcim",
+      "line": "601"
+    },
+    {
       "id": "station_beznau",
       "label": "Beznau",
       "code": null,
@@ -5604,6 +5620,14 @@
       "code": null,
       "typ": "Station",
       "tanklager": null,
+      "line": "611"
+    },
+    {
+      "id": "station_tl_ng",
+      "label": "Niederglatt Tanklager",
+      "code": null,
+      "typ": "unoccupied_station",
+      "tanklager": "Niederglatt Tanklager",
       "line": "611"
     }
   ],
@@ -6024,6 +6048,14 @@
       "code": "SEV",
       "typ": "Station",
       "tanklager": null,
+      "line": "642"
+    },
+    {
+      "id": "station_tl-häggenschwil_winden-7",
+      "label": "Landquart Tanklager",
+      "code": null,
+      "typ": "unoccupied_station",
+      "tanklager": "Landquart Tanklager",
       "line": "642"
     },
     {
@@ -7928,6 +7960,14 @@
     }
   ],
   "unknown": [
+    {
+      "id": "station_gik",
+      "label": "ANG Swissterminal Frenkendorf",
+      "code": "411",
+      "typ": "unoccupied_station",
+      "tanklager": "Frenkendorf Swissterminal",
+      "line": null
+    },
     {
       "id": "station_chiasso",
       "label": "Chiasso",
