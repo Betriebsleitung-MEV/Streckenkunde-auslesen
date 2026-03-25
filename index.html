@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="de-CH">
+<html lang=\"de-CH\">
 <head>
-  <meta charset="utf-8" />
-  <title>Streckenkunde – Viewer v1.7.1</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset=\"utf-8\" />
+  <title>Streckenkunde – Viewer v1.7.4 (ohne BLS-Teilstrecken)</title>
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
   <style>
-    :root{ --bg:#0b1220; --panel:#121a2b; --panel2:#0f1730; --text:#e8eefc; --muted:#9fb0d0; --kundig:#16a34a; --unkundig:#ef4444; --auffr:#f59e0b; --chip:#1f2a44; }
+    :root{ --bg:#0b1220; --panel:#121a2b; --panel2:#0f1730; --text:#e8eefc; --muted:#9fb0d0; --kundig:#1976d2; --auffr:#d32f2f; --chip:#1f2a44; }
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
     .header{display:flex;gap:12px;align-items:center;padding:12px;border-bottom:1px solid rgba(255,255,255,.08);background:#0c1528;position:sticky;top:0;z-index:20}
@@ -39,8 +39,9 @@
     .item{display:flex;gap:10px;align-items:flex-start;padding:10px;border-bottom:1px solid rgba(255,255,255,.06)}
     .item:last-child{border-bottom:0}
     .badge{font-size:12px;font-weight:900;padding:3px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.14);white-space:nowrap}
-    .badge.k{color:var(--kundig);border-color:rgba(22,163,74,.45);background:rgba(22,163,74,.10)}
-    .badge.n{color:var(--unkundig);border-color:rgba(239,68,68,.35);background:rgba(239,68,68,.12)}
+    .badge.k{color:var(--kundig);border-color:rgba(25,118,210,.45);background:rgba(25,118,210,.10)}
+    .badge.a{color:var(--auffr);border-color:rgba(211,47,47,.35);background:rgba(211,47,47,.12)}
+    .badge.n{color:#0f172a;border-color:rgba(0,0,0,.18);background:rgba(255,255,255,.85)}
     .pill{display:inline-flex;gap:4px;align-items:center;font-size:12px;border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:2px 6px}
     .name{font-weight:700}
     @page { size: A3 landscape; margin: 10mm; }
@@ -52,49 +53,50 @@
   </style>
 </head>
 <body>
-  <div class="header">
-    <h1 id="title">Streckenkunde – JSON Viewer v1.7.1</h1>
-    <span id="meta" class="small"></span>
+  <div class=\"header\">
+    <h1 id=\"title\">Streckenkunde – JSON Viewer v1.7.4 (ohne BLS-Teilstrecken)</h1>
+    <span id=\"meta\" class=\"small\"></span>
   </div>
-  <div class="grid">
-    <div class="card">
+  <div class=\"grid\">
+    <div class=\"card\">
       <h2>Anzeige & Druck</h2>
-      <div class="body">
-        <div class="controls">
-          <label class="btn">JSON laden<input id="jsonFile" type="file" accept=".json" hidden></label>
-          <button onclick="window.print()">A3 PDF drucken</button>
-          <span class="small" id="status">Bereit …</span>
+      <div class=\"body\">
+        <div class=\"controls\">
+          <label class=\"btn\">JSON laden<input id=\"jsonFile\" type=\"file\" accept=\".json\" hidden></label>
+          <button onclick=\"window.print()\">A3 PDF drucken</button>
+          <span class=\"small\" id=\"status\">Bereit …</span>
         </div>
-        <div id="svgFrame" class="card" aria-label="Kartenanzeige">
-          <div class="overlay">
-            <button id="btnFit" class="tool" title="Auf Fenster einpassen">Fit</button>
-            <button id="btnReset" class="tool" title="Original-ViewBox wiederherstellen">Reset</button>
+        <div id=\"svgFrame\" class=\"card\" aria-label=\"Kartenanzeige\">
+          <div class=\"overlay\">
+            <button id=\"btnFit\" class=\"tool\" title=\"Auf Fenster einpassen\">Fit</button>
+            <button id=\"btnReset\" class=\"tool\" title=\"Original-ViewBox wiederherstellen\">Reset</button>
           </div>
-          <object id="svgObj" type="image/svg+xml" data="assets/map.svg"></object>
-          <div id="pzCapture" title="Mit Mausrad zoomen, mit Maus ziehen zum verschieben"></div>
-          <div style="position:absolute;inset:auto 8px 8px 8px;color:#111;background:rgba(255,255,255,.9);padding:4px 6px;border-radius:8px;border:1px solid rgba(0,0,0,.2);font-size:12px">Zoom: Mausrad • Pan: Linke Maustaste ziehen</div>
+          <object id=\"svgObj\" type=\"image/svg+xml\" data=\"assets/map.svg\"></object>
+          <div id=\"pzCapture\" title=\"Mit Mausrad zoomen, mit Maus ziehen zum verschieben\"></div>
+          <div style=\"position:absolute;inset:auto 8px 8px 8px;color:#111;background:rgba(255,255,255,.9);padding:4px 6px;border-radius:8px;border:1px solid rgba(0,0,0,.2);font-size:12px\">Zoom: Mausrad • Pan: Linke Maustaste ziehen</div>
         </div>
-        <div id="debug" hidden></div>
+        <div id=\"debug\" hidden></div>
       </div>
     </div>
-    <div class="card sidebar">
+    <div class=\"card sidebar\">
       <h2>Ortskunde (führend: Mitarbeiter‑JSON)</h2>
-      <div class="body">
-        <div class="search">
-          <input id="search" placeholder="Suche … (Name, Linie)">
-          <select id="filterStatus">
-            <option value="all">Status: alle</option>
-            <option value="kundig">nur kundig</option>
-            <option value="unkundig">nur unkundig</option>
+      <div class=\"body\">
+        <div class=\"search\">
+          <input id=\"search\" placeholder=\"Suche … (Name, Linie)\">
+          <select id=\"filterStatus\">
+            <option value=\"all\">Status: alle</option>
+            <option value=\"kundig\">nur kundig</option>
+            <option value=\"auffr\">nur Auffrischung</option>
+            <option value=\"unkundig\">nur unkundig</option>
           </select>
         </div>
-        <div class="chips" id="chips"></div>
-        <div class="small" id="tlCount">0 Einträge</div>
-        <div id="tlList" class="list"></div>
+        <div class=\"chips\" id=\"chips\"></div>
+        <div class=\"small\" id=\"tlCount\">0 Einträge</div>
+        <div id=\"tlList\" class=\"list\"></div>
       </div>
-      <div class="small" style="padding:10px 12px;border-top:1px solid rgba(255,255,255,.08)">Quelle: <b>mitarbeiter.json → ortskunde</b> (alles anzeigen; `kundig` steuert nur Status)</div>
+      <div class=\"small\" style=\"padding:10px 12px;border-top:1px solid rgba(255,255,255,.08)\">Legende: <b>kundig = blau</b> • <b>Auffrischung = rot</b> • <b>unkundig = neutral</b></div>
     </div>
   </div>
-  <script src="viewer.js"></script>
+  <script src=\"viewer.js?v=1.7.4\"></script>
 </body>
 </html>
