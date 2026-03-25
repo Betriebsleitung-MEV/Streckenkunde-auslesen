@@ -5,10 +5,11 @@
   <title>Streckenkunde – Auslesekarte</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:#0b1220; color:#e8eefc; }
+    :root{ --bg:#0b1220; --panel:#121a2b; --text:#e8eefc; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--text); }
     .header{padding:12px;border-bottom:1px solid rgba(255,255,255,.1)}
     .controls{display:flex;gap:8px;padding:12px}
-    button,label{padding:8px 14px;border-radius:8px;border:1px solid #555;background:#1a2440;color:#fff;cursor:pointer}
+    button,label{padding:8px 14px;border-radius:8px;border:1px solid #4a587a;background:#1a2440;color:#fff;cursor:pointer}
     #svgHost{height:85vh;background:#fff;margin:12px;border-radius:8px;overflow:hidden}
 
     /* Druck immer A3 Quer */
@@ -16,18 +17,21 @@
     @media print {
       .header,.controls{display:none !important;}
       body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-      #svgHost{margin:0;height:auto}
+      #svgHost{margin:0;height:auto;border:none;border-radius:0}
     }
   </style>
 </head>
 <body>
   <div class="header"><strong>Streckenkunde – JSON Viewer</strong></div>
   <div class="controls">
-    <label>SVG laden<input id="svgFile" type="file" accept=".svg" hidden></label>
     <label>JSON laden<input id="jsonFile" type="file" accept=".json" hidden></label>
     <button onclick="window.print()">A3 PDF drucken</button>
   </div>
-  <div id="svgHost">SVG laden…</div>
+
+  <!-- feste SVG aus assets/map.svg -->
+  <div id="svgHost">
+    <object id="svgObj" type="image/svg+xml" data="assets/map.svg" style="width:100%;height:85vh;"></object>
+  </div>
 
 <script src="js/viewer.js"></script>
 </body>
