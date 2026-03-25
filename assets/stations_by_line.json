@@ -853,14 +853,6 @@
       "line": "151"
     },
     {
-      "id": "station_rbl_west",
-      "label": "RBL West",
-      "code": null,
-      "typ": "unoccupied_station",
-      "tanklager": "Rangierbahnhof Limmattal",
-      "line": "151"
-    },
-    {
       "id": "station_rupperswil",
       "label": "Rupperswil",
       "code": "RU",
@@ -1631,7 +1623,7 @@
       "label": "ANG Nespresso",
       "code": null,
       "typ": "unoccupied_station",
-      "tanklager": "Nespresso",
+      "tanklager": "Avenches Nespresso",
       "line": "252"
     },
     {
@@ -2895,7 +2887,7 @@
       "label": "Depot Spiez",
       "code": null,
       "typ": "unoccupied_station",
-      "tanklager": "Depot Spiez",
+      "tanklager": "Spiez Depot",
       "line": "322"
     },
     {
@@ -3867,7 +3859,7 @@
       "label": "Mellingen",
       "code": null,
       "typ": "unoccupied_station",
-      "tanklager": "Mellingen",
+      "tanklager": "Tanklager Mellingen TAMAG",
       "line": "436"
     },
     {
@@ -4436,14 +4428,6 @@
       "code": null,
       "typ": "unoccupied_station",
       "tanklager": null,
-      "line": "502"
-    },
-    {
-      "id": "station_eow_haltingen",
-      "label": "EOW Haltingen",
-      "code": null,
-      "typ": "unoccupied_station",
-      "tanklager": "EOW Haltingen",
       "line": "502"
     },
     {
@@ -5141,14 +5125,6 @@
       "line": "542"
     },
     {
-      "id": "station_tanklager_stabio",
-      "label": "Tanklager Stabio",
-      "code": null,
-      "typ": "unoccupied_station",
-      "tanklager": "Tanklager Stabio",
-      "line": "542"
-    },
-    {
       "id": "station_taverne_torricella",
       "label": "Taverne-Torricella",
       "code": "TAV",
@@ -5282,14 +5258,6 @@
     }
   ],
   "601": [
-    {
-      "id": "station_ang_siggenthal",
-      "label": "ANG Siggenthal-W.",
-      "code": null,
-      "typ": "unoccupied_station",
-      "tanklager": "Holcim Siggenthal",
-      "line": "601"
-    },
     {
       "id": "station_beznau",
       "label": "Beznau",
@@ -5636,22 +5604,6 @@
       "code": null,
       "typ": "Station",
       "tanklager": null,
-      "line": "611"
-    },
-    {
-      "id": "station_tarl",
-      "label": "TARL",
-      "code": null,
-      "typ": "unoccupied_station",
-      "tanklager": "TAR Glattbrugg",
-      "line": "611"
-    },
-    {
-      "id": "station_tl_ng",
-      "label": "Tanklager Niederglatt",
-      "code": null,
-      "typ": "unoccupied_station",
-      "tanklager": "Niederglatt",
       "line": "611"
     }
   ],
@@ -6075,16 +6027,8 @@
       "line": "642"
     },
     {
-      "id": "station_tl-häggenschwil_winden-7",
-      "label": "TL Landquart",
-      "code": null,
-      "typ": "unoccupied_station",
-      "tanklager": "Landquart",
-      "line": "642"
-    },
-    {
       "id": "station_tanklager_sennwald",
-      "label": "Tanklager Sennwald",
+      "label": "Salez-Sennwald",
       "code": "SAS",
       "typ": "unoccupied_station",
       "tanklager": "Salez-Sennwald",
@@ -6104,14 +6048,6 @@
       "code": "WEI",
       "typ": "Station",
       "tanklager": null,
-      "line": "642"
-    },
-    {
-      "id": "station_tl-häggenschwil_winden-7-5",
-      "label": "Ziszers SBB",
-      "code": null,
-      "typ": "unoccupied_station",
-      "tanklager": "Zizers SBB",
       "line": "642"
     }
   ],
@@ -7427,14 +7363,6 @@
   ],
   "761": [
     {
-      "id": "station_oberwintherthur_ua-6",
-      "label": "Altishausen",
-      "code": "AHAU",
-      "typ": "unoccupied_station",
-      "tanklager": "Altishausen",
-      "line": "761"
-    },
-    {
       "id": "station_berg",
       "label": "Berg",
       "code": "BERG",
@@ -7512,14 +7440,6 @@
       "code": "SHAU",
       "typ": "Station",
       "tanklager": null,
-      "line": "761"
-    },
-    {
-      "id": "station_tlt",
-      "label": "TLT",
-      "code": null,
-      "typ": "unoccupied_station",
-      "tanklager": "Bettwiesen",
       "line": "761"
     },
     {
@@ -7982,10 +7902,10 @@
     },
     {
       "id": "station_tl-häggenschwil_winden",
-      "label": "TL Häggenschwil-Winden",
+      "label": "Tanklager Häggenschwil Osterwalder - Avia",
       "code": null,
       "typ": "unoccupied_station",
-      "tanklager": "Häggenschwil-Winden",
+      "tanklager": "Tanklager Häggenschwil Osterwalder - Avia",
       "line": "791"
     },
     {
@@ -8008,14 +7928,6 @@
     }
   ],
   "unknown": [
-    {
-      "id": "station_gik",
-      "label": "ANG Swissterminal Frenkendorf",
-      "code": "411",
-      "typ": "unoccupied_station",
-      "tanklager": "Swissterminal Frenkendorf",
-      "line": null
-    },
     {
       "id": "station_chiasso",
       "label": "Chiasso",
