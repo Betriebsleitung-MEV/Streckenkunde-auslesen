@@ -7,6 +7,10 @@ let viewBase=null, viewCur=null, panState=null;
 function setStatus(m){ if(statusEl) statusEl.textContent = m; }
 const norm = s => String(s||'').toLowerCase().replace(/\s+/g,' ').trim();
 
+function showDebug(obj){
+  try{ const box = $('#debug'); if(!box) return; box.hidden=false; box.textContent = JSON.stringify(obj, null, 2); }catch(e){}
+}
+
 function setDocTitleFromProfile(p){
   try{
     const name = `${p.person?.vorname||''} ${p.person?.nachname||''}`.trim();
@@ -31,7 +35,7 @@ function wirePanZoom(){
   $('#btnReset').onclick = ()=>{ if(viewBase) setViewBox({...viewBase}); };
 }
 
-function statusToColor(v){ if(!v) return ''; const kundig=getComputedStyle(document.documentElement).getPropertyValue('--kundig').trim()||'#1976d2'; const auffr=getComputedStyle(document.documentElement).getPropertyValue('--auffr').trim()||'#d32f2f'; if(v.kundig===true||v.status==='kundig') return kundig; if(v.auffrischung===true||v.status==='auffrischung') return auffr; return ''; }
+function statusToColor(v){ if(!v) return ''; const kundig=getComputedStyle(document.documentElement).getPropertyValue('--kundig').trim()||'#16a34a'; const auffr=getComputedStyle(document.documentElement).getPropertyValue('--auffr').trim()||'#f59e0b'; if(v.kundig===true||v.status==='kundig') return kundig; if(v.auffrischung===true||v.status==='auffrischung') return auffr; return ''; }
 function collectDataLines(el){ const out=[]; if(!el||!el.getAttributeNames) return out; for(const a of el.getAttributeNames()){ if(!a.startsWith('data-line')) continue; const v=String(el.getAttribute(a)||'').replace(/\D+/g,''); if(v && !out.includes(v)) out.push(v); } out.sort((a,b)=>Number(a)-Number(b)); return out; }
 function apply(){
   if(!svgEl){ setStatus('Karte (SVG) nicht geladen.'); return; }
@@ -40,22 +44,62 @@ function apply(){
   for (const [l, v] of Object.entries(linien)){ const el = svgEl.getElementById('line-'+l); if (el){ const col=statusToColor(v); if(col){ el.style.stroke=col; el.style.fill=col; } } }
   const candidates = svgEl.querySelectorAll('[data-line], [data-line-1], [data-line-2], [data-line-3], [data-line-4], [data-line-5]');
   candidates.forEach(el=>{ const lines=collectDataLines(el); let col=''; for(const l of lines){ const v=linien[l]; const c=statusToColor(v); if(c){ col=c; if(v?.kundig||v?.status==='kundig') break; } } if(col){ el.style.stroke=col; el.style.fill=col; } });
-  const segMap = jsonData.teilstrecken || {}; for (const arr of Object.values(segMap)){ for (const seg of arr){ if(!seg||!('seg' in seg)) continue; const segId='seg-'+ String(seg.seg).replace('.', '-'); const el=svgEl.getElementById(segId); if(!el) continue; if(seg.kundig){ const col=getComputedStyle(document.documentElement).getPropertyValue('--kundig').trim()||'#1976d2'; el.style.stroke=col; el.style.fill=col; } } }
+  const segMap = jsonData.teilstrecken || {}; for (const arr of Object.values(segMap)){ for (const seg of arr){ if(!seg||!('seg' in seg)) continue; const segId='seg-'+ String(seg.seg).replace('.', '-'); const el=svgEl.getElementById(segId); if(!el) continue; if(seg.kundig){ const col=getComputedStyle(document.documentElement).getPropertyValue('--kundig').trim()||'#16a34a'; el.style.stroke=col; el.style.fill=col; } } }
   for (const [id, st] of Object.entries(overrides)){ const el = svgEl.getElementById(id); if(!el) continue; const v={status:st,kundig:st==='kundig',auffrischung:st==='auffrischung'}; const col=statusToColor(v); if(col){ el.style.stroke=col; el.style.fill=col; } }
   setStatus('Markierungen angewendet.');
 }
 
-// --- Ortskunde: ALLES anzeigen, was in mitarbeiter.json → ortskunde steht (ohne Filter) ---
-async function renderOrtskunde(){
-  const host = $('#tlList'); const cnt = $('#tlCount'); if(!host||!cnt) return; host.innerHTML='';
-  const ok = jsonData && jsonData.ortskunde ? jsonData.ortskunde : {};
-  let entries = Object.keys(ok).map(name=>({ name, kundig: !!(ok[name] && ok[name].kundig), linien: (ok[name] && Array.isArray(ok[name].linien)) ? ok[name].linien.slice() : [] }));
+// robust: finde ortskunde egal wo (ortskunde, Ortskunde, jsonData.data.ortskunde etc.)
+function getOrtskundeObject(j){
+  if(!j||typeof j!=='object') return {};
+  if(j.ortskunde && typeof j.ortskunde==='object') return j.ortskunde;
+  if(j.Ortskunde && typeof j.Ortskunde==='object') return j.Ortskunde;
+  if(j.data && typeof j.data==='object') return getOrtskundeObject(j.data);
+  return {};
+}
+
+// ---- Ortskunde besser anzeigen (führend: mitarbeiter.json → ortskunde) ----
+function renderOrtskunde(){
+  const host = $('#tlList'); const cnt = $('#tlCount'); const chips = $('#chips'); if(!host||!cnt) return; host.innerHTML=''; if(chips) chips.innerHTML='';
+  const ok = getOrtskundeObject(jsonData);
+  // Debug, falls leer
+  if(!ok || !Object.keys(ok).length){
+    $('#tlCount').textContent = '0 Einträge';
+    host.innerHTML = "<div class='small'>Keine Einträge in <code>ortskunde</code> gefunden. Prüfe JSON-Struktur.</div>";
+    showDebug({hinweis:'Erwartet: Wurzelebene → "ortskunde"', keys: Object.keys(jsonData||{})});
+    return;
+  }
+  const statusFilter = $('#filterStatus')?.value || 'all';
+  let entries = Object.keys(ok).map(name=>({
+    name,
+    kundig: !!(ok[name] && ok[name].kundig),
+    linien: (ok[name] && Array.isArray(ok[name].linien)) ? ok[name].linien.slice() : []
+  }));
   const q = ($('#search')?.value||'').toLowerCase().trim();
   if(q){ entries = entries.filter(e=> e.name.toLowerCase().includes(q) || e.linien.join(',').includes(q.replace(/\D+/g,'')) ); }
-  entries.sort((a,b)=> a.name.localeCompare(b.name,'de-CH'));
-  cnt.textContent = `${entries.length} Einträge`;
-  if(!entries.length){ host.innerHTML = "<div class='small'>Keine Einträge.</div>"; return; }
-  for(const e of entries){ const div=document.createElement('div'); div.className='item'; const badge=e.kundig?"<span class='badge k'>kundig</span>":"<span class='badge n'>unkundig</span>"; div.innerHTML = `<div class='desc'><b>${e.name}</b><div class='small'>Linien: ${e.linien.join(', ')||'—'}</div></div>${badge}`; host.appendChild(div); }
+  if(statusFilter==='kundig') entries = entries.filter(e=>e.kundig);
+  if(statusFilter==='unkundig') entries = entries.filter(e=>!e.kundig);
+  const groups = new Map();
+  const push = (key, e) => { if(!groups.has(key)) groups.set(key, []); groups.get(key).push(e); };
+  for(const e of entries){ if(!e.linien || !e.linien.length){ push('—', e); continue; } for(const l of e.linien){ push(String(l), e); } }
+  const keys = Array.from(groups.keys()).sort((a,b)=>{ if(a==='—'&&b==='—') return 0; if(a==='—') return 1; if(b==='—') return -1; return Number(a)-Number(b); });
+  const total = entries.length; const kCount = entries.filter(e=>e.kundig).length; const uCount = total - kCount;
+  if(chips) chips.innerHTML = `<span class=\"chip\">Gesamt: ${total}</span><span class=\"chip\">kundig: ${kCount}</span><span class=\"chip\">unkundig: ${uCount}</span>`;
+  cnt.textContent = `${total} Einträge`;
+  for(const k of keys){
+    const arr = groups.get(k);
+    arr.sort((a,b)=> (Number(b.kundig)-Number(a.kundig)) || a.name.localeCompare(b.name,'de-CH'));
+    const box = document.createElement('div'); box.className='group';
+    box.innerHTML = `<h3>Linie ${k} <span style=\"opacity:.7\">(${arr.length})</span></h3>`;
+    for(const e of arr){
+      const row = document.createElement('div'); row.className='item';
+      const badge = e.kundig?"<span class='badge k'>kundig</span>":"<span class='badge n'>unkundig</span>";
+      row.innerHTML = `<div class='name'>${e.name}</div><div class='pill'>${(e.linien&&e.linien.length)?e.linien.join(', '):'—'}</div>${badge}`;
+      box.appendChild(row);
+    }
+    host.appendChild(box);
+  }
+  if(!keys.length){ host.innerHTML = "<div class='small'>Keine Einträge (Filter).</div>"; }
 }
 
 // --- Bootstrapping ---
@@ -67,14 +111,18 @@ if(svgObj){
     viewBase = getInitialViewBox(svgEl); setViewBox({...viewBase}); wirePanZoom();
     if (jsonData) apply();
   });
-  // Fehlerfall (z.B. 404) abfangen
-  svgObj.addEventListener('error', () => {
-    setStatus('SVG nicht gefunden – überprüfe assets/map.svg');
-  });
+  svgObj.addEventListener('error', () => { setStatus('SVG nicht gefunden – überprüfe assets/map.svg'); });
 }
 
 $('#jsonFile').addEventListener('change', async e => {
-  try{ jsonData = JSON.parse(await e.target.files[0].text()); setDocTitleFromProfile(jsonData); apply(); renderOrtskunde(); setStatus('JSON geladen.'); }
-  catch(err){ alert('Fehler im JSON: '+err.message); }
+  try{
+    const text = await e.target.files[0].text();
+    // Entferne unsichtbare BOM/Steuerzeichen, die JSON stören könnten
+    const clean = text.replace(/[\u0000-\u001F\uFEFF]/g, ch => (ch==='\n'||ch==='\r'||ch==='\t')?ch:'');
+    jsonData = JSON.parse(clean);
+    setDocTitleFromProfile(jsonData); apply(); renderOrtskunde(); setStatus('JSON geladen.');
+  }
+  catch(err){ alert('Fehler im JSON: '+err.message); showDebug({parseError: String(err)}); }
 });
 $('#search')?.addEventListener('input', ()=> renderOrtskunde());
+$('#filterStatus')?.addEventListener('change', ()=> renderOrtskunde());
