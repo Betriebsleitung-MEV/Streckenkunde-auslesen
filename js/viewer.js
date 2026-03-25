@@ -32,7 +32,7 @@ function clientToSvgXY(cx,cy){ if(!svgEl) return {x:0,y:0}; const pt = svgEl.cre
 function wirePanZoom(){
   const cap = $('#pzCapture');
   if(!cap||!svgEl) return;
-  // Wheel zoom
+  // Wheel zoom (mit passive:false)
   cap.addEventListener('wheel', e=>{
     if(!viewCur||!viewBase) return; e.preventDefault();
     const factor = (e.deltaY>0?1.08:0.92);
@@ -75,7 +75,7 @@ function apply(){
   // 1) Direkt per ID line-XXX
   for (const [l, v] of Object.entries(linien)){
     const el = svgEl.getElementById('line-'+l);
-    if (!el) continue; const col = statusToColor(v); if (col){ el.style.stroke = col; el.style.fill = col; }
+    if (el){ const col = statusToColor(v); if (col){ el.style.stroke = col; el.style.fill = col; } }
   }
   // 2) Fallback per data-line*
   const candidates = svgEl.querySelectorAll('[data-line], [data-line-1], [data-line-2], [data-line-3], [data-line-4], [data-line-5]');
@@ -85,21 +85,24 @@ function apply(){
     for(const l of lines){ const v = linien[l]; const c = statusToColor(v); if(c){ col=c; if(v?.kundig||v?.status==='kundig') break; } }
     if(col){ el.style.stroke = col; el.style.fill = col; }
   });
-  // 3) Overrides: id => status string (kundig/auffrischung/unkundig)
+  // 3) Teilstrecken seg-XXX.YY → seg-XXX-YY
+  const segMap = jsonData.teilstrecken || {};
+  for (const arr of Object.values(segMap)){
+    for (const seg of arr){ if(!seg||!('seg' in seg)) continue; const segId = 'seg-'+ String(seg.seg).replace('.', '-'); const el = svgEl.getElementById(segId); if(!el) continue; if(seg.kundig){ const col = getComputedStyle(document.documentElement).getPropertyValue('--kundig').trim()||'#1976d2'; el.style.stroke = col; el.style.fill = col; } }
+  }
+  // 4) Overrides: id => status string
   for (const [id, st] of Object.entries(overrides)){
-    const el = svgEl.getElementById(id); if(!el) continue;
-    const v = {status:st, kundig: st==='kundig', auffrischung: st==='auffrischung'}; const col = statusToColor(v);
-    if(col){ el.style.stroke = col; el.style.fill = col; }
+    const el = svgEl.getElementById(id); if(!el) continue; const v = {status:st, kundig: st==='kundig', auffrischung: st==='auffrischung'}; const col = statusToColor(v); if(col){ el.style.stroke = col; el.style.fill = col; }
   }
   setStatus('Markierungen angewendet.');
 }
 
 // --- Ortskunde: Liste rendern (alle, auch unkundig) ---
 function renderOrtskunde(){
-  const host = $('#tlList'); const cnt = $('#tlCount'); host.innerHTML='';
+  const host = $('#tlList'); const cnt = $('#tlCount'); if(!host||!cnt) return; host.innerHTML='';
   const ok = jsonData && jsonData.ortskunde ? jsonData.ortskunde : {};
   let entries = Object.keys(ok).map(name=>({ name, kundig: !!(ok[name] && ok[name].kundig), linien: (ok[name] && Array.isArray(ok[name].linien)) ? ok[name].linien.slice() : [] }));
-  const q = ($('#search').value||'').toLowerCase().trim();
+  const q = ($('#search')?.value||'').toLowerCase().trim();
   if(q){ entries = entries.filter(e=> e.name.toLowerCase().includes(q) || e.linien.join(',').includes(q.replace(/\D+/g,'')) ); }
   entries.sort((a,b)=> a.name.localeCompare(b.name,'de-CH'));
   cnt.textContent = `${entries.length} Einträge`;
@@ -125,4 +128,4 @@ $('#jsonFile').addEventListener('change', async e => {
   catch(err){ alert('Fehler im JSON: '+err.message); }
 });
 
-$('#search').addEventListener('input', ()=> renderOrtskunde());
+$('#search')?.addEventListener('input', ()=> renderOrtskunde());
