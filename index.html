@@ -6,7 +6,10 @@
   <title>Streckenkunde – JSON Viewer v1.7.4 (ohne BLS‑Teilstrecken)</title>
   <style>
     :root {
-      --bg:#0f1720; --fg:#e6edf3; --muted:#9fb3c8; --accent:#36c; --ok:#2ea043; --warn:#d1242f;
+      --bg:#0f1720; --fg:#e6edf3; --muted:#9fb3c8; --accent:#36c;
+      --ok:#2aa8ff; /* kundig = blau */
+      --warn:#ff4d4f; /* unkundig = rot */
+      --neutral:#7e8b98; /* neutral = grau */
       --panel:#111a22; --btn:#1f2a36; --btn-b:#2d3b49;
     }
     html,body {height:100%; margin:0; background:var(--bg); color:var(--fg); font:14px/1.4 system-ui,Segoe UI,Roboto,Arial,sans-serif;}
@@ -15,22 +18,21 @@
     .toolbar {display:flex; flex-wrap:wrap; gap:8px; align-items:center; background:var(--panel); padding:10px; border:1px solid var(--btn-b); border-radius:8px}
     .btn {background:var(--btn); border:1px solid var(--btn-b); color:var(--fg); padding:8px 10px; border-radius:6px; cursor:pointer}
     .btn:hover {filter:brightness(1.1)}
-    .btn.ok {border-color:#2a5; color:#bff}
-    .btn.warn {border-color:#a33; color:#fcc}
     .hint {color:var(--muted); margin-left:6px}
-    .main {display:grid; grid-template-columns:1fr 320px; gap:12px; min-height:0}
-    .stage {background:#0b1218; border:1px solid var(--btn-b); border-radius:8px; position:relative; min-height:420px; overflow:hidden}
+    .main {display:grid; grid-template-columns:1fr 360px; gap:12px; min-height:0}
+    .stage {background:#0b1218; border:1px solid var(--btn-b); border-radius:8px; position:relative; min-height:460px; overflow:hidden}
     .svg-host {position:absolute; inset:0; display:grid; place-items:center; overflow:hidden}
     .side {background:var(--panel); border:1px solid var(--btn-b); border-radius:8px; padding:10px; overflow:auto}
-    .legend {font-size:13px; color:var(--muted); display:flex; gap:10px; flex-wrap:wrap}
+    .legend {font-size:13px; color:var(--muted); display:flex; gap:12px; flex-wrap:wrap}
     .chip {display:inline-flex; align-items:center; gap:6px}
     .dot {width:10px; height:10px; border-radius:50%}
-    .dot.blue{background:#2aa8ff} .dot.red{background:#ff4d4f} .dot.gray{background:#7e8b98}
+    .dot.blue{background:var(--ok)} .dot.red{background:var(--warn)} .dot.gray{background:var(--neutral)}
     .list-head {display:flex; gap:8px; margin:8px 0}
     input[type="file"]{display:none}
     .status {font-size:12px; color:var(--muted)}
     .footer {color:var(--muted); font-size:12px}
     .pannable {cursor:grab} .pannable:active{cursor:grabbing}
+    .row {display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:1px dashed #223}
   </style>
 </head>
 <body>
@@ -57,11 +59,11 @@
     <aside class="side">
       <div class="list-head">
         <input id="search" class="btn" style="flex:1" placeholder="Suche">
-        <select id="filter" class="btn" style="width:140px">
+        <select id="filter" class="btn" style="width:160px">
           <option value="alle">Suche: alle</option>
-          <option value="kundig">nur kundig</option>
-          <option value="unkundig">nur unkundig</option>
-          <option value="neutral">nur neutral</option>
+          <option value="kundig">nur kundig (blau)</option>
+          <option value="unkundig">nur unkundig (rot)</option>
+          <option value="neutral">nur neutral (grau)</option>
         </select>
       </div>
 
@@ -76,6 +78,7 @@
       <div id="listWrap">
         <div class="status">0 Einträge</div>
       </div>
+      <div id="mapStats" class="status" style="margin-top:8px"></div>
     </aside>
   </div>
 
@@ -84,19 +87,134 @@
 
 <script>
 (() => {
+  // ---------- Konfiguration ----------
+  const SVG_PATH = './assets/map.svg'; // relativ, kein führender Slash
+  // In dieser Reihenfolge werden Namen im SVG gesucht:
+  const ATTRS = ['data-name','data-label','data-code','id','title']; 
+  const COLORS = { kundig: getCSS('--ok'), unkundig: getCSS('--warn'), neutral: getCSS('--neutral') };
+
+  // ---------- Shortcuts ----------
   const $ = (s, p=document) => p.querySelector(s);
-  const svgHost = $('#svgHost');
-  const msg = $('#msg');
+  const svgHost = $('#svgHost'), msg = $('#msg');
+  const fileInput = $('#jsonFile'), listWrap = $('#listWrap');
+  const search = $('#search'), filter = $('#filter');
+  const mapStats = $('#mapStats');
 
-  // --- SVG laden (relativ, gleiches Repo/Origin) ---
-  const SVG_PATH = './assets/map.svg'; // wichtig: kein führender Slash
+  // ---------- State ----------
+  let svgEl = null, vb0 = null;
+  let personenOrtskunde = []; // [{label, status}]
+  let indexMaps = {};         // { normalizedName: [Element, ...] }
+  let paintStats = { matched:0, total:0 };
 
-  let svgEl = null;          // <svg> Element
-  let vb0 = null;            // ursprüngliche viewBox [x,y,w,h]
-  let pan = {x:0, y:0};      // akkumuliertes Panning
-  let scale = 1;             // Zoom-Faktor
-
+  // ---------- Util ----------
   function setStatus(t){ msg.textContent = t || ''; }
+  function getCSS(varName){ return getComputedStyle(document.documentElement).getPropertyValue(varName).trim(); }
+
+  function norm(s){
+    if(!s) return '';
+    return s.toString()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g,'') // Diakritika entfernen
+      .toLowerCase()
+      .replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss')
+      .replace(/[^a-z0-9]+/g,' ')  // Sonderzeichen → Leerzeichen
+      .trim()
+      .replace(/\s+/g,' ');        // Mehrfachspaces zusammen
+  }
+
+  function buildIndex() {
+    indexMaps = {};
+    const all = svgEl.querySelectorAll('*');
+    for (const el of all) {
+      let key = '';
+      for (const a of ATTRS) {
+        if (a === 'title') {
+          const t = el.querySelector(':scope > title');
+          if (t && t.textContent) { key = t.textContent; break; }
+        } else if (el.hasAttribute && el.hasAttribute(a)) {
+          key = el.getAttribute(a);
+          if (key) break;
+        }
+      }
+      if (!key) continue;
+      const n = norm(key);
+      if (!n) continue;
+      (indexMaps[n] ||= []).push(el);
+    }
+  }
+
+  function rememberOriginal(el){
+    if(!el.hasAttribute('data-orig-stroke')) {
+      const cs = getComputedStyle(el);
+      el.setAttribute('data-orig-stroke', el.getAttribute('stroke') ?? cs.stroke ?? '');
+      el.setAttribute('data-orig-fill',   el.getAttribute('fill')   ?? cs.fill   ?? '');
+      el.setAttribute('data-orig-sw',     el.getAttribute('stroke-width') ?? '');
+      el.setAttribute('data-orig-op',     el.getAttribute('opacity') ?? '');
+    }
+  }
+  function restoreOriginal(el){
+    const s = el.getAttribute('data-orig-stroke');
+    const f = el.getAttribute('data-orig-fill');
+    const w = el.getAttribute('data-orig-sw');
+    const o = el.getAttribute('data-orig-op');
+    if (s !== null) el.setAttribute('stroke', s);
+    if (f !== null) el.setAttribute('fill', f);
+    if (w) el.setAttribute('stroke-width', w); else el.removeAttribute('stroke-width');
+    if (o) el.setAttribute('opacity', o); else el.removeAttribute('opacity');
+  }
+
+  function paintElement(el, color){
+    rememberOriginal(el);
+    const tag = el.tagName.toLowerCase();
+    // Linien/Wege
+    if (['path','polyline','line'].includes(tag)) {
+      el.setAttribute('fill','none');
+      el.setAttribute('stroke', color);
+      if (!el.hasAttribute('stroke-width')) el.setAttribute('stroke-width','2.2');
+    }
+    // Flächen
+    else if (['polygon','rect','circle','ellipse'].includes(tag)) {
+      el.setAttribute('fill', color);
+      // dünne Outline optional:
+      if (!el.hasAttribute('stroke')) el.setAttribute('stroke','#102025');
+      if (!el.hasAttribute('stroke-width')) el.setAttribute('stroke-width','0.8');
+      el.setAttribute('opacity', '0.85');
+    }
+    // Fallback
+    else {
+      el.setAttribute('stroke', color);
+    }
+  }
+
+  function clearPaint(){
+    if(!svgEl) return;
+    const all = svgEl.querySelectorAll('[data-orig-stroke],[data-orig-fill]');
+    for(const el of all) restoreOriginal(el);
+    paintStats = { matched:0, total:0 };
+    mapStats.textContent = '';
+  }
+
+  function applyOrtskundeToSVG() {
+    if (!svgEl) return;
+    clearPaint();
+    if (!personenOrtskunde.length) return;
+
+    // Liste der Normalisierungen aus JSON:
+    const items = personenOrtskunde.map(x => ({ label:x.label, status:x.status, key:norm(x.label) }));
+    paintStats.total = items.length;
+
+    for (const it of items) {
+      const els = indexMaps[it.key];
+      if (!els || !els.length) continue;
+      const color = COLORS[it.status] || COLORS.neutral;
+      for (const el of els) paintElement(el, color);
+      paintStats.matched++;
+    }
+    mapStats.textContent = `Karte: ${paintStats.matched}/${paintStats.total} Einträge zugewiesen`;
+  }
+
+  // ---------- SVG laden & Pan/Zoom ----------
+  let pan = {x:0,y:0}, scale = 1;
+  function setViewBox(x,y,w,h){ svgEl.setAttribute('viewBox', [x,y,w,h].join(' ')); }
 
   async function loadSVG() {
     setStatus('lade Karte …');
@@ -107,24 +225,23 @@
       svgHost.innerHTML = text; // inline einbetten
       svgEl = svgHost.querySelector('svg');
       if(!svgEl) throw new Error('Kein <svg> in map.svg');
-      // viewBox sicherstellen
       if(!svgEl.hasAttribute('viewBox')) {
         const w = parseFloat(svgEl.getAttribute('width')) || 2000;
         const h = parseFloat(svgEl.getAttribute('height')) || 1200;
         svgEl.setAttribute('viewBox', `0 0 ${w} ${h}`);
       }
       vb0 = svgEl.getAttribute('viewBox').split(/\s+/).map(Number); // [x,y,w,h]
+      buildIndex();
       fit();
       attachPanZoom();
       setStatus('bereit');
+      // Falls JSON bereits geladen wurde, sofort färben:
+      applyOrtskundeToSVG();
     } catch (e) {
       console.error(e);
       setStatus('SVG konnte nicht geladen werden ('+e.message+'). Erwartet: assets/map.svg');
     }
   }
-
-  // --- Fit / Reset / Zoom / Pan ---
-  function setViewBox(x,y,w,h){ svgEl.setAttribute('viewBox', [x,y,w,h].join(' ')); }
 
   function fit() {
     if(!svgEl || !vb0) return;
@@ -132,11 +249,8 @@
     const aspectHost = host.width / host.height;
     const aspectSvg  = vb0[2] / vb0[3];
     let w=vb0[2], h=vb0[3];
-    if(aspectHost > aspectSvg){ // Host breiter -> Höhe limitierend
-      w = vb0[2] * (aspectHost / aspectSvg);
-    } else {
-      h = vb0[3] * (aspectSvg / aspectHost);
-    }
+    if(aspectHost > aspectSvg){ w = vb0[2] * (aspectHost / aspectSvg); }
+    else { h = vb0[3] * (aspectSvg / aspectHost); }
     scale = 1; pan.x = 0; pan.y = 0;
     const x = vb0[0] - (w - vb0[2])/2;
     const y = vb0[1] - (h - vb0[3])/2;
@@ -147,28 +261,26 @@
     if(!svgEl || !vb0) return;
     scale = 1; pan.x=0; pan.y=0;
     setViewBox(...vb0);
+    clearPaint();
+    // Nach Reset erneut färben, wenn Daten da
+    if (personenOrtskunde.length) applyOrtskundeToSVG();
   }
 
   function zoomAt(clientX, clientY, delta) {
     if(!svgEl) return;
-    const k = Math.exp(delta * -0.0015); // feinfühlig
+    const k = Math.exp(delta * -0.0015);
     scale *= k;
-
-    // Um den Mauspunkt zoomen:
     const r = svgEl.getBoundingClientRect();
     const px = (clientX - r.left) / r.width;
     const py = (clientY - r.top)  / r.height;
-
     const vb = svgEl.getAttribute('viewBox').split(/\s+/).map(Number);
     const nx = vb[0] + vb[2]*px - (vb[2]*k)*px;
     const ny = vb[1] + vb[3]*py - (vb[3]*k)*py;
-    const nw = vb[2]*k;
-    const nh = vb[3]*k;
+    const nw = vb[2]*k, nh = vb[3]*k;
     setViewBox(nx, ny, nw, nh);
   }
 
   function attachPanZoom() {
-    // Pan
     let dragging=false, lx=0, ly=0;
     svgHost.addEventListener('mousedown', (e)=>{ dragging=true; lx=e.clientX; ly=e.clientY; });
     window.addEventListener('mouseup', ()=> dragging=false);
@@ -181,27 +293,14 @@
       setViewBox(vb[0]-dx, vb[1]-dy, vb[2], vb[3]);
       lx = e.clientX; ly = e.clientY;
     });
-
-    // Wheel zoom
     svgHost.addEventListener('wheel', (e)=>{
       e.preventDefault();
       zoomAt(e.clientX, e.clientY, e.deltaY);
     }, {passive:false});
-
-    // Resize -> fit leicht neu berechnen
-    new ResizeObserver(()=>{
-      fit();
-    }).observe(svgHost);
+    new ResizeObserver(()=>{ fit(); }).observe(svgHost);
   }
 
-  // --- JSON laden & Liste (ohne BLS‑Teilstrecken) ---
-  const fileInput = $('#jsonFile');
-  const listWrap = $('#listWrap');
-  const search = $('#search');
-  const filter = $('#filter');
-
-  let personenOrtskunde = []; // [{label:'...', status:'kundig'|'unkundig'|'neutral'}]
-
+  // ---------- JSON laden & Liste ----------
   fileInput.addEventListener('change', async (e)=>{
     const f = e.target.files?.[0];
     if(!f) return;
@@ -217,6 +316,8 @@
       });
       renderList();
       setStatus('JSON geladen: '+personenOrtskunde.length+' Einträge');
+      // auf Karte anwenden (sofern SVG da ist)
+      if (svgEl) applyOrtskundeToSVG();
     } catch(err){
       console.error(err);
       setStatus('JSON fehlerhaft: '+err.message);
@@ -233,25 +334,21 @@
       const okQ = !q || x.label.toLowerCase().includes(q);
       return okF && okQ;
     }).map(x=>{
-      const color = x.status==='kundig'?'#2aa8ff':(x.status==='unkundig'?'#ff4d4f':'#7e8b98');
-      return `<div style="display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:1px dashed #223">
+      const color = x.status==='kundig'?COLORS.kundig:(x.status==='unkundig'?COLORS.unkundig:COLORS.neutral);
+      return `<div class="row">
         <span class="dot" style="background:${color}"></span>
         <span>${x.label}</span>
         <span style="margin-left:auto;color:#8aa">${x.status}</span>
       </div>`;
     }).join('');
-
-    listWrap.innerHTML = `<div class="status">${rows ? '' : '0 Einträge'}</div>${rows}`;
+    listWrap.innerHTML = rows ? rows : `<div class="status">0 Einträge</div>`;
   }
-
-  search.addEventListener('input', renderList);
-  filter.addEventListener('change', renderList);
 
   // Buttons
   $('#btnFit').addEventListener('click', fit);
   $('#btnReset').addEventListener('click', reset);
   $('#btnPrint').addEventListener('click', ()=>{
-    // Immer Querformat; endgültiges A3 erzwingst du im Druckdialog
+    // Immer Querformat; endgültiges A3 stellst du im Druckdialog ein
     const css = '@page { size: A3 landscape; margin: 10mm }';
     const s = document.createElement('style'); s.textContent = css; document.head.appendChild(s);
     window.print();
