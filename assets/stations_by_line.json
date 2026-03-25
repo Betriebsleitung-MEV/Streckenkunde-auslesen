@@ -5145,7 +5145,7 @@
       "label": "Tanklager Stabio",
       "code": null,
       "typ": "unoccupied_station",
-      "tanklager": null,
+      "tanklager": "Tanklager Stabio",
       "line": "542"
     },
     {
@@ -6079,7 +6079,7 @@
       "label": "TL Landquart",
       "code": null,
       "typ": "unoccupied_station",
-      "tanklager": "Landquardt",
+      "tanklager": "Landquart",
       "line": "642"
     },
     {
