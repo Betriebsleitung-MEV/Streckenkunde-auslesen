@@ -3,7 +3,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>Streckenkunde – Vorgabe vergleichen (v3.1)</title>
+<title>Streckenkunde – Vorgabe vergleichen (v3.2)</title>
 <style>
 @page { size: A3 landscape; margin: 15mm; }
 
@@ -23,20 +23,33 @@ body{font-family:Arial,Helvetica,sans-serif;display:flex;flex-direction:column;o
 #container{flex:1;display:flex;overflow:hidden}
 #mapContainer{flex:3;overflow:hidden;cursor:grab;position:relative}
 #mapContainer svg{width:100%;height:100%}
-#sidebar{flex:1;border-left:1px solid #ccc;padding:12px;background:#fafafa}
+#sidebar{flex:1;border-left:1px solid #ccc;padding:12px;background:#fafafa;overflow:auto}
 
-button,select,input[type=file]{
+button,select,input[type=file],input[type=text]{
  appearance:none;border:1px solid var(--ui-border);background:var(--ui-bg);
  color:var(--ui-text);font-size:13px;font-weight:600;padding:7px 14px;
  border-radius:16px;box-shadow:var(--ui-shadow);cursor:pointer;
- transition:all .15s ease
+ transition:all .15s ease;width:auto
 }
 
-button:hover,select:hover,input[type=file]:hover{background:var(--ui-bg-hover);box-shadow:var(--ui-shadow-hover)}
+button:hover,select:hover,input[type=file]:hover,input[type=text]:hover{background:var(--ui-bg-hover);box-shadow:var(--ui-shadow-hover)}
 
 .legend{list-style:none;padding:0;margin:0}
 .legend li{display:flex;align-items:center;margin:6px 0;font-size:13px}
 .dot{width:12px;height:12px;border-radius:50%;margin-right:8px}
+
+.ortskunde-search{width:100%;margin:6px 0 10px 0;padding:6px 10px;font-size:13px}
+
+.ortskunde-card{
+ background:#fff;border:1px solid #e3e3e3;border-radius:12px;
+ padding:8px 10px;margin-bottom:6px;box-shadow:0 2px 6px rgba(0,0,0,.05)
+}
+
+.ortskunde-title{font-size:13px;font-weight:600}
+.ortskunde-lines{font-size:12px;color:#666}
+.ortskunde-badge{float:right;font-size:11px;padding:2px 8px;border-radius:10px}
+.badge-kundig{background:#e4f4ec;color:#1b7f4b}
+.badge-unkundig{background:#eeeeee;color:#666}
 
 .kundig{fill:#1e90ff!important}
 .auffrischung{fill:#e53935!important}
@@ -76,6 +89,10 @@ button:hover,select:hover,input[type=file]:hover{background:var(--ui-bg-hover);b
    <li><span class="dot" style="background:#ccc"></span>unkundig</li>
    <li><span class="dot" style="background:#2ecc71"></span>Ortskunde kundig</li>
   </ul>
+
+  <h3 style="margin-top:18px">Ortskunde</h3>
+  <input class="ortskunde-search" id="ortskundeSearch" placeholder="Suchen…">
+  <div id="ortskundeList"></div>
  </div>
 </div>
 

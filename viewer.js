@@ -28,7 +28,7 @@ function setupVorgaben(){const sel=document.getElementById('vorgabeSelect');
 
 function setupStreckenkunde(){document.getElementById('streckenkundeInput').onchange=e=>{
  const f=e.target.files[0];if(!f)return;const r=new FileReader();
- r.onload=()=>{streckenkunde=JSON.parse(r.result);applyStatus();};r.readAsText(f);};}
+ r.onload=()=>{streckenkunde=JSON.parse(r.result);applyStatus();renderOrtskunde();};r.readAsText(f);};}
 
 function setupTitle(){document.getElementById('titleSelect').onchange=updateTitle;}
 
@@ -58,5 +58,25 @@ function attachTooltip(el,status,label,ortskunde){el.onmouseenter=e=>{
  t.innerHTML=txt;document.body.appendChild(t);el._t=t;};
  el.onmousemove=e=>{if(el._t){el._t.style.left=e.pageX+10+'px';el._t.style.top=e.pageY+10+'px'}};
  el.onmouseleave=()=>{if(el._t){el._t.remove();el._t=null}};}
+
+function renderOrtskunde(){
+ const list=document.getElementById('ortskundeList');list.innerHTML='';
+ const o=streckenkunde?.ortskunde||{};
+ Object.entries(o).forEach(([name,data])=>{
+  const div=document.createElement('div');div.className='ortskunde-card';
+  const badge=data.kundig?'badge-kundig':'badge-unkundig';
+  const txt=data.kundig?'kundig':'unkundig';
+  div.innerHTML=`<span class="ortskunde-badge ${badge}">${txt}</span>
+  <div class="ortskunde-title">${name}</div>
+  <div class="ortskunde-lines">Linien: ${data.linien.join(', ')}</div>`;
+  list.appendChild(div);
+ });}
+
+// Suche
+ortskundeSearch?.addEventListener('input',e=>{
+ const q=e.target.value.toLowerCase();
+ document.querySelectorAll('.ortskunde-card').forEach(c=>{
+  c.style.display=c.textContent.toLowerCase().includes(q)?'':'none';
+ });});
 
 init();
