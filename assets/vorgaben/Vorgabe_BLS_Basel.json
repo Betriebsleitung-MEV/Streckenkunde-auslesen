@@ -1,5 +1,5 @@
 {
-  "name": "BLS Basel (Vorgabe)",
+  "name": "BLS Basel",
   "linien": [
     "141",
     "142",
@@ -16,7 +16,39 @@
     "541"
   ],
   "stationen": [
+    "Aarau",
+    "baden",
+    "Basel Bad A-Gruppe",
     "Basel Bad F-Gruppe",
-    "Basel GB"
+    "Basel GB",
+    "Basel RB",
+    "Bellinzona",
+    "Biasca",
+    "Biel Mett",
+    "Bodio",
+    "Busswil",
+    "Castione-Arbedo",
+    "Claro",
+    "Däniken",
+    "Dulliken",
+    "Frenkendorf Füllinsdorf",
+    "Gionico",
+    "Kaiseraugst",
+    "Killwangen-Spreitenbach",
+    "Langenthal",
+    "Limmattal Rangierbahnhof (RBL)",
+    "Lyss",
+    "Muttenz",
+    "Neuenhof",
+    "Osaogna-Cresciano",
+    "Pianotondo",
+    "Pollegio",
+    "Pratteln",
+    "Pratteln Salina Raurica",
+    "Rupperswil",
+    "Schönenwerd",
+    "Turgi",
+    "Wettingen",
+    "Wöschnau"
   ]
 }
