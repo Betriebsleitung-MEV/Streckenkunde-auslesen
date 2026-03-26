@@ -10,7 +10,9 @@ async function loadJSON(p){ return (await fetch(p)).json(); }
 
 async function init(){
   document.getElementById('mapContainer').insertAdjacentHTML('beforeend', await (await fetch(MAP)).text());
-  svg=document.querySelector('svg'); viewBox=svg.viewBox.baseVal;
+  svg=document.querySelector('svg');
+  svg.setAttribute('preserveAspectRatio','xMidYMid meet');
+  viewBox=svg.viewBox.baseVal;
   setupZoomPan(); setupVorgaben(); setupStreckenkunde(); setupTitle();
 }
 
@@ -18,8 +20,13 @@ function setupZoomPan(){
   const c=document.getElementById('mapContainer');
   c.onmousedown=e=>{drag=true;start={x:e.clientX,y:e.clientY}};
   window.onmouseup=()=>drag=false;
-  window.onmousemove=e=>{if(!drag)return;viewBox.x+=(start.x-e.clientX)*(viewBox.width/c.clientWidth);viewBox.y+=(start.y-e.clientY)*(viewBox.height/c.clientHeight);start={x:e.clientX,y:e.clientY};};
-  c.onwheel=e=>{e.preventDefault();const s=e.deltaY<0?0.9:1.1;viewBox.width*=s;viewBox.height*=s;};
+  window.onmousemove=e=>{
+    if(!drag) return;
+    viewBox.x+=(start.x-e.clientX)*(viewBox.width/c.clientWidth);
+    viewBox.y+=(start.y-e.clientY)*(viewBox.height/c.clientHeight);
+    start={x:e.clientX,y:e.clientY};
+  };
+  c.onwheel=e=>{ e.preventDefault(); const s=e.deltaY<0?0.9:1.1; viewBox.width*=s; viewBox.height*=s; };
 }
 
 function setupVorgaben(){
@@ -39,28 +46,51 @@ function setupStreckenkunde(){
   };
 }
 
-function setupTitle(){
-  document.getElementById('titleSelect').onchange=updateTitle;
-}
+function setupTitle(){ document.getElementById('titleSelect').onchange=updateTitle; }
 
 function updateTitle(){
   const base=document.getElementById('titleSelect').value;
   const el=document.getElementById('pdfTitle');
-  if(!base){el.textContent='';return;}
+  if(!base){ el.textContent=''; return; }
   el.textContent=vorgabe?`${base}: ${vorgabe.name}`:base;
 }
 
-function stationLines(el){return(el.dataset.line||'').split(',').map(v=>v.trim()).filter(Boolean)}
+function stationLines(el){
+  if(el.dataset.line){ return el.dataset.line.split(',').map(l=>l.trim()); }
+  return [];
+}
 
 function applyStatus(){
   svg.querySelectorAll('[id^="station_"]').forEach(el=>{
     el.classList.remove('kundig','auffrischung','vorgabe-fehlt','unkundig');
     let status='unkundig';
     const lines=stationLines(el);
-    if(streckenkunde) lines.forEach(l=>{const s=streckenkunde.linien?.[l]; if(!s)return; if(s.auffrischung)status='auffrischung'; else if(s.kundig&&status!=='auffrischung')status='kundig';});
+    const overrides=streckenkunde?.overrides||{};
+
+    if(overrides[el.id]) status=overrides[el.id];
+    else if(streckenkunde){
+      lines.forEach(l=>{
+        const s=streckenkunde.linien?.[l]; if(!s) return;
+        if(s.auffrischung) status='auffrischung';
+        else if(s.kundig && status!=='auffrischung') status='kundig';
+      });
+    }
+
     if(vorgabe && status!=='kundig' && lines.some(l=>vorgabe.linien?.includes(l))) status='vorgabe-fehlt';
+
     el.classList.add(status);
+    attachTooltip(el,status);
   });
+}
+
+function attachTooltip(el,status){
+  el.onmouseenter=e=>{
+    const t=document.createElement('div'); t.className='tooltip';
+    t.innerHTML=`<strong>${el.id}</strong><br>Status: ${status}${vorgabe?'<br>Vorgabe: '+vorgabe.name:''}`;
+    document.body.appendChild(t); el._t=t;
+  };
+  el.onmousemove=e=>{ if(el._t){ el._t.style.left=e.pageX+10+'px'; el._t.style.top=e.pageY+10+'px'; } };
+  el.onmouseleave=()=>{ if(el._t){ el._t.remove(); el._t=null; } };
 }
 
 init();
