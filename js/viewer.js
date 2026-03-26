@@ -1,7 +1,9 @@
 
-// Drop-in viewer.js (v3.6) – kompatibel zu deinem GitHub-Viewer
-// Minimal-invasive Fixes: robustes Laden, data-line1..N, unoccupied_station_ einbeziehen,
-// Zoom um Mauszeiger, Title-Guards, Overrides normalisieren.
+// GitHub Viewer v3.6a – Stations-first & Ortskunde aus Vorgabe+SVG (Tanklager)
+// Änderungen:
+// - Vorgabe-Check NUR über stationen[] (keine Linien mehr)
+// - Robust: data-line1..N, unoccupied_station_*, Zoom um Cursor, Loader-Guards
+// - Ortskunde rechts: zusätzlich Tanklager, deren Label in vorgabe.stationen[] steht
 
 const ASSETS = 'assets/';
 const MAP = ASSETS + 'map.svg';
@@ -9,6 +11,7 @@ const VORGABEN_DIR = ASSETS + 'vorgaben/';
 
 let svg, viewBox, dragging = false, start = {x:0,y:0};
 let vorgabe = null, streckenkunde = null;
+let vorgabeStationSet = new Set(); // normalisierte Stationsnamen aus der Vorgabe
 
 async function loadJSON(p){ const r = await fetch(p, {cache:'no-store'}); if(!r.ok) throw new Error(p+' HTTP '+r.status); return r.json(); }
 async function loadText(p){ const r = await fetch(p, {cache:'no-store'}); if(!r.ok) throw new Error(p+' HTTP '+r.status); return r.text(); }
@@ -51,6 +54,23 @@ function setupZoomPan(){
   }, {passive:false});
 }
 
+function normName(s){
+  return String(s||'')
+    .toLowerCase()
+    .normalize('NFKC')
+    .replace(/\s+/g, ' ')
+    .replace(/\s*\/\s*/g, ' / ')
+    .replace(/\s*-\s*/g, '-')
+    .trim();
+}
+
+function buildVorgabeStationSet(v){
+  const set = new Set();
+  const arr = Array.isArray(v?.stationen) ? v.stationen : [];
+  arr.forEach(n=>{ const k=normName(n); if(k) set.add(k); });
+  return set;
+}
+
 function setupVorgaben(){
   const sel = document.getElementById('vorgabeSelect');
   const files = ['Vorgabe_BLS_Basel.json'];
@@ -59,9 +79,11 @@ function setupVorgaben(){
   sel.onchange = async ()=>{
     try{
       vorgabe = sel.value ? await loadJSON(VORGABEN_DIR + sel.value) : null;
+      vorgabeStationSet = buildVorgabeStationSet(vorgabe);
       const info = document.getElementById('vorgabeInfo'); if(info) info.textContent = vorgabe ? `Aktive Vorgabe: ${vorgabe.name}` : '';
       updateTitle();
       applyStatus();
+      renderOrtskunde();
     }catch(e){ alert('Vorgabe konnte nicht geladen werden: '+e.message); }
   };
 }
@@ -90,8 +112,7 @@ function setupTitle(){
     out.textContent = (vorgabe && vorgabe.name) ? `${base}: ${vorgabe.name}` : base;
   }
   if(sel) sel.addEventListener('change', update);
-  // Exponiere für Alt-Code, falls irgendwo direkt aufgerufen wird
-  window.updateTitle = update;
+  window.updateTitle = update; // für Alt-Code kompatibel
 }
 
 // ==== Helpers ====
@@ -115,13 +136,12 @@ function applyStatus(){
   nodes.forEach(el=>{
     el.classList.remove('kundig','auffrischung','vorgabe-fehlt','unkundig','ortskunde-kundig');
     let status = 'unkundig';
-    const lines = stationLines(el);
+    const lines = stationLines(el); // (für Anzeige nicht mehr genutzt, nur Info)
 
     // Overrides zuerst
     const ov = normalizeOverride(overrides[el.id]);
     if(ov){ status = ov; }
     else if(streckenkunde && lines.length){
-      // Linien-Status aus JSON
       lines.forEach(l=>{
         const s = streckenkunde.linien?.[l]; if(!s) return;
         if(s.auffrischung) status = 'auffrischung';
@@ -129,9 +149,10 @@ function applyStatus(){
       });
     }
 
-    // Vorgabe-Abgleich: nur wenn nicht kundig
-    if(vorgabe && status!=='kundig' && Array.isArray(vorgabe.linien)){
-      if(lines.some(l => vorgabe.linien.includes(l))) status = 'vorgabe-fehlt';
+    // Vorgabe-Abgleich: NUR über stationen[] (Linien sind irrelevant)
+    if(vorgabeStationSet.size > 0 && status !== 'kundig'){
+      const label = el.getAttribute('inkscape:label') || el.id;
+      if(vorgabeStationSet.has(normName(label))) status = 'vorgabe-fehlt';
     }
 
     el.classList.add(status);
@@ -155,16 +176,51 @@ function attachTooltip(el,status,label,ortskunde){
   el.onmouseleave = ()=>{ if(el._t){ el._t.remove(); el._t=null; } };
 }
 
+function isTanklagerNode(el){
+  if(!el || !el.getAttribute) return false;
+  const byAttr = el.hasAttribute('Tanklager') || el.hasAttribute('tanklager');
+  const byTyp  = (String(el.getAttribute('data-typ')||'').toLowerCase()==='tanklager');
+  return byAttr || byTyp;
+}
+
+function allTanklagerLabels(){
+  const out = new Set(); if(!svg) return out;
+  const nodes = svg.querySelectorAll('[Tanklager], [tanklager]');
+  nodes.forEach(el=>{ const lab = el.getAttribute('inkscape:label') || el.getAttribute('data-name') || el.id; if(lab) out.add(lab); });
+  return out;
+}
+
 function renderOrtskunde(){
   const list = document.getElementById('ortskundeList'); if(!list) return; list.innerHTML='';
   const o = streckenkunde?.ortskunde || {};
+
+  // Basis: aus JSON
+  const items = new Map(); // name -> {kind:'json'|'vorgabe', kundig:bool|null, linien:[]}
   Object.entries(o).forEach(([name,data])=>{
+    items.set(name, {kind:'json', kundig: !!data.kundig, linien: Array.isArray(data.linien)?data.linien:[]});
+  });
+
+  // Zusatz: alle Tanklager aus SVG, deren Label in vorgabe.stationen[] steht
+  if(vorgabeStationSet.size>0 && svg){
+    const tl = allTanklagerLabels();
+    tl.forEach(label=>{
+      if(vorgabeStationSet.has(normName(label))){
+        if(!items.has(label)) items.set(label, {kind:'vorgabe', kundig: null, linien: []});
+      }
+    });
+  }
+
+  // Render
+  const sorted = Array.from(items.keys()).sort((a,b)=>String(a).localeCompare(String(b),'de'));
+  sorted.forEach(name=>{
+    const it = items.get(name);
+    let badgeClass='badge-unkundig', badgeText='unkundig';
+    if(it.kundig===true){ badgeClass='badge-kundig'; badgeText='kundig'; }
+    if(it.kind==='vorgabe' && it.kundig===null){ badgeClass='badge-vorgabe'; badgeText='Vorgabe'; }
     const div=document.createElement('div'); div.className='ortskunde-card';
-    const badge = data.kundig ? 'badge-kundig' : 'badge-unkundig';
-    const txt = data.kundig ? 'kundig' : 'unkundig';
-    div.innerHTML = `<span class="ortskunde-badge ${badge}">${txt}</span>
+    div.innerHTML = `<span class="ortskunde-badge ${badgeClass}">${badgeText}</span>
       <div class="ortskunde-title">${name}</div>
-      <div class="ortskunde-lines">Linien: ${(data.linien||[]).join(', ')}</div>`;
+      <div class="ortskunde-lines">${it.linien && it.linien.length?('Linien: '+it.linien.join(', ')):' '}</div>`;
     list.appendChild(div);
   });
 }
