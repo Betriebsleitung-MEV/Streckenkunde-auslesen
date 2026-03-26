@@ -1,101 +1,77 @@
 
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de-CH">
 <head>
-<meta charset="UTF-8">
-<title>Streckenkunde – Vorgabe vergleichen (v3.2)</title>
-<style>
-@page { size: A3 landscape; margin: 15mm; }
-
-:root{
- --ui-bg:#f6f7f8;--ui-bg-hover:#ffffff;--ui-border:#dcdde1;--ui-text:#1c1c1c;
- --ui-shadow:0 4px 10px rgba(0,0,0,.08);--ui-shadow-hover:0 6px 14px rgba(0,0,0,.12)
-}
-
-html,body{height:100%;margin:0}
-body{font-family:Arial,Helvetica,sans-serif;display:flex;flex-direction:column;overflow:hidden}
-
-#toolbar{
- height:42px;background:linear-gradient(#fafafa,#eeeeee);
- border-bottom:1px solid #d0d0d0;display:flex;align-items:center;gap:8px;padding:0 8px
-}
-
-#container{flex:1;display:flex;overflow:hidden}
-#mapContainer{flex:3;overflow:hidden;cursor:grab;position:relative}
-#mapContainer svg{width:100%;height:100%}
-#sidebar{flex:1;border-left:1px solid #ccc;padding:12px;background:#fafafa;overflow:auto}
-
-button,select,input[type=file],input[type=text]{
- appearance:none;border:1px solid var(--ui-border);background:var(--ui-bg);
- color:var(--ui-text);font-size:13px;font-weight:600;padding:7px 14px;
- border-radius:16px;box-shadow:var(--ui-shadow);cursor:pointer;
- transition:all .15s ease;width:auto
-}
-
-button:hover,select:hover,input[type=file]:hover,input[type=text]:hover{background:var(--ui-bg-hover);box-shadow:var(--ui-shadow-hover)}
-
-.legend{list-style:none;padding:0;margin:0}
-.legend li{display:flex;align-items:center;margin:6px 0;font-size:13px}
-.dot{width:12px;height:12px;border-radius:50%;margin-right:8px}
-
-.ortskunde-search{width:100%;margin:6px 0 10px 0;padding:6px 10px;font-size:13px}
-
-.ortskunde-card{
- background:#fff;border:1px solid #e3e3e3;border-radius:12px;
- padding:8px 10px;margin-bottom:6px;box-shadow:0 2px 6px rgba(0,0,0,.05)
-}
-
-.ortskunde-title{font-size:13px;font-weight:600}
-.ortskunde-lines{font-size:12px;color:#666}
-.ortskunde-badge{float:right;font-size:11px;padding:2px 8px;border-radius:10px}
-.badge-kundig{background:#e4f4ec;color:#1b7f4b}
-.badge-unkundig{background:#eeeeee;color:#666}
-
-.kundig{fill:#1e90ff!important}
-.auffrischung{fill:#e53935!important}
-.vorgabe-fehlt{fill:#f4d03f!important}
-.unkundig{fill:#ccc!important}
-.ortskunde-kundig{stroke:#2ecc71!important;stroke-width:3}
-
-.pdf-title{display:none;text-align:center;font-size:18px;margin-bottom:10px}
-.tooltip{position:absolute;background:#fff;border:1px solid #333;padding:6px;font-size:12px;pointer-events:none;z-index:20}
-
-@media print{#toolbar,#sidebar{display:none}.pdf-title{display:block}}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Streckenkunde – Auslese-Viewer (v3.5)</title>
+  <style>
+    @page { size: A3 landscape; margin: 12mm; }
+    :root{--bg:#f6f7f8;--panel:#ffffff;--text:#1c1c1c;--muted:#6b6b6b;--line:#dcdde1;--blue:#1e90ff;--red:#e53935;--yellow:#f4d03f}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Segoe UI,Arial,Helvetica,sans-serif;color:var(--text)}
+    #toolbar{display:flex;gap:8px;align-items:center;padding:10px;border-bottom:1px solid var(--line);background:linear-gradient(#fafafa,#eee)}
+    .btn, select, input[type=file], input[type=text]{padding:6px 10px;border:1px solid var(--line);border-radius:14px;background:#fff;cursor:pointer;font-weight:600}
+    .grid{display:grid;grid-template-columns:1.4fr 1.6fr 1.1fr;gap:12px;height:calc(100% - 52px);padding:10px;background:var(--bg)}
+    .pane{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px;display:flex;flex-direction:column;min-height:0}
+    .list{margin-top:8px;overflow:auto;border-top:1px dashed var(--line)}
+    .item{padding:6px 6px;border-bottom:1px dashed var(--line)}
+    .row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .left{display:flex;align-items:center;gap:8px}
+    .code{font-weight:700;min-width:48px}
+    .name{font-weight:600}
+    .muted{color:var(--muted);font-size:12px}
+    .badge{display:inline-block;width:10px;height:10px;border-radius:50%}
+    .b-blue{background:var(--blue)}
+    .b-yellow{background:var(--yellow)}
+    .children{margin:6px 0 6px 28px;border-left:2px dotted var(--line);padding-left:8px}
+    .child{display:flex;align-items:center;justify-content:space-between;padding:4px 0}
+    .chip{display:inline-block;padding:0 6px;border-radius:10px;border:1px solid var(--line);font-size:11px;color:#555;margin-left:6px}
+    .ovrp{background:#e7f6e9;border-color:#b7e1bf;color:#1b7f4b}
+    .ovrm{background:#fdecea;border-color:#f5c6cb;color:#a33a2a}
+    .toolrow{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 2px 28px}
+    .mini{padding:4px 8px;border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer;font-size:12px}
+    #meta{background:#fafafa;border:1px solid var(--line);border-radius:8px;padding:8px;max-height:36vh;overflow:auto}
+    #globalError{position:fixed;left:12px;bottom:12px;background:#fff3cd;border:1px solid #f1c40f;color:#7d6608;padding:8px 10px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.08);max-width:70vw;display:none;z-index:99}
+    @media print{#toolbar{display:none}}
+  </style>
 </head>
 <body>
+  <div id="toolbar">
+    <strong>Streckenkunde JSON</strong>
+    <label class="btn"><input id="jsonInput" type="file" accept=".json" hidden> laden…</label>
+    <label class="btn"><input id="svgInput" type="file" accept=".svg" hidden> (optional) SVG laden…</label>
+    <label class="btn"><input id="onlyTL" type="checkbox" checked> nur Tanklager</label>
+    <button id="printBtn" class="btn">PDF A3</button>
+  </div>
 
-<div id="toolbar">
- <strong>Titel</strong>
- <select id="titleSelect">
-  <option value="">kein Titel</option>
-  <option value="Streckenkunde – Vergleich mit Vorgabe">Streckenkunde – Vergleich</option>
- </select>
- <strong>Vorgabe</strong>
- <select id="vorgabeSelect"></select>
- <span id="vorgabeInfo"></span>
- <label>Streckenkunde <input type="file" id="streckenkundeInput" accept=".json"></label>
- <button onclick="window.print()">PDF A3</button>
-</div>
+  <div class="grid">
+    <section class="pane">
+      <h3>Linien <small id="linesCount"></small></h3>
+      <input id="lineSearch" class="btn" placeholder="Linien filtern (z. B. 141, 311)">
+      <div id="linesList" class="list"></div>
+    </section>
+    <section class="pane">
+      <h3>Ortskunde (nur Tanklager) <small id="stationsCount"></small></h3>
+      <input id="stationSearch" class="btn" placeholder="Tanklager filtern (z. B. RBL, Schweizerhalle)">
+      <div id="stationsList" class="list"></div>
+    </section>
+    <aside class="pane">
+      <h3>Vorschau</h3>
+      <ul>
+        <li><span class="badge b-blue"></span> Ausgewählt (kommt in die Vorgabe)</li>
+        <li><span class="badge b-yellow"></span> In Quelle vorhanden, aber nicht in der Vorgabe</li>
+        <li><span class="chip ovrp">OVR+</span> per Override auf kundig/auffrischung gesetzt</li>
+        <li><span class="chip ovrm">OVR−</span> per Override auf unkundig gesetzt</li>
+      </ul>
+      <details open>
+        <summary>Geladene Metadaten</summary>
+        <pre id="meta"></pre>
+      </details>
+    </aside>
+  </div>
 
-<div id="container">
- <div id="mapContainer"><div class="pdf-title" id="pdfTitle"></div></div>
- <div id="sidebar">
-  <h3>Legende</h3>
-  <ul class="legend">
-   <li><span class="dot" style="background:#1e90ff"></span>kundig</li>
-   <li><span class="dot" style="background:#e53935"></span>Auffrischung</li>
-   <li><span class="dot" style="background:#f4d03f"></span>Vorgabe fehlt</li>
-   <li><span class="dot" style="background:#ccc"></span>unkundig</li>
-   <li><span class="dot" style="background:#2ecc71"></span>Ortskunde kundig</li>
-  </ul>
-
-  <h3 style="margin-top:18px">Ortskunde</h3>
-  <input class="ortskunde-search" id="ortskundeSearch" placeholder="Suchen…">
-  <div id="ortskundeList"></div>
- </div>
-</div>
-
-<script src="viewer.js"></script>
+  <div id="globalError"></div>
+  <script src="viewer.js"></script>
 </body>
 </html>
