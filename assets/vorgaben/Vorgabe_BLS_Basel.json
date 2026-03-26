@@ -1,0 +1,11 @@
+{
+  "name": "BLS Basel",
+  "linien": [
+    "151",
+    "311"
+  ],
+  "stationen": [
+    "GEPR",
+    "GEST"
+  ]
+}
