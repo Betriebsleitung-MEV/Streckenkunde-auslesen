@@ -1,11 +1,7248 @@
 {
-  "name": "BLS Basel",
-  "linien": [
-    "151",
-    "311"
-  ],
-  "stationen": [
-    "GEPR",
-    "GEST"
-  ]
+  "erzeugtAm": "2026-03-26T09:22:17.116Z",
+  "person": {
+    "vorname": "BLS Basel",
+    "nachname": "Vorgabe",
+    "datum": "2026-03-26",
+    "personalnummer": ""
+  },
+  "bls": false,
+  "linien": {
+    "141": {
+      "status": "kundig",
+      "kundig": true,
+      "auffrischung": false,
+      "unkundig": false
+    },
+    "142": {
+      "status": "kundig",
+      "kundig": true,
+      "auffrischung": false,
+      "unkundig": false
+    },
+    "221": {
+      "status": "unkundig",
+      "kundig": false,
+      "auffrischung": false,
+      "unkundig": true
+    },
+    "222": {
+      "status": "unkundig",
+      "kundig": false,
+      "auffrischung": false,
+      "unkundig": true
+    },
+    "311": {
+      "status": "kundig",
+      "kundig": true,
+      "auffrischung": false,
+      "unkundig": false
+    },
+    "321": {
+      "status": "kundig",
+      "kundig": true,
+      "auffrischung": false,
+      "unkundig": false
+    },
+    "322": {
+      "status": "kundig",
+      "kundig": true,
+      "auffrischung": false,
+      "unkundig": false
+    },
+    "331": {
+      "status": "unkundig",
+      "kundig": false,
+      "auffrischung": false,
+      "unkundig": true
+    },
+    "332": {
+      "status": "unkundig",
+      "kundig": false,
+      "auffrischung": false,
+      "unkundig": true
+    },
+    "341": {
+      "status": "unkundig",
+      "kundig": false,
+      "auffrischung": false,
+      "unkundig": true
+    },
+    "351": {
+      "status": "unkundig",
+      "kundig": false,
+      "auffrischung": false,
+      "unkundig": true
+    },
+    "371": {
+      "status": "kundig",
+      "kundig": true,
+      "auffrischung": false,
+      "unkundig": false
+    },
+    "391": {
+      "status": "unkundig",
+      "kundig": false,
+      "auffrischung": false,
+      "unkundig": true
+    },
+    "411": {
+      "status": "kundig",
+      "kundig": true,
+      "auffrischung": false,
+      "unkundig": false
+    },
+    "421": {
+      "status": "kundig",
+      "kundig": true,
+      "auffrischung": false,
+      "unkundig": false
+    },
+    "502": {
+      "status": "kundig",
+      "kundig": true,
+      "auffrischung": false,
+      "unkundig": false
+    },
+    "511": {
+      "status": "kundig",
+      "kundig": true,
+      "auffrischung": false,
+      "unkundig": false
+    },
+    "521": {
+      "status": "kundig",
+      "kundig": true,
+      "auffrischung": false,
+      "unkundig": false
+    },
+    "531": {
+      "status": "kundig",
+      "kundig": true,
+      "auffrischung": false,
+      "unkundig": false
+    },
+    "541": {
+      "status": "kundig",
+      "kundig": true,
+      "auffrischung": false,
+      "unkundig": false
+    }
+  },
+  "teilstrecken": {
+    "101": [
+      {
+        "seg": "101.01",
+        "from": "LP",
+        "to": "LPFR",
+        "fromName": "La Plaine",
+        "toName": "La Plaine-Frontière",
+        "kundig": false
+      },
+      {
+        "seg": "101.01",
+        "from": "LPFR",
+        "to": "LP",
+        "fromName": "La Plaine-Frontière",
+        "toName": "La Plaine",
+        "kundig": false
+      },
+      {
+        "seg": "101.02",
+        "from": "LP",
+        "to": "VM",
+        "fromName": "La Plaine",
+        "toName": "Meyrin",
+        "kundig": false
+      },
+      {
+        "seg": "101.02",
+        "from": "VM",
+        "to": "LP",
+        "fromName": "Meyrin",
+        "toName": "La Plaine",
+        "kundig": false
+      },
+      {
+        "seg": "101.03",
+        "from": "CHNE",
+        "to": "VM",
+        "fromName": "Châtelaine (bif)",
+        "toName": "Meyrin",
+        "kundig": false
+      },
+      {
+        "seg": "101.03",
+        "from": "VM",
+        "to": "CHNE",
+        "fromName": "Meyrin",
+        "toName": "Châtelaine (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "101.04",
+        "from": "CHNE",
+        "to": "GEAP",
+        "fromName": "Châtelaine (bif)",
+        "toName": "Genève-Aéroport",
+        "kundig": false
+      },
+      {
+        "seg": "101.04",
+        "from": "GEAP",
+        "to": "CHNE",
+        "fromName": "Genève-Aéroport",
+        "toName": "Châtelaine (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "101.05",
+        "from": "CHNE",
+        "to": "FUBI",
+        "fromName": "Châtelaine (bif)",
+        "toName": "Furet (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "101.05",
+        "from": "FUBI",
+        "to": "CHNE",
+        "fromName": "Furet (bif)",
+        "toName": "Châtelaine (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "101.06",
+        "from": "FUBI",
+        "to": "SJ",
+        "fromName": "Furet (bif)",
+        "toName": "St-Jean (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "101.06",
+        "from": "SJ",
+        "to": "FUBI",
+        "fromName": "St-Jean (bif)",
+        "toName": "Furet (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "101.07",
+        "from": "FUBI",
+        "to": "JON",
+        "fromName": "Furet (bif)",
+        "toName": "Jonction (Genève)",
+        "kundig": false
+      },
+      {
+        "seg": "101.07",
+        "from": "JON",
+        "to": "FUBI",
+        "fromName": "Jonction (Genève)",
+        "toName": "Furet (bif)",
+        "kundig": false
+      }
+    ],
+    "102": [
+      {
+        "seg": "102.01",
+        "from": "CHEB",
+        "to": "CHEF",
+        "fromName": "Chêne-Bourg",
+        "toName": "Chene-Bourg-Frontiere",
+        "kundig": false
+      },
+      {
+        "seg": "102.01",
+        "from": "CHEF",
+        "to": "CHEB",
+        "fromName": "Chene-Bourg-Frontiere",
+        "toName": "Chêne-Bourg",
+        "kundig": false
+      },
+      {
+        "seg": "102.02",
+        "from": "CHEB",
+        "to": "GEPR",
+        "fromName": "Chêne-Bourg",
+        "toName": "Genève-La-Praille",
+        "kundig": false
+      },
+      {
+        "seg": "102.02",
+        "from": "GEPR",
+        "to": "CHEB",
+        "fromName": "Genève-La-Praille",
+        "toName": "Chêne-Bourg",
+        "kundig": false
+      }
+    ],
+    "111": [
+      {
+        "seg": "111.01",
+        "from": "GEPR",
+        "to": "GEST",
+        "fromName": "Genève-La-Praille",
+        "toName": "Genève-Stade",
+        "kundig": false
+      },
+      {
+        "seg": "111.01",
+        "from": "GEST",
+        "to": "GEPR",
+        "fromName": "Genève-Stade",
+        "toName": "Genève-La-Praille",
+        "kundig": false
+      },
+      {
+        "seg": "111.01",
+        "from": "ARCA",
+        "to": "LTN",
+        "fromName": "Archy A (bif)",
+        "toName": "Lausanne-Triage Nord",
+        "kundig": false
+      },
+      {
+        "seg": "111.01",
+        "from": "LTN",
+        "to": "ARCA",
+        "fromName": "Lausanne-Triage Nord",
+        "toName": "Archy A (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "111.02",
+        "from": "GEPR",
+        "to": "JON",
+        "fromName": "Genève-La-Praille",
+        "toName": "Jonction (Genève)",
+        "kundig": false
+      },
+      {
+        "seg": "111.02",
+        "from": "JON",
+        "to": "GEPR",
+        "fromName": "Jonction (Genève)",
+        "toName": "Genève-La-Praille",
+        "kundig": false
+      },
+      {
+        "seg": "111.03",
+        "from": "JON",
+        "to": "SJ",
+        "fromName": "Jonction (Genève)",
+        "toName": "St-Jean (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "111.03",
+        "from": "SJ",
+        "to": "JON",
+        "fromName": "St-Jean (bif)",
+        "toName": "Jonction (Genève)",
+        "kundig": false
+      },
+      {
+        "seg": "111.04",
+        "from": "GE",
+        "to": "SJ",
+        "fromName": "Genève",
+        "toName": "St-Jean (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "111.04",
+        "from": "SJ",
+        "to": "GE",
+        "fromName": "St-Jean (bif)",
+        "toName": "Genève",
+        "kundig": false
+      },
+      {
+        "seg": "111.05",
+        "from": "GE",
+        "to": "NY",
+        "fromName": "Genève",
+        "toName": "Nyon",
+        "kundig": false
+      },
+      {
+        "seg": "111.05",
+        "from": "NY",
+        "to": "GE",
+        "fromName": "Nyon",
+        "toName": "Genève",
+        "kundig": false
+      },
+      {
+        "seg": "111.06",
+        "from": "MOR",
+        "to": "NY",
+        "fromName": "Morges",
+        "toName": "Nyon",
+        "kundig": false
+      },
+      {
+        "seg": "111.06",
+        "from": "NY",
+        "to": "MOR",
+        "fromName": "Nyon",
+        "toName": "Morges",
+        "kundig": false
+      },
+      {
+        "seg": "111.07",
+        "from": "LONA",
+        "to": "MOR",
+        "fromName": "Lonay A (bif)",
+        "toName": "Morges",
+        "kundig": false
+      },
+      {
+        "seg": "111.07",
+        "from": "MOR",
+        "to": "LONA",
+        "fromName": "Morges",
+        "toName": "Lonay A (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "111.08",
+        "from": "LONA",
+        "to": "LTD",
+        "fromName": "Lonay A (bif)",
+        "toName": "Lausanne-Triage D",
+        "kundig": false
+      },
+      {
+        "seg": "111.08",
+        "from": "LTD",
+        "to": "LONA",
+        "fromName": "Lausanne-Triage D",
+        "toName": "Lonay A (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "111.09",
+        "from": "LTD",
+        "to": "LTN",
+        "fromName": "Lausanne-Triage D",
+        "toName": "Lausanne-Triage Nord",
+        "kundig": false
+      },
+      {
+        "seg": "111.09",
+        "from": "LTN",
+        "to": "LTD",
+        "fromName": "Lausanne-Triage Nord",
+        "toName": "Lausanne-Triage D",
+        "kundig": false
+      },
+      {
+        "seg": "111.11",
+        "from": "ARCA",
+        "to": "RENO",
+        "fromName": "Archy A (bif)",
+        "toName": "Renens VD Ouest (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "111.11",
+        "from": "RENO",
+        "to": "ARCA",
+        "fromName": "Renens VD Ouest (bif)",
+        "toName": "Archy A (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "111.19",
+        "from": "LS",
+        "to": "LSPA",
+        "fromName": "Lausanne",
+        "toName": "Lausanne Paleyres",
+        "kundig": false
+      }
+    ],
+    "121": [
+      {
+        "seg": "121.01",
+        "from": "LS",
+        "to": "PUI",
+        "fromName": "Lausanne",
+        "toName": "Puidoux",
+        "kundig": false
+      },
+      {
+        "seg": "121.01",
+        "from": "PUI",
+        "to": "LS",
+        "fromName": "Puidoux",
+        "toName": "Lausanne",
+        "kundig": false
+      },
+      {
+        "seg": "121.02",
+        "from": "PAL",
+        "to": "PUI",
+        "fromName": "Palézieux",
+        "toName": "Puidoux",
+        "kundig": false
+      },
+      {
+        "seg": "121.02",
+        "from": "PUI",
+        "to": "PAL",
+        "fromName": "Puidoux",
+        "toName": "Palézieux",
+        "kundig": false
+      },
+      {
+        "seg": "121.03",
+        "from": "PAL",
+        "to": "ROM",
+        "fromName": "Palézieux",
+        "toName": "Romont FR",
+        "kundig": false
+      },
+      {
+        "seg": "121.03",
+        "from": "ROM",
+        "to": "PAL",
+        "fromName": "Romont FR",
+        "toName": "Palézieux",
+        "kundig": false
+      },
+      {
+        "seg": "121.04",
+        "from": "FRI",
+        "to": "ROM",
+        "fromName": "Fribourg/Freiburg",
+        "toName": "Romont FR",
+        "kundig": false
+      },
+      {
+        "seg": "121.04",
+        "from": "ROM",
+        "to": "FRI",
+        "fromName": "Romont FR",
+        "toName": "Fribourg/Freiburg",
+        "kundig": false
+      },
+      {
+        "seg": "121.05",
+        "from": "FLM",
+        "to": "FRI",
+        "fromName": "Flamatt",
+        "toName": "Fribourg/Freiburg",
+        "kundig": false
+      },
+      {
+        "seg": "121.05",
+        "from": "FRI",
+        "to": "FLM",
+        "fromName": "Fribourg/Freiburg",
+        "toName": "Flamatt",
+        "kundig": false
+      },
+      {
+        "seg": "121.06",
+        "from": "FLM",
+        "to": "LPN",
+        "fromName": "Flamatt",
+        "toName": "Laupen BE",
+        "kundig": false
+      },
+      {
+        "seg": "121.06",
+        "from": "LPN",
+        "to": "FLM",
+        "fromName": "Laupen BE",
+        "toName": "Flamatt",
+        "kundig": false
+      },
+      {
+        "seg": "121.07",
+        "from": "BNSH",
+        "to": "FLM",
+        "fromName": "Bern Steigerhubel (Abzw)",
+        "toName": "Flamatt",
+        "kundig": false
+      },
+      {
+        "seg": "121.07",
+        "from": "FLM",
+        "to": "BNSH",
+        "fromName": "Flamatt",
+        "toName": "Bern Steigerhubel (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "121.08",
+        "from": "BN",
+        "to": "BNSH",
+        "fromName": "Bern",
+        "toName": "Bern Steigerhubel (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "121.08",
+        "from": "BNSH",
+        "to": "BN",
+        "fromName": "Bern Steigerhubel (Abzw)",
+        "toName": "Bern",
+        "kundig": false
+      },
+      {
+        "seg": "121.98",
+        "from": "ALT",
+        "to": "GÜMMEN",
+        "fromName": "Laupen BE",
+        "toName": "Laupen Ost (Ausw)",
+        "kundig": false
+      }
+    ],
+    "141": [
+      {
+        "seg": "141.01",
+        "from": "BN",
+        "to": "BNWD",
+        "fromName": "Bern",
+        "toName": "Bern Wankdorf",
+        "kundig": false
+      },
+      {
+        "seg": "141.01",
+        "from": "BNWD",
+        "to": "BN",
+        "fromName": "Bern Wankdorf",
+        "toName": "Bern",
+        "kundig": false
+      },
+      {
+        "seg": "141.01",
+        "from": "RTR",
+        "to": "ABOW",
+        "fromName": "Rothrist",
+        "toName": "Aarburg-Oftringen West (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "141.01",
+        "from": "ABOW",
+        "to": "RTR",
+        "fromName": "Aarburg-Oftringen West (Abzw)",
+        "toName": "Rothrist",
+        "kundig": false
+      },
+      {
+        "seg": "141.02",
+        "from": "BNWD",
+        "to": "LGUS",
+        "fromName": "Bern Wankdorf",
+        "toName": "Löchligut Süd (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "141.02",
+        "from": "LGUS",
+        "to": "BNWD",
+        "fromName": "Löchligut Süd (Abzw)",
+        "toName": "Bern Wankdorf",
+        "kundig": false
+      },
+      {
+        "seg": "141.03",
+        "from": "LGUS",
+        "to": "LGUT",
+        "fromName": "Löchligut Süd (Abzw)",
+        "toName": "Löchligut (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "141.03",
+        "from": "LGUT",
+        "to": "LGUS",
+        "fromName": "Löchligut (Abzw)",
+        "toName": "Löchligut Süd (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "141.04",
+        "from": "LGUT",
+        "to": "ZOL",
+        "fromName": "Löchligut (Abzw)",
+        "toName": "Zollikofen",
+        "kundig": false
+      },
+      {
+        "seg": "141.04",
+        "from": "ZOL",
+        "to": "LGUT",
+        "fromName": "Zollikofen",
+        "toName": "Löchligut (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "141.05",
+        "from": "MATA",
+        "to": "ZOL",
+        "fromName": "Mattstetten (Abzw)",
+        "toName": "Zollikofen",
+        "kundig": false
+      },
+      {
+        "seg": "141.05",
+        "from": "ZOL",
+        "to": "MATA",
+        "fromName": "Zollikofen",
+        "toName": "Mattstetten (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "141.06",
+        "from": "BDF",
+        "to": "MATA",
+        "fromName": "Burgdorf",
+        "toName": "Mattstetten (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "141.06",
+        "from": "MATA",
+        "to": "BDF",
+        "fromName": "Mattstetten (Abzw)",
+        "toName": "Burgdorf",
+        "kundig": false
+      },
+      {
+        "seg": "141.07",
+        "from": "BDF",
+        "to": "HB",
+        "fromName": "Burgdorf",
+        "toName": "Herzogenbuchsee",
+        "kundig": false
+      },
+      {
+        "seg": "141.07",
+        "from": "HB",
+        "to": "BDF",
+        "fromName": "Herzogenbuchsee",
+        "toName": "Burgdorf",
+        "kundig": false
+      },
+      {
+        "seg": "141.08",
+        "from": "HB",
+        "to": "LTH",
+        "fromName": "Herzogenbuchsee",
+        "toName": "Langenthal",
+        "kundig": false
+      },
+      {
+        "seg": "141.08",
+        "from": "LTH",
+        "to": "HB",
+        "fromName": "Langenthal",
+        "toName": "Herzogenbuchsee",
+        "kundig": false
+      },
+      {
+        "seg": "141.09",
+        "from": "LTH",
+        "to": "RTR",
+        "fromName": "Langenthal",
+        "toName": "Rothrist",
+        "kundig": false
+      },
+      {
+        "seg": "141.09",
+        "from": "RTR",
+        "to": "LTH",
+        "fromName": "Rothrist",
+        "toName": "Langenthal",
+        "kundig": false
+      },
+      {
+        "seg": "141.11",
+        "from": "ABO",
+        "to": "ABOW",
+        "fromName": "Aarburg-Oftringen",
+        "toName": "Aarburg-Oftringen West (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "141.11",
+        "from": "ABOW",
+        "to": "ABO",
+        "fromName": "Aarburg-Oftringen West (Abzw)",
+        "toName": "Aarburg-Oftringen",
+        "kundig": false
+      },
+      {
+        "seg": "141.12",
+        "from": "ABO",
+        "to": "OL",
+        "fromName": "Aarburg-Oftringen",
+        "toName": "Olten",
+        "kundig": false
+      },
+      {
+        "seg": "141.12",
+        "from": "OL",
+        "to": "ABO",
+        "fromName": "Olten",
+        "toName": "Aarburg-Oftringen",
+        "kundig": false
+      }
+    ],
+    "142": [
+      {
+        "seg": "142.01",
+        "from": "AESP",
+        "to": "LGUT",
+        "fromName": "Aespli",
+        "toName": "Löchligut (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "142.01",
+        "from": "LGUT",
+        "to": "AESP",
+        "fromName": "Löchligut (Abzw)",
+        "toName": "Aespli",
+        "kundig": false
+      },
+      {
+        "seg": "142.01",
+        "from": "SO",
+        "to": "WANZ",
+        "fromName": "Solothurn",
+        "toName": "Wanzwil (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "142.01",
+        "from": "WANZ",
+        "to": "SO",
+        "fromName": "Wanzwil (Abzw)",
+        "toName": "Solothurn",
+        "kundig": false
+      },
+      {
+        "seg": "142.02",
+        "from": "AESP",
+        "to": "MATA",
+        "fromName": "Aespli",
+        "toName": "Mattstetten (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "142.02",
+        "from": "MATA",
+        "to": "AESP",
+        "fromName": "Mattstetten (Abzw)",
+        "toName": "Aespli",
+        "kundig": false
+      },
+      {
+        "seg": "142.03",
+        "from": "AESP",
+        "to": "WANZ",
+        "fromName": "Aespli",
+        "toName": "Wanzwil (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "142.03",
+        "from": "WANZ",
+        "to": "AESP",
+        "fromName": "Wanzwil (Abzw)",
+        "toName": "Aespli",
+        "kundig": false
+      },
+      {
+        "seg": "142.04",
+        "from": "RTR",
+        "to": "WANZ",
+        "fromName": "Rothrist",
+        "toName": "Wanzwil (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "142.04",
+        "from": "WANZ",
+        "to": "RTR",
+        "fromName": "Wanzwil (Abzw)",
+        "toName": "Rothrist",
+        "kundig": false
+      },
+      {
+        "seg": "142.05",
+        "from": "O",
+        "to": "RTR",
+        "fromName": "Olten",
+        "toName": "Rothrist",
+        "kundig": false
+      },
+      {
+        "seg": "142.05",
+        "from": "RTR",
+        "to": "OL",
+        "fromName": "Rothrist",
+        "toName": "Olten",
+        "kundig": false
+      }
+    ],
+    "151": [
+      {
+        "seg": "151.01",
+        "from": "OLNO",
+        "to": "OLO",
+        "fromName": "Olten Nord-Ost (Abzw)",
+        "toName": "Olten Ost (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "151.01",
+        "from": "OLO",
+        "to": "OLNO",
+        "fromName": "Olten Ost (Abzw)",
+        "toName": "Olten Nord-Ost (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "151.01",
+        "from": "GMT",
+        "to": "OTH",
+        "fromName": "Gruemet (Abzw)",
+        "toName": "Othmarsingen",
+        "kundig": false
+      },
+      {
+        "seg": "151.01",
+        "from": "KLW",
+        "to": "GMT",
+        "fromName": "Killwangen-Spreitenbach",
+        "toName": "Gruemet (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "151.01",
+        "from": "OTH",
+        "to": "GMT",
+        "fromName": "Othmarsingen",
+        "toName": "Gruemet (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "151.02",
+        "from": "DK",
+        "to": "OLO",
+        "fromName": "Däniken SO",
+        "toName": "Olten Ost (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "151.02",
+        "from": "OLO",
+        "to": "DK",
+        "fromName": "Olten Ost (Abzw)",
+        "toName": "Däniken SO",
+        "kundig": false
+      },
+      {
+        "seg": "151.02",
+        "from": "BG",
+        "to": "RU",
+        "fromName": "Brugg AG",
+        "toName": "Rupperswil",
+        "kundig": false
+      },
+      {
+        "seg": "151.02",
+        "from": "RU",
+        "to": "BG",
+        "fromName": "Rupperswil",
+        "toName": "Brugg AG",
+        "kundig": false
+      },
+      {
+        "seg": "151.03",
+        "from": "DK",
+        "to": "WOES",
+        "fromName": "Däniken SO",
+        "toName": "Wöschnau SBB",
+        "kundig": false
+      },
+      {
+        "seg": "151.03",
+        "from": "WOES",
+        "to": "DK",
+        "fromName": "Wöschnau SBB",
+        "toName": "Däniken SO",
+        "kundig": false
+      },
+      {
+        "seg": "151.04",
+        "from": "DK",
+        "to": "SCOE",
+        "fromName": "Däniken SO",
+        "toName": "Wöschnau SBB",
+        "kundig": false
+      },
+      {
+        "seg": "151.04",
+        "from": "WOES",
+        "to": "SCOE",
+        "fromName": "Wöschnau SBB",
+        "toName": "Däniken SO",
+        "kundig": false
+      },
+      {
+        "seg": "151.05",
+        "from": "AA",
+        "to": "WOES",
+        "fromName": "Aarau",
+        "toName": "Wöschnau SBB",
+        "kundig": false
+      },
+      {
+        "seg": "151.05",
+        "from": "WOES",
+        "to": "AA",
+        "fromName": "Wöschnau SBB",
+        "toName": "Aarau",
+        "kundig": false
+      },
+      {
+        "seg": "151.06",
+        "from": "AA",
+        "to": "RU",
+        "fromName": "Aarau",
+        "toName": "Rupperswil",
+        "kundig": false
+      },
+      {
+        "seg": "151.06",
+        "from": "RU",
+        "to": "AA",
+        "fromName": "Rupperswil",
+        "toName": "Aarau",
+        "kundig": false
+      },
+      {
+        "seg": "151.07",
+        "from": "LB",
+        "to": "RU",
+        "fromName": "Lenzburg",
+        "toName": "Rupperswil",
+        "kundig": false
+      },
+      {
+        "seg": "151.07",
+        "from": "RU",
+        "to": "LB",
+        "fromName": "Rupperswil",
+        "toName": "Lenzburg",
+        "kundig": false
+      },
+      {
+        "seg": "151.08",
+        "from": "GEXI",
+        "to": "LB",
+        "fromName": "Gexi",
+        "toName": "Lenzburg",
+        "kundig": false
+      },
+      {
+        "seg": "151.08",
+        "from": "LB",
+        "to": "GEXI",
+        "fromName": "Lenzburg",
+        "toName": "Gexi",
+        "kundig": false
+      },
+      {
+        "seg": "151.09",
+        "from": "GEXI",
+        "to": "OTH",
+        "fromName": "Gexi",
+        "toName": "Othmarsingen",
+        "kundig": false
+      },
+      {
+        "seg": "151.09",
+        "from": "OTH",
+        "to": "GEXI",
+        "fromName": "Othmarsingen",
+        "toName": "Gexi",
+        "kundig": false
+      },
+      {
+        "seg": "151.11",
+        "from": "GMT",
+        "to": "KLW",
+        "fromName": "Gruemet (Abzw)",
+        "toName": "Killwangen-Spreitenbach",
+        "kundig": false
+      }
+    ],
+    "161": [
+      {
+        "seg": "161.01",
+        "from": "BG",
+        "to": "TG",
+        "fromName": "Brugg AG",
+        "toName": "Turgi",
+        "kundig": false
+      },
+      {
+        "seg": "161.01",
+        "from": "TG",
+        "to": "BG",
+        "fromName": "Turgi",
+        "toName": "Brugg AG",
+        "kundig": false
+      },
+      {
+        "seg": "161.02",
+        "from": "TG",
+        "to": "WE",
+        "fromName": "Turgi",
+        "toName": "Wettingen",
+        "kundig": false
+      },
+      {
+        "seg": "161.02",
+        "from": "WE",
+        "to": "TG",
+        "fromName": "Wettingen",
+        "toName": "Turgi",
+        "kundig": false
+      },
+      {
+        "seg": "161.02",
+        "from": "ZAS",
+        "to": "ZHDB",
+        "fromName": "Zürich Altstetten",
+        "toName": "Zürich Hardbrücke",
+        "kundig": false
+      },
+      {
+        "seg": "161.02",
+        "from": "ZHDB",
+        "to": "ZAS",
+        "fromName": "Zürich Hardbrücke",
+        "toName": "Zürich Altstetten",
+        "kundig": false
+      },
+      {
+        "seg": "161.03",
+        "from": "KLW",
+        "to": "WE",
+        "fromName": "Killwangen-Spreitenbach",
+        "toName": "Wettingen",
+        "kundig": false
+      },
+      {
+        "seg": "161.03",
+        "from": "WE",
+        "to": "KLW",
+        "fromName": "Wettingen",
+        "toName": "Killwangen-Spreitenbach",
+        "kundig": false
+      },
+      {
+        "seg": "161.03",
+        "from": "ZAS",
+        "to": "ZHER",
+        "fromName": "Zürich Altstetten",
+        "toName": "Zürich Hardbrücke",
+        "kundig": false
+      },
+      {
+        "seg": "161.03",
+        "from": "ZHDB",
+        "to": "ZER",
+        "fromName": "Zürich Hardbrücke",
+        "toName": "Zürich Altstetten",
+        "kundig": false
+      },
+      {
+        "seg": "161.04",
+        "from": "KLW",
+        "to": "SILB",
+        "fromName": "Killwangen-Spreitenbach",
+        "toName": "Silberen (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "161.04",
+        "from": "SILB",
+        "to": "KLW",
+        "fromName": "Silberen (Abzw)",
+        "toName": "Killwangen-Spreitenbach",
+        "kundig": false
+      },
+      {
+        "seg": "161.05",
+        "from": "DT",
+        "to": "SILB",
+        "fromName": "Dietikon",
+        "toName": "Silberen (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "161.05",
+        "from": "SILB",
+        "to": "DT",
+        "fromName": "Silberen (Abzw)",
+        "toName": "Dietikon",
+        "kundig": false
+      },
+      {
+        "seg": "161.06",
+        "from": "DT",
+        "to": "ZAS",
+        "fromName": "Dietikon",
+        "toName": "Zürich Altstetten",
+        "kundig": false
+      },
+      {
+        "seg": "161.06",
+        "from": "ZAS",
+        "to": "DT",
+        "fromName": "Zürich Altstetten",
+        "toName": "Dietikon",
+        "kundig": false
+      },
+      {
+        "seg": "161.07",
+        "from": "ZAS",
+        "to": "ZVB",
+        "fromName": "Zürich Altstetten",
+        "toName": "Zürich Vorbahnhof",
+        "kundig": false
+      },
+      {
+        "seg": "161.07",
+        "from": "ZVB",
+        "to": "ZAS",
+        "fromName": "Zürich Vorbahnhof",
+        "toName": "Zürich Altstetten",
+        "kundig": false
+      },
+      {
+        "seg": "161.08",
+        "from": "ZLST",
+        "to": "ZVB",
+        "fromName": "Zürich Langstrasse",
+        "toName": "Zürich Vorbahnhof",
+        "kundig": false
+      },
+      {
+        "seg": "161.08",
+        "from": "ZVB",
+        "to": "ZLST",
+        "fromName": "Zürich Vorbahnhof",
+        "toName": "Zürich Langstrasse",
+        "kundig": false
+      },
+      {
+        "seg": "161.09",
+        "from": "ZLST",
+        "to": "ZUE",
+        "fromName": "Zürich Langstrasse",
+        "toName": "Zürich HB",
+        "kundig": false
+      },
+      {
+        "seg": "161.09",
+        "from": "ZUE",
+        "to": "ZLST",
+        "fromName": "Zürich HB",
+        "toName": "Zürich Langstrasse",
+        "kundig": false
+      }
+    ],
+    "171": [
+      {
+        "seg": "171.01",
+        "from": "WE",
+        "to": "WUER",
+        "fromName": "Wettingen",
+        "toName": "Würenlos",
+        "kundig": false
+      },
+      {
+        "seg": "171.01",
+        "from": "WUER",
+        "to": "WE",
+        "fromName": "Würenlos",
+        "toName": "Wettingen",
+        "kundig": false
+      },
+      {
+        "seg": "171.02",
+        "from": "KLW",
+        "to": "WUER",
+        "fromName": "Killwangen-Spreitenbach",
+        "toName": "Würenlos",
+        "kundig": false
+      },
+      {
+        "seg": "171.02",
+        "from": "WUER",
+        "to": "KLW",
+        "fromName": "Würenlos",
+        "toName": "Killwangen-Spreitenbach",
+        "kundig": false
+      },
+      {
+        "seg": "171.03",
+        "from": "WUER",
+        "to": "ZSEB",
+        "fromName": "Würenlos",
+        "toName": "Zürich Seebach",
+        "kundig": false
+      },
+      {
+        "seg": "171.03",
+        "from": "ZSEB",
+        "to": "WUER",
+        "fromName": "Zürich Seebach",
+        "toName": "Würenlos",
+        "kundig": false
+      },
+      {
+        "seg": "171.04",
+        "from": "ZOEN",
+        "to": "ZSEB",
+        "fromName": "Zürich Oerlikon Nord (Abzw)",
+        "toName": "Zürich Seebach",
+        "kundig": false
+      },
+      {
+        "seg": "171.04",
+        "from": "ZSEB",
+        "to": "ZOEN",
+        "fromName": "Zürich Seebach",
+        "toName": "Zürich Oerlikon Nord (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "171.05",
+        "from": "OPS",
+        "to": "ZSEB",
+        "fromName": "Opfikon Süd",
+        "toName": "Zürich Seebach",
+        "kundig": false
+      },
+      {
+        "seg": "171.05",
+        "from": "ZSEB",
+        "to": "OPS",
+        "fromName": "Zürich Seebach",
+        "toName": "Opfikon Süd",
+        "kundig": false
+      },
+      {
+        "seg": "171.06",
+        "from": "GLB",
+        "to": "OPS",
+        "fromName": "Glattbrugg",
+        "toName": "Opfikon Süd",
+        "kundig": false
+      },
+      {
+        "seg": "171.06",
+        "from": "OPS",
+        "to": "GLB",
+        "fromName": "Opfikon Süd",
+        "toName": "Glattbrugg",
+        "kundig": false
+      }
+    ],
+    "201": [
+      {
+        "seg": "201.01",
+        "from": "VAL",
+        "to": "VLB",
+        "fromName": "Vallorbe",
+        "toName": "Vallorbe-Frontière",
+        "kundig": false
+      },
+      {
+        "seg": "201.01",
+        "from": "VLB",
+        "to": "VAL",
+        "fromName": "Vallorbe-Frontière",
+        "toName": "Vallorbe",
+        "kundig": false
+      },
+      {
+        "seg": "201.02",
+        "from": "DAY",
+        "to": "VAL",
+        "fromName": "Le Day",
+        "toName": "Vallorbe",
+        "kundig": false
+      },
+      {
+        "seg": "201.02",
+        "from": "VAL",
+        "to": "DAY",
+        "fromName": "Vallorbe",
+        "toName": "Le Day",
+        "kundig": false
+      },
+      {
+        "seg": "201.03",
+        "from": "DAIL",
+        "to": "DAY",
+        "fromName": "Daillens",
+        "toName": "Le Day",
+        "kundig": false
+      },
+      {
+        "seg": "201.03",
+        "from": "DAY",
+        "to": "DAIL",
+        "fromName": "Le Day",
+        "toName": "Daillens",
+        "kundig": false
+      },
+      {
+        "seg": "201.04",
+        "from": "BUY",
+        "to": "LTE",
+        "fromName": "Bussigny",
+        "toName": "Lausanne-Triage Est",
+        "kundig": false
+      },
+      {
+        "seg": "201.04",
+        "from": "LTE",
+        "to": "BUY",
+        "fromName": "Lausanne-Triage Est",
+        "toName": "Bussigny",
+        "kundig": false
+      }
+    ],
+    "202": [
+      {
+        "seg": "202.01",
+        "from": "BRA",
+        "to": "DAY",
+        "fromName": "81a5410a-0052-428f-b459-fa811404c0cb",
+        "toName": "Le Day",
+        "kundig": false
+      },
+      {
+        "seg": "202.01",
+        "from": "DAY",
+        "to": "BRA",
+        "fromName": "Le Day",
+        "toName": "81a5410a-0052-428f-b459-fa811404c0cb",
+        "kundig": false
+      }
+    ],
+    "203": [
+      {
+        "seg": "203.01",
+        "from": "CHV",
+        "to": "ORBE",
+        "fromName": "Chavornay",
+        "toName": "Orbe-Industrie (marchandises)",
+        "kundig": false
+      }
+    ],
+    "211": [
+      {
+        "seg": "211.01",
+        "from": "LS",
+        "to": "VV",
+        "fromName": "Lausanne",
+        "toName": "Vevey",
+        "kundig": false
+      },
+      {
+        "seg": "211.01",
+        "from": "VV",
+        "to": "LS",
+        "fromName": "Vevey",
+        "toName": "Lausanne",
+        "kundig": false
+      },
+      {
+        "seg": "211.02",
+        "from": "AIG",
+        "to": "VV",
+        "fromName": "Aigle",
+        "toName": "Vevey",
+        "kundig": false
+      },
+      {
+        "seg": "211.02",
+        "from": "VV",
+        "to": "AIG",
+        "fromName": "Vevey",
+        "toName": "Aigle",
+        "kundig": false
+      },
+      {
+        "seg": "211.03",
+        "from": "AIG",
+        "to": "ST",
+        "fromName": "Aigle",
+        "toName": "St-Triphon",
+        "kundig": false
+      },
+      {
+        "seg": "211.03",
+        "from": "ST",
+        "to": "AIG",
+        "fromName": "St-Triphon",
+        "toName": "Aigle",
+        "kundig": false
+      },
+      {
+        "seg": "211.04",
+        "from": "PDS",
+        "to": "ST",
+        "fromName": "Les Paluds",
+        "toName": "St-Triphon",
+        "kundig": false
+      },
+      {
+        "seg": "211.04",
+        "from": "ST",
+        "to": "PDS",
+        "fromName": "St-Triphon",
+        "toName": "Les Paluds",
+        "kundig": false
+      },
+      {
+        "seg": "211.05",
+        "from": "MA",
+        "to": "PDS",
+        "fromName": "Martigny",
+        "toName": "Les Paluds",
+        "kundig": false
+      },
+      {
+        "seg": "211.05",
+        "from": "PDS",
+        "to": "MA",
+        "fromName": "Les Paluds",
+        "toName": "Martigny",
+        "kundig": false
+      },
+      {
+        "seg": "211.06",
+        "from": "MA",
+        "to": "SIO",
+        "fromName": "Martigny",
+        "toName": "Sion",
+        "kundig": false
+      },
+      {
+        "seg": "211.06",
+        "from": "SIO",
+        "to": "MA",
+        "fromName": "Sion",
+        "toName": "Martigny",
+        "kundig": false
+      }
+    ],
+    "221": [
+      {
+        "seg": "221.01",
+        "from": "SIE",
+        "to": "SIO",
+        "fromName": "Sierre/Siders",
+        "toName": "Sion",
+        "kundig": false
+      },
+      {
+        "seg": "221.01",
+        "from": "SIO",
+        "to": "SIE",
+        "fromName": "Sion",
+        "toName": "Sierre/Siders",
+        "kundig": false
+      },
+      {
+        "seg": "221.02",
+        "from": "GA",
+        "to": "SIE",
+        "fromName": "Gampel-Steg",
+        "toName": "Sierre/Siders",
+        "kundig": false
+      },
+      {
+        "seg": "221.02",
+        "from": "SIE",
+        "to": "GA",
+        "fromName": "Sierre/Siders",
+        "toName": "Gampel-Steg",
+        "kundig": false
+      },
+      {
+        "seg": "221.03",
+        "from": "GA",
+        "to": "STGE",
+        "fromName": "Gampel-Steg",
+        "toName": "St. German (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "221.03",
+        "from": "STGE",
+        "to": "GA",
+        "fromName": "St. German (Abzw)",
+        "toName": "Gampel-Steg",
+        "kundig": false
+      },
+      {
+        "seg": "221.04",
+        "from": "STGE",
+        "to": "VI",
+        "fromName": "St. German (Abzw)",
+        "toName": "Visp",
+        "kundig": false
+      },
+      {
+        "seg": "221.04",
+        "from": "VI",
+        "to": "STGE",
+        "fromName": "Visp",
+        "toName": "St. German (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "221.05",
+        "from": "BRLO",
+        "to": "VI",
+        "fromName": "Brig-Lötschberg (Abzw)",
+        "toName": "Visp",
+        "kundig": false
+      },
+      {
+        "seg": "221.05",
+        "from": "VI",
+        "to": "BRLO",
+        "fromName": "Visp",
+        "toName": "Brig-Lötschberg (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "221.06",
+        "from": "BR",
+        "to": "BRLO",
+        "fromName": "Brig",
+        "toName": "Brig-Lötschberg (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "221.06",
+        "from": "BRLO",
+        "to": "BR",
+        "fromName": "Brig-Lötschberg (Abzw)",
+        "toName": "Brig",
+        "kundig": false
+      },
+      {
+        "seg": "221.07",
+        "from": "BR",
+        "to": "IS",
+        "fromName": "Brig",
+        "toName": "Iselle di Trasquera",
+        "kundig": false
+      },
+      {
+        "seg": "221.07",
+        "from": "IS",
+        "to": "BR",
+        "fromName": "Iselle di Trasquera",
+        "toName": "Brig",
+        "kundig": false
+      },
+      {
+        "seg": "221.08",
+        "from": "DOBI",
+        "to": "IS",
+        "fromName": "Domodossola (bif)",
+        "toName": "Iselle di Trasquera",
+        "kundig": false
+      },
+      {
+        "seg": "221.08",
+        "from": "IS",
+        "to": "DOBI",
+        "fromName": "Iselle di Trasquera",
+        "toName": "Domodossola (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "221.09",
+        "from": "DOBI",
+        "to": "DOFS",
+        "fromName": "Domodossola (bif)",
+        "toName": "Domodossola SBB (fiktiv)",
+        "kundig": false
+      },
+      {
+        "seg": "221.09",
+        "from": "DOFS",
+        "to": "DOBI",
+        "fromName": "Domodossola SBB (fiktiv)",
+        "toName": "Domodossola (bif)",
+        "kundig": false
+      }
+    ],
+    "222": [
+      {
+        "seg": "222.01",
+        "from": "DO2",
+        "to": "DOBI",
+        "fromName": "DOMO II SBB (fiktiv)",
+        "toName": "Domodossola (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "222.01",
+        "from": "DOBI",
+        "to": "DO2",
+        "fromName": "Domodossola (bif)",
+        "toName": "DOMO II SBB (fiktiv)",
+        "kundig": false
+      }
+    ],
+    "231": [
+      {
+        "seg": "231.01",
+        "from": "PUI",
+        "to": "VV",
+        "fromName": "Puidoux",
+        "toName": "Vevey",
+        "kundig": false
+      }
+    ],
+    "232": [
+      {
+        "seg": "232.01",
+        "from": "MTH",
+        "to": "STGI",
+        "fromName": "Monthey",
+        "toName": "St-Gingolph (Suisse)",
+        "kundig": false
+      },
+      {
+        "seg": "232.01",
+        "from": "STGI",
+        "to": "MTH",
+        "fromName": "St-Gingolph (Suisse)",
+        "toName": "Monthey",
+        "kundig": false
+      },
+      {
+        "seg": "232.02",
+        "from": "MTH",
+        "to": "PDS",
+        "fromName": "Monthey",
+        "toName": "Les Paluds",
+        "kundig": false
+      },
+      {
+        "seg": "232.02",
+        "from": "PDS",
+        "to": "MTH",
+        "fromName": "Les Paluds",
+        "toName": "Monthey",
+        "kundig": false
+      }
+    ],
+    "241": [
+      {
+        "seg": "241.01",
+        "from": "LSBI",
+        "to": "LSSB",
+        "fromName": "Lausanne (bif)",
+        "toName": "Renens VD Est (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "241.01",
+        "from": "RENB",
+        "to": "LSSB",
+        "fromName": "Renens VD Est (bif)",
+        "toName": "Lausanne (bif)",
+        "kundig": false
+      }
+    ],
+    "252": [
+      {
+        "seg": "252.01",
+        "from": "AV",
+        "to": "PAY",
+        "fromName": "Avenches",
+        "toName": "Payerne",
+        "kundig": false
+      },
+      {
+        "seg": "252.01",
+        "from": "PAY",
+        "to": "AV",
+        "fromName": "Payerne",
+        "toName": "Avenches",
+        "kundig": false
+      },
+      {
+        "seg": "252.02",
+        "from": "AV",
+        "to": "MRT",
+        "fromName": "Avenches",
+        "toName": "Murten/Morat",
+        "kundig": false
+      },
+      {
+        "seg": "252.03",
+        "from": "MRT",
+        "to": "MUN",
+        "fromName": "Murten/Morat",
+        "toName": "Muntelier",
+        "kundig": false
+      },
+      {
+        "seg": "252.03",
+        "from": "MUN",
+        "to": "MRT",
+        "fromName": "Muntelier",
+        "toName": "Murten/Morat",
+        "kundig": false
+      },
+      {
+        "seg": "252.04",
+        "from": "KZ",
+        "to": "MUN",
+        "fromName": "Kerzers",
+        "toName": "Muntelier",
+        "kundig": false
+      },
+      {
+        "seg": "252.04",
+        "from": "MUN",
+        "to": "KZ",
+        "fromName": "Muntelier",
+        "toName": "Kerzers",
+        "kundig": false
+      },
+      {
+        "seg": "252.05",
+        "from": "ABE",
+        "to": "KZ",
+        "fromName": "Aarberg",
+        "toName": "Kerzers",
+        "kundig": false
+      },
+      {
+        "seg": "252.05",
+        "from": "KZ",
+        "to": "ABE",
+        "fromName": "Kerzers",
+        "toName": "Aarberg",
+        "kundig": false
+      },
+      {
+        "seg": "252.06",
+        "from": "ABE",
+        "to": "LY",
+        "fromName": "Aarberg",
+        "toName": "Lyss",
+        "kundig": false
+      },
+      {
+        "seg": "252.06",
+        "from": "LY",
+        "to": "ABE",
+        "fromName": "Lyss",
+        "toName": "Aarberg",
+        "kundig": false
+      },
+      {
+        "seg": "252.07",
+        "from": "BUER",
+        "to": "BUS",
+        "fromName": "Büren an der Aare",
+        "toName": "Busswil BE",
+        "kundig": false
+      },
+      {
+        "seg": "252.07",
+        "from": "BUS",
+        "to": "BUER",
+        "fromName": "Busswil BE",
+        "toName": "Büren an der Aare",
+        "kundig": false
+      }
+    ],
+    "254": [
+      {
+        "seg": "254.01",
+        "from": "BUL",
+        "to": "ROM",
+        "fromName": "Bulle",
+        "toName": "Romont FR",
+        "kundig": false
+      },
+      {
+        "seg": "254.01",
+        "from": "ROM",
+        "to": "BUL",
+        "fromName": "Romont FR",
+        "toName": "Bulle",
+        "kundig": false
+      }
+    ],
+    "255": [
+      {
+        "seg": "255.01",
+        "from": "GIVO",
+        "to": "MRT",
+        "fromName": "Givisiez Ouest",
+        "toName": "Murten/Morat",
+        "kundig": false
+      },
+      {
+        "seg": "255.01",
+        "from": "MRT",
+        "to": "GIVO",
+        "fromName": "Murten/Morat",
+        "toName": "Givisiez Ouest",
+        "kundig": false
+      },
+      {
+        "seg": "255.02",
+        "from": "INS",
+        "to": "MUN",
+        "fromName": "Ins",
+        "toName": "Muntelier",
+        "kundig": false
+      },
+      {
+        "seg": "255.02",
+        "from": "MUN",
+        "to": "INS",
+        "fromName": "Muntelier",
+        "toName": "Ins",
+        "kundig": false
+      }
+    ],
+    "261": [
+      {
+        "seg": "261.01",
+        "from": "PAY",
+        "to": "YV",
+        "fromName": "Payerne",
+        "toName": "Yverdon-les-Bains",
+        "kundig": false
+      },
+      {
+        "seg": "261.01",
+        "from": "YV",
+        "to": "PAY",
+        "fromName": "Yverdon-les-Bains",
+        "toName": "Payerne",
+        "kundig": false
+      },
+      {
+        "seg": "261.01",
+        "from": "GIV",
+        "to": "GIVD",
+        "fromName": "Givisiez",
+        "toName": "Givisiez dépôt",
+        "kundig": false
+      },
+      {
+        "seg": "261.02",
+        "from": "GIVO",
+        "to": "PAY",
+        "fromName": "Givisiez Ouest",
+        "toName": "Payerne",
+        "kundig": false
+      },
+      {
+        "seg": "261.02",
+        "from": "PAY",
+        "to": "GIVO",
+        "fromName": "Payerne",
+        "toName": "Givisiez Ouest",
+        "kundig": false
+      },
+      {
+        "seg": "261.03",
+        "from": "FRI",
+        "to": "GIVO",
+        "fromName": "Fribourg/Freiburg",
+        "toName": "Givisiez Ouest",
+        "kundig": false
+      },
+      {
+        "seg": "261.03",
+        "from": "GIVO",
+        "to": "FRI",
+        "fromName": "Givisiez Ouest",
+        "toName": "Fribourg/Freiburg",
+        "kundig": false
+      }
+    ],
+    "271": [
+      {
+        "seg": "271.01",
+        "from": "VER",
+        "to": "VERF",
+        "fromName": "Les Verrières",
+        "toName": "Les Verrières-Frontière",
+        "kundig": false
+      },
+      {
+        "seg": "271.01",
+        "from": "VERF",
+        "to": "VER",
+        "fromName": "Les Verrières-Frontière",
+        "toName": "Les Verrières",
+        "kundig": false
+      },
+      {
+        "seg": "271.02",
+        "from": "TR",
+        "to": "VER",
+        "fromName": "Travers",
+        "toName": "Les Verrières",
+        "kundig": false
+      },
+      {
+        "seg": "271.02",
+        "from": "VER",
+        "to": "TR",
+        "fromName": "Les Verrières",
+        "toName": "Travers",
+        "kundig": false
+      },
+      {
+        "seg": "271.03",
+        "from": "AUV",
+        "to": "TR",
+        "fromName": "Auvernier",
+        "toName": "Travers",
+        "kundig": false
+      },
+      {
+        "seg": "271.03",
+        "from": "TR",
+        "to": "AUV",
+        "fromName": "Travers",
+        "toName": "Auvernier",
+        "kundig": false
+      }
+    ],
+    "272": [
+      {
+        "seg": "272.01",
+        "from": "LOC",
+        "to": "LOCF",
+        "fromName": "Le Locle",
+        "toName": "Le Locle-Frontière",
+        "kundig": false
+      },
+      {
+        "seg": "272.01",
+        "from": "LOCF",
+        "to": "LOC",
+        "fromName": "Le Locle-Frontière",
+        "toName": "Le Locle",
+        "kundig": false
+      },
+      {
+        "seg": "272.02",
+        "from": "CF",
+        "to": "LOC",
+        "fromName": "La Chaux-de-Fonds",
+        "toName": "Le Locle",
+        "kundig": false
+      },
+      {
+        "seg": "272.02",
+        "from": "LOC",
+        "to": "CF",
+        "fromName": "Le Locle",
+        "toName": "La Chaux-de-Fonds",
+        "kundig": false
+      },
+      {
+        "seg": "272.03",
+        "from": "CF",
+        "to": "NEBI",
+        "fromName": "La Chaux-de-Fonds",
+        "toName": "Neuchâtel-Vauseyon (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "272.03",
+        "from": "NEBI",
+        "to": "CF",
+        "fromName": "Neuchâtel-Vauseyon (bif)",
+        "toName": "La Chaux-de-Fonds",
+        "kundig": false
+      }
+    ],
+    "273": [
+      {
+        "seg": "273.01",
+        "from": "TR",
+        "to": "FLE",
+        "fromName": "Travers",
+        "toName": "Fleurier",
+        "kundig": false
+      },
+      {
+        "seg": "273.01",
+        "from": "FLE",
+        "to": "SSP",
+        "fromName": "Fleurier",
+        "toName": "St-Sulpice NE",
+        "kundig": false
+      },
+      {
+        "seg": "273.02",
+        "from": "FLE",
+        "to": "BT",
+        "fromName": "Fleurier",
+        "toName": "Buttes",
+        "kundig": false
+      }
+    ],
+    "281": [
+      {
+        "seg": "281.01",
+        "from": "CF",
+        "to": "SCB",
+        "fromName": "La Chaux-de-Fonds",
+        "toName": "Sonceboz-Sombeval",
+        "kundig": false
+      },
+      {
+        "seg": "281.01",
+        "from": "SCB",
+        "to": "CF",
+        "fromName": "Sonceboz-Sombeval",
+        "toName": "La Chaux-de-Fonds",
+        "kundig": false
+      },
+      {
+        "seg": "281.02",
+        "from": "REU",
+        "to": "SCB",
+        "fromName": "Reuchenette-Péry",
+        "toName": "Sonceboz-Sombeval",
+        "kundig": false
+      },
+      {
+        "seg": "281.02",
+        "from": "SCB",
+        "to": "REU",
+        "fromName": "Sonceboz-Sombeval",
+        "toName": "Reuchenette-Péry",
+        "kundig": false
+      },
+      {
+        "seg": "281.03",
+        "from": "BI",
+        "to": "REU",
+        "fromName": "Biel/Bienne",
+        "toName": "Reuchenette-Péry",
+        "kundig": false
+      },
+      {
+        "seg": "281.03",
+        "from": "REU",
+        "to": "BI",
+        "fromName": "Reuchenette-Péry",
+        "toName": "Biel/Bienne",
+        "kundig": false
+      }
+    ],
+    "282": [
+      {
+        "seg": "282.01",
+        "from": "MOU",
+        "to": "TA",
+        "fromName": "Moutier",
+        "toName": "Tavannes",
+        "kundig": false
+      },
+      {
+        "seg": "282.01",
+        "from": "TA",
+        "to": "MOU",
+        "fromName": "Tavannes",
+        "toName": "Moutier",
+        "kundig": false
+      },
+      {
+        "seg": "282.02",
+        "from": "SCB",
+        "to": "TA",
+        "fromName": "Sonceboz-Sombeval",
+        "toName": "Tavannes",
+        "kundig": false
+      },
+      {
+        "seg": "282.02",
+        "from": "TA",
+        "to": "SCB",
+        "fromName": "Tavannes",
+        "toName": "Sonceboz-Sombeval",
+        "kundig": false
+      }
+    ],
+    "291": [
+      {
+        "seg": "291.01",
+        "from": "MOU",
+        "to": "DMT",
+        "fromName": "Moutier",
+        "toName": "Delémont",
+        "kundig": false
+      },
+      {
+        "seg": "291.02",
+        "from": "LEN",
+        "to": "MOU",
+        "fromName": "Lengnau BE",
+        "toName": "Moutier",
+        "kundig": false
+      },
+      {
+        "seg": "291.02",
+        "from": "MOU",
+        "to": "LEN",
+        "fromName": "Moutier",
+        "toName": "Lengnau BE",
+        "kundig": false
+      }
+    ],
+    "292": [
+      {
+        "seg": "292.01",
+        "from": "CTM",
+        "to": "DLF",
+        "fromName": "Courtemaîche",
+        "toName": "Delle-Frontière",
+        "kundig": false
+      },
+      {
+        "seg": "292.01",
+        "from": "DLF",
+        "to": "CTM",
+        "fromName": "Delle-Frontière",
+        "toName": "Courtemaîche",
+        "kundig": false
+      },
+      {
+        "seg": "292.01",
+        "from": "BURE",
+        "to": "CTM",
+        "fromName": "Bure-Casernes",
+        "toName": "Courtemaîche",
+        "kundig": false
+      },
+      {
+        "seg": "292.02",
+        "from": "CTM",
+        "to": "POR",
+        "fromName": "Courtemaîche",
+        "toName": "Porrentruy",
+        "kundig": false
+      },
+      {
+        "seg": "292.02",
+        "from": "POR",
+        "to": "CTM",
+        "fromName": "Porrentruy",
+        "toName": "Courtemaîche",
+        "kundig": false
+      },
+      {
+        "seg": "292.03",
+        "from": "CTM",
+        "to": "POR",
+        "fromName": "Glovelier",
+        "toName": "Porrentruy",
+        "kundig": false
+      },
+      {
+        "seg": "292.03",
+        "from": "POR",
+        "to": "GLO",
+        "fromName": "Porrentruy",
+        "toName": "Glovelier",
+        "kundig": false
+      },
+      {
+        "seg": "292.05",
+        "from": "DMT",
+        "to": "GLO",
+        "fromName": "Delémont",
+        "toName": "Glovelier",
+        "kundig": false
+      },
+      {
+        "seg": "292.05",
+        "from": "GLO",
+        "to": "DMT",
+        "fromName": "Glovelier",
+        "toName": "Delémont",
+        "kundig": false
+      }
+    ],
+    "301": [
+      {
+        "seg": "301.01",
+        "from": "LS",
+        "to": "LSBI",
+        "fromName": "Lausanne",
+        "toName": "Lausanne (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "301.01",
+        "from": "LSBI",
+        "to": "LS",
+        "fromName": "Lausanne (bif)",
+        "toName": "Lausanne",
+        "kundig": false
+      },
+      {
+        "seg": "301.01",
+        "from": "NE",
+        "to": "NEBI",
+        "fromName": "Neuchâtel",
+        "toName": "Neuchâtel-Vauseyon (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "301.01",
+        "from": "NEBI",
+        "to": "NE",
+        "fromName": "Neuchâtel-Vauseyon (bif)",
+        "toName": "Neuchâtel",
+        "kundig": false
+      },
+      {
+        "seg": "301.02",
+        "from": "LSBI",
+        "to": "RENB",
+        "fromName": "Lausanne (bif)",
+        "toName": "Renens VD Est (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "301.02",
+        "from": "RENB",
+        "to": "LSBI",
+        "fromName": "Renens VD Est (bif)",
+        "toName": "Lausanne (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "301.03",
+        "from": "RENB",
+        "to": "RENO",
+        "fromName": "Renens VD Est (bif)",
+        "toName": "Renens VD Ouest (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "301.03",
+        "from": "RENO",
+        "to": "RENB",
+        "fromName": "Renens VD Ouest (bif)",
+        "toName": "Renens VD Est (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "301.04",
+        "from": "RENO",
+        "to": "BY",
+        "fromName": "Renens VD Ouest (bif)",
+        "toName": "Bussigny",
+        "kundig": false
+      },
+      {
+        "seg": "301.04",
+        "from": "RENO",
+        "to": "RENB",
+        "fromName": "Bussigny",
+        "toName": "Renens VD Ouest (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "301.05",
+        "from": "BY",
+        "to": "DAIL",
+        "fromName": "Bussigny",
+        "toName": "Daillens",
+        "kundig": false
+      },
+      {
+        "seg": "301.05",
+        "from": "DAIL",
+        "to": "BY",
+        "fromName": "Daillens",
+        "toName": "Bussigny",
+        "kundig": false
+      },
+      {
+        "seg": "301.06",
+        "from": "CHV",
+        "to": "DAIL",
+        "fromName": "Chavornay",
+        "toName": "Daillens",
+        "kundig": false
+      },
+      {
+        "seg": "301.06",
+        "from": "DAIL",
+        "to": "CHV",
+        "fromName": "Daillens",
+        "toName": "Chavornay",
+        "kundig": false
+      },
+      {
+        "seg": "301.07",
+        "from": "CHV",
+        "to": "YE",
+        "fromName": "Chavornay",
+        "toName": "Yverdon-les-Bains",
+        "kundig": false
+      },
+      {
+        "seg": "301.07",
+        "from": "YE",
+        "to": "CHV",
+        "fromName": "Yverdon-les-Bains",
+        "toName": "Chavornay",
+        "kundig": false
+      },
+      {
+        "seg": "301.08",
+        "from": "AUV",
+        "to": "YV",
+        "fromName": "Auvernier",
+        "toName": "Yverdon-les-Bains",
+        "kundig": false
+      },
+      {
+        "seg": "301.09",
+        "from": "AUV",
+        "to": "NEBI",
+        "fromName": "Auvernier",
+        "toName": "Neuchâtel-Vauseyon (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "301.09",
+        "from": "NEB",
+        "to": "AUV",
+        "fromName": "Neuchâtel-Vauseyon (bif)",
+        "toName": "Auvernier",
+        "kundig": false
+      },
+      {
+        "seg": "301.11",
+        "from": "NE",
+        "to": "NEMA",
+        "fromName": "Neuchâtel",
+        "toName": "Neuchâtel Est (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "301.11",
+        "from": "NEMA",
+        "to": "NE",
+        "fromName": "Neuchâtel Est (bif)",
+        "toName": "Neuchâtel",
+        "kundig": false
+      },
+      {
+        "seg": "301.12",
+        "from": "CORN",
+        "to": "NEMA",
+        "fromName": "Cornaux NE",
+        "toName": "Neuchâtel Est (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "301.12",
+        "from": "NEMA",
+        "to": "CORN",
+        "fromName": "Neuchâtel Est (bif)",
+        "toName": "Cornaux NE",
+        "kundig": false
+      },
+      {
+        "seg": "301.13",
+        "from": "BI",
+        "to": "CORN",
+        "fromName": "Biel/Bienne",
+        "toName": "Cornaux NE",
+        "kundig": false
+      },
+      {
+        "seg": "301.13",
+        "from": "CORN",
+        "to": "BI",
+        "fromName": "Cornaux NE",
+        "toName": "Biel/Bienne",
+        "kundig": false
+      }
+    ],
+    "311": [
+      {
+        "seg": "311.01",
+        "from": "BI",
+        "to": "BIMA",
+        "fromName": "Biel/Bienne",
+        "toName": "Biel Mett",
+        "kundig": false
+      },
+      {
+        "seg": "311.01",
+        "from": "BIMA",
+        "to": "BI",
+        "fromName": "Biel Mett",
+        "toName": "Biel/Bienne",
+        "kundig": false
+      },
+      {
+        "seg": "311.01",
+        "from": "BI",
+        "to": "BIPO",
+        "fromName": "Biel/Bienne",
+        "toName": "Biel Mett (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "311.02",
+        "from": "BIMA",
+        "to": "LEN",
+        "fromName": "Biel Mett (Abzw)",
+        "toName": "Lengnau BE",
+        "kundig": false
+      },
+      {
+        "seg": "311.02",
+        "from": "LEN",
+        "to": "BIMA",
+        "fromName": "Lengnau BE",
+        "toName": "Biel Mett (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "311.03",
+        "from": "LEN",
+        "to": "SW",
+        "fromName": "Lengnau BE",
+        "toName": "Solothurn West",
+        "kundig": false
+      },
+      {
+        "seg": "311.03",
+        "from": "SW",
+        "to": "LEN",
+        "fromName": "Solothurn West",
+        "toName": "Lengnau BE",
+        "kundig": false
+      },
+      {
+        "seg": "311.04",
+        "from": "SO",
+        "to": "SW",
+        "fromName": "Solothurn",
+        "toName": "Solothurn West",
+        "kundig": false
+      },
+      {
+        "seg": "311.04",
+        "from": "SW",
+        "to": "SO",
+        "fromName": "Solothurn West",
+        "toName": "Solothurn",
+        "kundig": false
+      },
+      {
+        "seg": "311.05",
+        "from": "NB",
+        "to": "SO",
+        "fromName": "Niederbipp",
+        "toName": "Solothurn",
+        "kundig": false
+      },
+      {
+        "seg": "311.05",
+        "from": "SO",
+        "to": "NB",
+        "fromName": "Solothurn",
+        "toName": "Niederbipp",
+        "kundig": false
+      },
+      {
+        "seg": "311.06",
+        "from": "NB",
+        "to": "OEN",
+        "fromName": "Niederbipp",
+        "toName": "Oensingen",
+        "kundig": false
+      },
+      {
+        "seg": "311.06",
+        "from": "OEN",
+        "to": "NB",
+        "fromName": "Oensingen",
+        "toName": "Niederbipp",
+        "kundig": false
+      },
+      {
+        "seg": "311.07",
+        "from": "OEN",
+        "to": "OL",
+        "fromName": "Oensingen",
+        "toName": "Olten",
+        "kundig": false
+      },
+      {
+        "seg": "311.07",
+        "from": "OL",
+        "to": "OEN",
+        "fromName": "Olten",
+        "toName": "Oensingen",
+        "kundig": false
+      }
+    ],
+    "321": [
+      {
+        "seg": "321.01",
+        "from": "BI",
+        "to": "MAD",
+        "fromName": "Biel/Bienne",
+        "toName": "Madretsch",
+        "kundig": false
+      },
+      {
+        "seg": "321.01",
+        "from": "MAD",
+        "to": "BI",
+        "fromName": "Madretsch",
+        "toName": "Biel/Bienne",
+        "kundig": false
+      },
+      {
+        "seg": "321.01",
+        "from": "STU",
+        "to": "STUA",
+        "fromName": "Studen BE",
+        "toName": "Studen Auto",
+        "kundig": false
+      },
+      {
+        "seg": "321.02",
+        "from": "BUS",
+        "to": "MAD",
+        "fromName": "Busswil BE",
+        "toName": "Madretsch",
+        "kundig": false
+      },
+      {
+        "seg": "321.02",
+        "from": "MAD",
+        "to": "BUS",
+        "fromName": "Madretsch",
+        "toName": "Busswil BE",
+        "kundig": false
+      },
+      {
+        "seg": "321.04",
+        "from": "BUS",
+        "to": "LY",
+        "fromName": "Busswil BE",
+        "toName": "Lyss",
+        "kundig": false
+      },
+      {
+        "seg": "321.04",
+        "from": "LY",
+        "to": "BUS",
+        "fromName": "Lyss",
+        "toName": "Busswil BE",
+        "kundig": false
+      },
+      {
+        "seg": "321.05",
+        "from": "LY",
+        "to": "ZOL",
+        "fromName": "Lyss",
+        "toName": "Zollikofen",
+        "kundig": false
+      },
+      {
+        "seg": "321.05",
+        "from": "ZOL",
+        "to": "LY",
+        "fromName": "Zollikofen",
+        "toName": "Lyss",
+        "kundig": false
+      }
+    ],
+    "322": [
+      {
+        "seg": "322.01",
+        "from": "LGUS",
+        "to": "WKD",
+        "fromName": "Löchligut Süd (Abzw)",
+        "toName": "Wankdorf (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "322.01",
+        "from": "WKD",
+        "to": "LGUS",
+        "fromName": "Wankdorf (Abzw)",
+        "toName": "Löchligut Süd (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "322.02",
+        "from": "BNWD",
+        "to": "WKD",
+        "fromName": "Bern Wankdorf",
+        "toName": "Wankdorf (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "322.02",
+        "from": "WKD",
+        "to": "BNWD",
+        "fromName": "Wankdorf (Abzw)",
+        "toName": "Bern Wankdorf",
+        "kundig": false
+      },
+      {
+        "seg": "322.03",
+        "from": "WKD",
+        "to": "GUES",
+        "fromName": "Wankdorf (Abzw)",
+        "toName": "Gümligen Süd (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "322.03",
+        "from": "GUES",
+        "to": "WKD",
+        "fromName": "Gümligen Süd (Abzw)",
+        "toName": "Wankdorf (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "322.04",
+        "from": "GUES",
+        "to": "THAB",
+        "fromName": "Gümligen Süd (Abzw)",
+        "toName": "Thun (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "322.04",
+        "from": "THAB",
+        "to": "GUES",
+        "fromName": "Thun (Abzw)",
+        "toName": "Gümligen Süd (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "322.05",
+        "from": "TH",
+        "to": "THAB",
+        "fromName": "Thun",
+        "toName": "Thun (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "322.05",
+        "from": "THAB",
+        "to": "TH",
+        "fromName": "Thun (Abzw)",
+        "toName": "Thun",
+        "kundig": false
+      },
+      {
+        "seg": "322.06",
+        "from": "SPAB",
+        "to": "TH",
+        "fromName": "Spiez (Abzw)",
+        "toName": "Thun",
+        "kundig": false
+      },
+      {
+        "seg": "322.06",
+        "from": "TH",
+        "to": "SPAB",
+        "fromName": "Thun",
+        "toName": "Spiez (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "322.07",
+        "from": "SP",
+        "to": "SPAB",
+        "fromName": "Spiez",
+        "toName": "Spiez (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "322.07",
+        "from": "SPAB",
+        "to": "SP",
+        "fromName": "Spiez (Abzw)",
+        "toName": "Spiez",
+        "kundig": false
+      },
+      {
+        "seg": "322.08",
+        "from": "REIK",
+        "to": "SP",
+        "fromName": "Reichenbach im Kandertal",
+        "toName": "Spiez",
+        "kundig": false
+      },
+      {
+        "seg": "322.08",
+        "from": "SP",
+        "to": "REIK",
+        "fromName": "Spiez",
+        "toName": "Reichenbach im Kandertal",
+        "kundig": false
+      }
+    ],
+    "331": [
+      {
+        "seg": "331.01",
+        "from": "GUES",
+        "to": "KF",
+        "fromName": "Gümligen Süd (Abzw)",
+        "toName": "Konolfingen",
+        "kundig": false
+      },
+      {
+        "seg": "331.01",
+        "from": "KF",
+        "to": "GUES",
+        "fromName": "Konolfingen",
+        "toName": "Gümligen Süd (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "331.02",
+        "from": "KF",
+        "to": "OM",
+        "fromName": "Konolfingen",
+        "toName": "Obermatt",
+        "kundig": false
+      },
+      {
+        "seg": "331.02",
+        "from": "OM",
+        "to": "KF",
+        "fromName": "Obermatt",
+        "toName": "Konolfingen",
+        "kundig": false
+      },
+      {
+        "seg": "331.03",
+        "from": "LN",
+        "to": "OM",
+        "fromName": "Langnau i.E.",
+        "toName": "Obermatt",
+        "kundig": false
+      },
+      {
+        "seg": "331.03",
+        "from": "OM",
+        "to": "LN",
+        "fromName": "Obermatt",
+        "toName": "Langnau i.E.",
+        "kundig": false
+      }
+    ],
+    "332": [
+      {
+        "seg": "332.01",
+        "from": "LN",
+        "to": "WH",
+        "fromName": "Langnau i.E.",
+        "toName": "Wolhusen",
+        "kundig": false
+      },
+      {
+        "seg": "332.01",
+        "from": "WH",
+        "to": "LN",
+        "fromName": "Wolhusen",
+        "toName": "Langnau i.E.",
+        "kundig": false
+      },
+      {
+        "seg": "332.02",
+        "from": "FMUE",
+        "to": "WH",
+        "fromName": "Fluhmühle (Abzw)",
+        "toName": "Wolhusen",
+        "kundig": false
+      },
+      {
+        "seg": "332.02",
+        "from": "WH",
+        "to": "FMUE",
+        "fromName": "Wolhusen",
+        "toName": "Fluhmühle (Abzw)",
+        "kundig": false
+      }
+    ],
+    "341": [
+      {
+        "seg": "341.01",
+        "from": "BS",
+        "to": "RUC",
+        "fromName": "Basel SBB",
+        "toName": "Ruchfeld",
+        "kundig": false
+      },
+      {
+        "seg": "341.01",
+        "from": "RUC",
+        "to": "BS",
+        "fromName": "Ruchfeld",
+        "toName": "Basel SBB",
+        "kundig": false
+      },
+      {
+        "seg": "341.01",
+        "from": "RUC",
+        "to": "BSDS",
+        "fromName": "Ruchfeld",
+        "toName": "Basel SBB Dreispitz",
+        "kundig": false
+      },
+      {
+        "seg": "341.02",
+        "from": "BSJA",
+        "to": "BSVL",
+        "fromName": "Basel St. Jakob",
+        "toName": "Basel SBB GB VL",
+        "kundig": false
+      },
+      {
+        "seg": "341.02",
+        "from": "BSVL",
+        "to": "BSJA",
+        "fromName": "Basel SBB GB VL",
+        "toName": "Basel St. Jakob",
+        "kundig": false
+      },
+      {
+        "seg": "341.03",
+        "from": "BSBG",
+        "to": "BSVL",
+        "fromName": "Basel SBB GB",
+        "toName": "Basel SBB GB VL",
+        "kundig": false
+      },
+      {
+        "seg": "341.03",
+        "from": "BSVL",
+        "to": "BSBG",
+        "fromName": "Basel SBB GB VL",
+        "toName": "Basel SBB GB",
+        "kundig": false
+      },
+      {
+        "seg": "341.04",
+        "from": "BSVL",
+        "to": "RUC",
+        "fromName": "Basel SBB GB VL",
+        "toName": "Ruchfeld",
+        "kundig": false
+      },
+      {
+        "seg": "341.04",
+        "from": "RUC",
+        "to": "BSVL",
+        "fromName": "Ruchfeld",
+        "toName": "Basel SBB GB VL",
+        "kundig": false
+      },
+      {
+        "seg": "341.05",
+        "from": "DMT",
+        "to": "RUC",
+        "fromName": "Delémont",
+        "toName": "Ruchfeld",
+        "kundig": false
+      },
+      {
+        "seg": "341.05",
+        "from": "RUC",
+        "to": "DMT",
+        "fromName": "Ruchfeld",
+        "toName": "Delémont",
+        "kundig": false
+      }
+    ],
+    "351": [
+      {
+        "seg": "351.01",
+        "from": "REIK",
+        "to": "WENE",
+        "fromName": "Reichenbach im Kandertal",
+        "toName": "Wengi-Ey (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "351.01",
+        "from": "GO",
+        "to": "GOAR",
+        "fromName": "Goppenstein",
+        "toName": "Goppenstein Autoverlad",
+        "kundig": false
+      },
+      {
+        "seg": "351.02",
+        "from": "FR",
+        "to": "WENE",
+        "fromName": "Frutigen",
+        "toName": "Wengi-Ey (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "351.02",
+        "from": "WENE",
+        "to": "FR",
+        "fromName": "Wengi-Ey (Abzw)",
+        "toName": "Frutigen",
+        "kundig": false
+      },
+      {
+        "seg": "351.03",
+        "from": "FR",
+        "to": "KA",
+        "fromName": "Frutigen",
+        "toName": "Kandersteg",
+        "kundig": false
+      },
+      {
+        "seg": "351.03",
+        "from": "KA",
+        "to": "FR",
+        "fromName": "Kandersteg",
+        "toName": "Frutigen",
+        "kundig": false
+      },
+      {
+        "seg": "351.04",
+        "from": "GO",
+        "to": "KA",
+        "fromName": "Goppenstein",
+        "toName": "Kandersteg",
+        "kundig": false
+      },
+      {
+        "seg": "351.04",
+        "from": "KA",
+        "to": "GO",
+        "fromName": "Kandersteg",
+        "toName": "Goppenstein",
+        "kundig": false
+      },
+      {
+        "seg": "351.05",
+        "from": "BRLO",
+        "to": "GO",
+        "fromName": "Brig-Lötschberg (Abzw)",
+        "toName": "Goppenstein",
+        "kundig": false
+      },
+      {
+        "seg": "351.05",
+        "from": "GO",
+        "to": "BRLO",
+        "fromName": "Goppenstein",
+        "toName": "Brig-Lötschberg (Abzw)",
+        "kundig": false
+      }
+    ],
+    "361": [
+      {
+        "seg": "361.01",
+        "from": "IO",
+        "to": "SP",
+        "fromName": "Interlaken Ost",
+        "toName": "Spiez",
+        "kundig": false
+      },
+      {
+        "seg": "361.01",
+        "from": "SP",
+        "to": "IO",
+        "fromName": "Spiez",
+        "toName": "Interlaken Ost",
+        "kundig": false
+      }
+    ],
+    "362": [
+      {
+        "seg": "362.01",
+        "from": "SPAB",
+        "to": "ZW",
+        "fromName": "Spiez (Abzw)",
+        "toName": "Zweisimmen",
+        "kundig": false
+      },
+      {
+        "seg": "362.01",
+        "from": "ZW",
+        "to": "SPAB",
+        "fromName": "Zweisimmen",
+        "toName": "Spiez (Abzw)",
+        "kundig": false
+      }
+    ],
+    "371": [
+      {
+        "seg": "371.01",
+        "from": "BN",
+        "to": "HOL",
+        "fromName": "Bern",
+        "toName": "Bern Holligen",
+        "kundig": false
+      },
+      {
+        "seg": "371.01",
+        "from": "HOL",
+        "to": "BN",
+        "fromName": "Bern Holligen",
+        "toName": "Bern",
+        "kundig": false
+      },
+      {
+        "seg": "371.02",
+        "from": "BNFI",
+        "to": "BNSH",
+        "fromName": "Bern Fischermätteli",
+        "toName": "Bern Steigerhubel (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "371.02",
+        "from": "BNSH",
+        "to": "BNFI",
+        "fromName": "Bern Steigerhubel (Abzw)",
+        "toName": "Bern Fischermätteli",
+        "kundig": false
+      },
+      {
+        "seg": "371.03",
+        "from": "BNFI",
+        "to": "THAB",
+        "fromName": "Bern Fischermätteli",
+        "toName": "Thun (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "371.03",
+        "from": "THAB",
+        "to": "BNFI",
+        "fromName": "Thun (Abzw)",
+        "toName": "Bern Fischermätteli",
+        "kundig": false
+      }
+    ],
+    "372": [
+      {
+        "seg": "372.01",
+        "from": "BNFI",
+        "to": "SCBG",
+        "fromName": "Bern Fischermätteli",
+        "toName": "Schwarzenburg",
+        "kundig": false
+      },
+      {
+        "seg": "372.01",
+        "from": "SCHB",
+        "to": "BNFI",
+        "fromName": "Schwarzenburg",
+        "toName": "Bern Fischermätteli",
+        "kundig": false
+      }
+    ],
+    "381": [
+      {
+        "seg": "381.01",
+        "from": "HOL",
+        "to": "KZ",
+        "fromName": "Bern Holligen",
+        "toName": "Kerzers",
+        "kundig": false
+      },
+      {
+        "seg": "381.01",
+        "from": "KZ",
+        "to": "HOL",
+        "fromName": "Kerzers",
+        "toName": "Bern Holligen",
+        "kundig": false
+      },
+      {
+        "seg": "381.02",
+        "from": "INS",
+        "to": "KZ",
+        "fromName": "Ins",
+        "toName": "Kerzers",
+        "kundig": false
+      },
+      {
+        "seg": "381.02",
+        "from": "KZ",
+        "to": "INS",
+        "fromName": "Kerzers",
+        "toName": "Ins",
+        "kundig": false
+      },
+      {
+        "seg": "381.03",
+        "from": "NEMA",
+        "to": "INS",
+        "fromName": "Neuchâtel Est (bif)",
+        "toName": "Ins",
+        "kundig": false
+      }
+    ],
+    "391": [
+      {
+        "seg": "391.01",
+        "from": "FRNP",
+        "to": "WENE",
+        "fromName": "Frutigen Nordportal (Abzw)",
+        "toName": "Wengi-Ey (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "391.01",
+        "from": "WENE",
+        "to": "FRNP",
+        "fromName": "Wengi-Ey (Abzw)",
+        "toName": "Frutigen Nordportal (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "391.02",
+        "from": "FR",
+        "to": "FRNO",
+        "fromName": "Frutigen",
+        "toName": "Frutigen Nordportal (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "391.02",
+        "from": "FRNP",
+        "to": "FR",
+        "fromName": "Frutigen Nordportal (Abzw)",
+        "toName": "Frutigen",
+        "kundig": false
+      },
+      {
+        "seg": "391.03",
+        "from": "FRNP",
+        "to": "STGE",
+        "fromName": "Frutigen Nordportal (Abzw)",
+        "toName": "St. German (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "391.03",
+        "from": "STGE",
+        "to": "FRNP",
+        "fromName": "St. German (Abzw)",
+        "toName": "Frutigen Nordportal (Abzw)",
+        "kundig": false
+      }
+    ],
+    "411": [
+      {
+        "seg": "411.01",
+        "from": "BS",
+        "to": "BSNO",
+        "fromName": "Basel SBB",
+        "toName": "Basel SBB Nordost (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "411.01",
+        "from": "BSNO",
+        "to": "BS",
+        "fromName": "Basel SBB Nordost (Abzw)",
+        "toName": "Basel SBB",
+        "kundig": false
+      },
+      {
+        "seg": "411.01",
+        "from": "OLN",
+        "to": "SIS",
+        "fromName": "Olten Nord (Abzw)",
+        "toName": "Sissach",
+        "kundig": false
+      },
+      {
+        "seg": "411.01",
+        "from": "SIS",
+        "to": "OLN",
+        "fromName": "Sissach",
+        "toName": "Olten Nord (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "411.02",
+        "from": "BSNO",
+        "to": "MU",
+        "fromName": "Basel SBB Nordost (Abzw)",
+        "toName": "Muttenz",
+        "kundig": false
+      },
+      {
+        "seg": "411.02",
+        "from": "MU",
+        "to": "BSNO",
+        "fromName": "Muttenz",
+        "toName": "Basel SBB Nordost (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "411.02",
+        "from": "OLN",
+        "to": "OLO",
+        "fromName": "Olten Nord (Abzw)",
+        "toName": "Olten Ost (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "411.02",
+        "from": "OLO",
+        "to": "OLN",
+        "fromName": "Olten Ost (Abzw)",
+        "toName": "Olten Nord (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "411.03",
+        "from": "MUOS",
+        "to": "MU",
+        "fromName": "Muttenz Ost (Abzw)",
+        "toName": "Muttenz",
+        "kundig": false
+      },
+      {
+        "seg": "411.03",
+        "from": "MU",
+        "to": "MUOS",
+        "fromName": "Muttenz",
+        "toName": "Muttenz Ost (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "411.04",
+        "from": "LSTN",
+        "to": "MUOS",
+        "fromName": "Liestal Nord (Abzw)",
+        "toName": "Muttenz Ost (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "411.04",
+        "from": "MUOS",
+        "to": "LSTN",
+        "fromName": "Muttenz Ost (Abzw)",
+        "toName": "Liestal Nord (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "411.05",
+        "from": "MUOS",
+        "to": "PRUW",
+        "fromName": "Muttenz Ost (Abzw)",
+        "toName": "Pratteln Ueberwerfung",
+        "kundig": false
+      },
+      {
+        "seg": "411.05",
+        "from": "PRUW",
+        "to": "MUOS",
+        "fromName": "Pratteln Ueberwerfung",
+        "toName": "Muttenz Ost (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "411.06",
+        "from": "PR",
+        "to": "PRUW",
+        "fromName": "Pratteln",
+        "toName": "Pratteln Ueberwerfung",
+        "kundig": false
+      },
+      {
+        "seg": "411.06",
+        "from": "PRUW",
+        "to": "PR",
+        "fromName": "Pratteln Ueberwerfung",
+        "toName": "Pratteln",
+        "kundig": false
+      },
+      {
+        "seg": "411.07",
+        "from": "FRE",
+        "to": "PR",
+        "fromName": "Frenkendorf-Füllinsdorf",
+        "toName": "Pratteln",
+        "kundig": false
+      },
+      {
+        "seg": "411.07",
+        "from": "PR",
+        "to": "FRE",
+        "fromName": "Pratteln",
+        "toName": "Frenkendorf-Füllinsdorf",
+        "kundig": false
+      },
+      {
+        "seg": "411.08",
+        "from": "FRE",
+        "to": "LSTN",
+        "fromName": "Frenkendorf-Füllinsdorf",
+        "toName": "Liestal Nord (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "411.08",
+        "from": "LITN",
+        "to": "FRE",
+        "fromName": "Liestal Nord (Abzw)",
+        "toName": "Frenkendorf-Füllinsdorf",
+        "kundig": false
+      },
+      {
+        "seg": "411.09",
+        "from": "SIS",
+        "to": "LSTN",
+        "fromName": "Sissach",
+        "toName": "Liestal Nord (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "411.11",
+        "from": "OLN",
+        "to": "OLNO",
+        "fromName": "Olten Nord (Abzw)",
+        "toName": "Olten Nord-Ost (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "411.11",
+        "from": "OLNO",
+        "to": "OLN",
+        "fromName": "Olten Nord-Ost (Abzw)",
+        "toName": "Olten Nord (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "411.12",
+        "from": "OL",
+        "to": "OLNO",
+        "fromName": "Olten",
+        "toName": "Olten Nord-Ost (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "411.12",
+        "from": "OLNO",
+        "to": "OL",
+        "fromName": "Olten Nord-Ost (Abzw)",
+        "toName": "Olten",
+        "kundig": false
+      }
+    ],
+    "421": [
+      {
+        "seg": "421.01",
+        "from": "OLN",
+        "to": "SIS",
+        "fromName": "Olten Nord (Abzw)",
+        "toName": "Sissach",
+        "kundig": false
+      },
+      {
+        "seg": "421.01",
+        "from": "SIS",
+        "to": "OLN",
+        "fromName": "Sissach",
+        "toName": "Olten Nord (Abzw)",
+        "kundig": false
+      }
+    ],
+    "422": [
+      {
+        "seg": "422.01",
+        "from": "ABO",
+        "to": "ABOS",
+        "fromName": "Aarburg-Oftringen",
+        "toName": "Aarburg-Oftringen Süd (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "422.01",
+        "from": "ABOS",
+        "to": "ABO",
+        "fromName": "Aarburg-Oftringen Süd (Abzw)",
+        "toName": "Aarburg-Oftringen",
+        "kundig": false
+      },
+      {
+        "seg": "422.02",
+        "from": "ABOS",
+        "to": "ABOW",
+        "fromName": "Aarburg-Oftringen Süd (Abzw)",
+        "toName": "Aarburg-Oftringen West (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "422.02",
+        "from": "ABOW",
+        "to": "ABOS",
+        "fromName": "Aarburg-Oftringen West (Abzw)",
+        "toName": "Aarburg-Oftringen Süd (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "422.03",
+        "from": "ABOS",
+        "to": "ZF",
+        "fromName": "Aarburg-Oftringen Süd (Abzw)",
+        "toName": "Zofingen",
+        "kundig": false
+      },
+      {
+        "seg": "422.03",
+        "from": "ZF",
+        "to": "ABOS",
+        "fromName": "Zofingen",
+        "toName": "Aarburg-Oftringen Süd (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "422.04",
+        "from": "SS",
+        "to": "ZF",
+        "fromName": "Sursee",
+        "toName": "Zofingen",
+        "kundig": false
+      },
+      {
+        "seg": "422.04",
+        "from": "ZF",
+        "to": "SS",
+        "fromName": "Zofingen",
+        "toName": "Sursee",
+        "kundig": false
+      },
+      {
+        "seg": "422.05",
+        "from": "RBG",
+        "to": "SS",
+        "fromName": "Rothenburg Station",
+        "toName": "Sursee",
+        "kundig": false
+      },
+      {
+        "seg": "422.05",
+        "from": "SS",
+        "to": "RBG",
+        "fromName": "Sursee",
+        "toName": "Rothenburg Station",
+        "kundig": false
+      },
+      {
+        "seg": "422.06",
+        "from": "HUEB",
+        "to": "RBG",
+        "fromName": "Hübeli LU",
+        "toName": "Rothenburg Station",
+        "kundig": false
+      },
+      {
+        "seg": "422.06",
+        "from": "RBG",
+        "to": "HUEB",
+        "fromName": "Rothenburg Station",
+        "toName": "Hübeli LU",
+        "kundig": false
+      },
+      {
+        "seg": "422.07",
+        "from": "FMUE",
+        "to": "HUEB",
+        "fromName": "Fluhmühle (Abzw)",
+        "toName": "Hübeli LU",
+        "kundig": false
+      },
+      {
+        "seg": "422.07",
+        "from": "HUEB",
+        "to": "FMUE",
+        "fromName": "Hübeli LU",
+        "toName": "Fluhmühle (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "422.08",
+        "from": "FMUE",
+        "to": "GTS",
+        "fromName": "Fluhmühle (Abzw)",
+        "toName": "Gütsch (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "422.08",
+        "from": "GTS",
+        "to": "FUME",
+        "fromName": "Gütsch (Abzw)",
+        "toName": "Fluhmühle (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "422.09",
+        "from": "GTS",
+        "to": "LZ",
+        "fromName": "Gütsch (Abzw)",
+        "toName": "Luzern",
+        "kundig": false
+      },
+      {
+        "seg": "422.09",
+        "from": "LZ",
+        "to": "GTS",
+        "fromName": "Luzern",
+        "toName": "Gütsch (Abzw)",
+        "kundig": false
+      }
+    ],
+    "431": [
+      {
+        "seg": "431.01",
+        "from": "LB",
+        "to": "HUEB",
+        "fromName": "Lenzburg",
+        "toName": "Hübeli LU",
+        "kundig": false
+      }
+    ],
+    "436": [
+      {
+        "seg": "436.01",
+        "from": "SUHR",
+        "to": "ZF",
+        "fromName": "Suhr",
+        "toName": "Zofingen",
+        "kundig": false
+      },
+      {
+        "seg": "436.01",
+        "from": "ZF",
+        "to": "SUHR",
+        "fromName": "Zofingen",
+        "toName": "Suhr",
+        "kundig": false
+      },
+      {
+        "seg": "436.02",
+        "from": "LB",
+        "to": "SUHR",
+        "fromName": "Lenzburg",
+        "toName": "Suhr",
+        "kundig": false
+      },
+      {
+        "seg": "436.02",
+        "from": "SUHR",
+        "to": "LB",
+        "fromName": "Suhr",
+        "toName": "Lenzburg",
+        "kundig": false
+      },
+      {
+        "seg": "436.03",
+        "from": "GMT",
+        "to": "WE",
+        "fromName": "Gruemet (Abzw)",
+        "toName": "Wettingen",
+        "kundig": false
+      },
+      {
+        "seg": "436.03",
+        "from": "WE",
+        "to": "GMT",
+        "fromName": "Wettingen",
+        "toName": "Gruemet (Abzw)",
+        "kundig": false
+      }
+    ],
+    "461": [
+      {
+        "seg": "461.01",
+        "from": "KOLM",
+        "to": "ZG",
+        "fromName": "Kollermühle (Abzw)",
+        "toName": "Zug",
+        "kundig": false
+      },
+      {
+        "seg": "461.01",
+        "from": "ZG",
+        "to": "KOLM",
+        "fromName": "Zug",
+        "toName": "Kollermühle (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "461.02",
+        "from": "KOLM",
+        "to": "RK",
+        "fromName": "Kollermühle (Abzw)",
+        "toName": "Rotkreuz",
+        "kundig": false
+      },
+      {
+        "seg": "461.02",
+        "from": "RK",
+        "to": "KOLM",
+        "fromName": "Rotkreuz",
+        "toName": "Kollermühle (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "461.03",
+        "from": "FMUE",
+        "to": "RK",
+        "fromName": "Fluhmühle (Abzw)",
+        "toName": "Rotkreuz",
+        "kundig": false
+      },
+      {
+        "seg": "461.03",
+        "from": "RK",
+        "to": "FMUE",
+        "fromName": "Rotkreuz",
+        "toName": "Fluhmühle (Abzw)",
+        "kundig": false
+      }
+    ],
+    "462": [
+      {
+        "seg": "462.01",
+        "from": "SBG",
+        "to": "TW",
+        "fromName": "Sihlbrugg",
+        "toName": "Thalwil",
+        "kundig": false
+      },
+      {
+        "seg": "462.01",
+        "from": "TW",
+        "to": "SBG",
+        "fromName": "Thalwil",
+        "toName": "Sihlbrugg",
+        "kundig": false
+      },
+      {
+        "seg": "462.02",
+        "from": "SBG",
+        "to": "ZG",
+        "fromName": "Sihlbrugg",
+        "toName": "Zug",
+        "kundig": false
+      },
+      {
+        "seg": "462.02",
+        "from": "ZG",
+        "to": "SBG",
+        "fromName": "Zug",
+        "toName": "Sihlbrugg",
+        "kundig": false
+      },
+      {
+        "seg": "462.03",
+        "from": "GD",
+        "to": "ZG",
+        "fromName": "Arth-Goldau",
+        "toName": "Zug",
+        "kundig": false
+      },
+      {
+        "seg": "462.03",
+        "from": "ZG",
+        "to": "GD",
+        "fromName": "Zug",
+        "toName": "Arth-Goldau",
+        "kundig": false
+      }
+    ],
+    "481": [
+      {
+        "seg": "481.01",
+        "from": "MOU",
+        "to": "SW",
+        "fromName": "Moutier",
+        "toName": "Solothurn West",
+        "kundig": false
+      },
+      {
+        "seg": "481.01",
+        "from": "SW",
+        "to": "MOU",
+        "fromName": "Solothurn West",
+        "toName": "Moutier",
+        "kundig": false
+      }
+    ],
+    "482": [
+      {
+        "seg": "482.01",
+        "from": "BIST",
+        "to": "SO",
+        "fromName": "Biberist Ost",
+        "toName": "Solothurn",
+        "kundig": false
+      },
+      {
+        "seg": "482.01",
+        "from": "SO",
+        "to": "BIST",
+        "fromName": "Solothurn",
+        "toName": "Biberist Ost",
+        "kundig": false
+      },
+      {
+        "seg": "482.02",
+        "from": "BIST",
+        "to": "GLF",
+        "fromName": "Biberist Ost",
+        "toName": "Gerlafingen",
+        "kundig": false
+      },
+      {
+        "seg": "482.02",
+        "from": "GLF",
+        "to": "BIST",
+        "fromName": "Gerlafingen",
+        "toName": "Biberist Ost",
+        "kundig": false
+      },
+      {
+        "seg": "482.03",
+        "from": "GLF",
+        "to": "WR",
+        "fromName": "Gerlafingen",
+        "toName": "Wiler",
+        "kundig": false
+      },
+      {
+        "seg": "482.03",
+        "from": "WR",
+        "to": "GLF",
+        "fromName": "Wiler",
+        "toName": "Gerlafingen",
+        "kundig": false
+      },
+      {
+        "seg": "482.04",
+        "from": "BDF",
+        "to": "WR",
+        "fromName": "Burgdorf",
+        "toName": "Wiler",
+        "kundig": false
+      },
+      {
+        "seg": "482.04",
+        "from": "WR",
+        "to": "BDF",
+        "fromName": "Wiler",
+        "toName": "Burgdorf",
+        "kundig": false
+      }
+    ],
+    "483": [
+      {
+        "seg": "483.01",
+        "from": "BDF",
+        "to": "OBB",
+        "fromName": "Burgdorf",
+        "toName": "Oberburg",
+        "kundig": false
+      },
+      {
+        "seg": "483.01",
+        "from": "OBB",
+        "to": "BDF",
+        "fromName": "Oberburg",
+        "toName": "Burgdorf",
+        "kundig": false
+      },
+      {
+        "seg": "483.02",
+        "from": "HA",
+        "to": "OBB",
+        "fromName": "Hasle-Rüegsau",
+        "toName": "Oberburg",
+        "kundig": false
+      },
+      {
+        "seg": "483.02",
+        "from": "OBB",
+        "to": "HA",
+        "fromName": "Oberburg",
+        "toName": "Hasle-Rüegsau",
+        "kundig": false
+      },
+      {
+        "seg": "483.03",
+        "from": "HA",
+        "to": "RAM",
+        "fromName": "Hasle-Rüegsau",
+        "toName": "Ramsei",
+        "kundig": false
+      },
+      {
+        "seg": "483.03",
+        "from": "RAM",
+        "to": "HA",
+        "fromName": "Ramsei",
+        "toName": "Hasle-Rüegsau",
+        "kundig": false
+      },
+      {
+        "seg": "483.04",
+        "from": "LN",
+        "to": "OM",
+        "fromName": "Obermatt",
+        "toName": "Ramsei",
+        "kundig": false
+      },
+      {
+        "seg": "483.04",
+        "from": "OM",
+        "to": "LN",
+        "fromName": "Ramsei",
+        "toName": "Obermatt",
+        "kundig": false
+      }
+    ],
+    "484": [
+      {
+        "seg": "484.01",
+        "from": "HA",
+        "to": "KF",
+        "fromName": "Hasle-Rüegsau",
+        "toName": "Konolfingen",
+        "kundig": false
+      },
+      {
+        "seg": "484.01",
+        "from": "KF",
+        "to": "HA",
+        "fromName": "Konolfingen",
+        "toName": "Hasle-Rüegsau",
+        "kundig": false
+      },
+      {
+        "seg": "484.02",
+        "from": "KF",
+        "to": "THAB",
+        "fromName": "Konolfingen",
+        "toName": "Thun (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "484.02",
+        "from": "THAB",
+        "to": "KF",
+        "fromName": "Thun (Abzw)",
+        "toName": "Konolfingen",
+        "kundig": false
+      }
+    ],
+    "491": [
+      {
+        "seg": "491.01",
+        "from": "RAM",
+        "to": "SWG",
+        "fromName": "Ramsei",
+        "toName": "Sumiswald-Grünen",
+        "kundig": false
+      },
+      {
+        "seg": "491.01",
+        "from": "SWG",
+        "to": "RAM",
+        "fromName": "Sumiswald-Grünen",
+        "toName": "Ramsei",
+        "kundig": false
+      }
+    ],
+    "493": [
+      {
+        "seg": "493.01",
+        "from": "HWIL",
+        "to": "LTH",
+        "fromName": "Huttwil",
+        "toName": "Langenthal",
+        "kundig": false
+      },
+      {
+        "seg": "493.01",
+        "from": "LTH",
+        "to": "HWIL",
+        "fromName": "Langenthal",
+        "toName": "Huttwil",
+        "kundig": false
+      },
+      {
+        "seg": "493.02",
+        "from": "HWIL",
+        "to": "ZELL",
+        "fromName": "Huttwil",
+        "toName": "Zell LU",
+        "kundig": false
+      },
+      {
+        "seg": "493.02",
+        "from": "ZELL",
+        "to": "HWIL",
+        "fromName": "Zell LU",
+        "toName": "Huttwil",
+        "kundig": false
+      },
+      {
+        "seg": "493.03",
+        "from": "GET",
+        "to": "ZELL",
+        "fromName": "Gettnau",
+        "toName": "Zell LU",
+        "kundig": false
+      },
+      {
+        "seg": "493.03",
+        "from": "ZELL",
+        "to": "GET",
+        "fromName": "Zell LU",
+        "toName": "Gettnau",
+        "kundig": false
+      },
+      {
+        "seg": "493.04",
+        "from": "GET",
+        "to": "MAU",
+        "fromName": "Gettnau",
+        "toName": "Menznau",
+        "kundig": false
+      },
+      {
+        "seg": "493.04",
+        "from": "MAU",
+        "to": "GET",
+        "fromName": "Menznau",
+        "toName": "Gettnau",
+        "kundig": false
+      },
+      {
+        "seg": "493.05",
+        "from": "MAU",
+        "to": "WH",
+        "fromName": "Menznau",
+        "toName": "Wolhusen",
+        "kundig": false
+      },
+      {
+        "seg": "493.05",
+        "from": "WH",
+        "to": "MAU",
+        "fromName": "Wolhusen",
+        "toName": "Menznau",
+        "kundig": false
+      }
+    ],
+    "501": [
+      {
+        "seg": "501.01",
+        "from": "BSFR",
+        "to": "BSSJ",
+        "fromName": "Basel Grenze (FR)",
+        "toName": "Basel St. Johann",
+        "kundig": false
+      },
+      {
+        "seg": "501.01",
+        "from": "BSSJ",
+        "to": "BSFR",
+        "fromName": "Basel St. Johann",
+        "toName": "Basel Grenze (FR)",
+        "kundig": false
+      },
+      {
+        "seg": "501.01",
+        "from": "BASEL",
+        "to": "RB",
+        "fromName": "Basel SBB RB Nordkopf (Abzw)",
+        "toName": "Pratteln Ueberwerfung",
+        "kundig": false
+      },
+      {
+        "seg": "501.02",
+        "from": "BS",
+        "to": "BSSJ",
+        "fromName": "Basel SBB",
+        "toName": "Basel St. Johann",
+        "kundig": false
+      },
+      {
+        "seg": "501.02",
+        "from": "BSSJ",
+        "to": "BS",
+        "fromName": "Basel St. Johann",
+        "toName": "Basel SBB",
+        "kundig": false
+      },
+      {
+        "seg": "501.03",
+        "from": "BS",
+        "to": "BSGB",
+        "fromName": "Basel SBB",
+        "toName": "Basel SBB GB",
+        "kundig": false
+      },
+      {
+        "seg": "501.03",
+        "from": "BSGB",
+        "to": "BS",
+        "fromName": "Basel SBB GB",
+        "toName": "Basel SBB",
+        "kundig": false
+      },
+      {
+        "seg": "501.04",
+        "from": "BSGB",
+        "to": "BSJA",
+        "fromName": "Basel SBB GB",
+        "toName": "Basel St. Jakob",
+        "kundig": false
+      },
+      {
+        "seg": "501.04",
+        "from": "BSJA",
+        "to": "BSGB",
+        "fromName": "Basel St. Jakob",
+        "toName": "Basel SBB GB",
+        "kundig": false
+      },
+      {
+        "seg": "501.05",
+        "from": "BSHA",
+        "to": "BSJA",
+        "fromName": "Hagnau (Abzw)",
+        "toName": "Basel St. Jakob",
+        "kundig": false
+      },
+      {
+        "seg": "501.05",
+        "from": "BSJA",
+        "to": "BSHA",
+        "fromName": "Basel St. Jakob",
+        "toName": "Hagnau (Abzw)",
+        "kundig": false
+      }
+    ],
+    "502": [
+      {
+        "seg": "502.01",
+        "from": "BSKH",
+        "to": "BADH",
+        "fromName": "Basel Kleinhüningen Hafen",
+        "toName": "Basel Bad Rbf KH (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "502.01",
+        "from": "BSNO",
+        "to": "GELL",
+        "fromName": "Basel SBB Nordost (Abzw)",
+        "toName": "Gellert",
+        "kundig": false
+      },
+      {
+        "seg": "502.01",
+        "from": "GELL",
+        "to": "BSNO",
+        "fromName": "Gellert",
+        "toName": "Basel SBB Nordost (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "502.02",
+        "from": "BAD",
+        "to": "BADH",
+        "fromName": "Basel Bad Bf",
+        "toName": "Basel Bad Rbf KH (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "502.02",
+        "from": "BADH",
+        "to": "BAD",
+        "fromName": "Basel Bad Rbf KH (Abzw)",
+        "toName": "Basel Bad Bf",
+        "kundig": false
+      },
+      {
+        "seg": "502.03",
+        "from": "BAD",
+        "to": "GELL",
+        "fromName": "Basel Bad Bf",
+        "toName": "Gellert",
+        "kundig": false
+      },
+      {
+        "seg": "502.03",
+        "from": "GELL",
+        "to": "BAD",
+        "fromName": "Gellert",
+        "toName": "Basel Bad Bf",
+        "kundig": false
+      },
+      {
+        "seg": "502.04",
+        "from": "BSHA",
+        "to": "GELL",
+        "fromName": "Hagnau (Abzw)",
+        "toName": "Gellert",
+        "kundig": false
+      },
+      {
+        "seg": "502.04",
+        "from": "GELL",
+        "to": "BSHA",
+        "fromName": "Gellert",
+        "toName": "Hagnau (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "502.05",
+        "from": "BSHA",
+        "to": "BSNK",
+        "fromName": "Hagnau (Abzw)",
+        "toName": "Basel SBB RB Nordkopf (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "502.05",
+        "from": "BSNK",
+        "to": "BSHA",
+        "fromName": "Basel SBB RB Nordkopf (Abzw)",
+        "toName": "Hagnau (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "502.06",
+        "from": "BSBH",
+        "to": "BSNK",
+        "fromName": "Birsfelden Hafen",
+        "toName": "Basel SBB RB Nordkopf (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "502.06",
+        "from": "BSNK",
+        "to": "BSBH",
+        "fromName": "Basel SBB RB Nordkopf (Abzw)",
+        "toName": "Birsfelden Hafen",
+        "kundig": false
+      },
+      {
+        "seg": "502.07",
+        "from": "BSBH",
+        "to": "SHAL",
+        "fromName": "Birsfelden Hafen",
+        "toName": "Schweizerhalle",
+        "kundig": false
+      },
+      {
+        "seg": "502.07",
+        "from": "SHAL",
+        "to": "BSBH",
+        "fromName": "Schweizerhalle",
+        "toName": "Birsfelden Hafen",
+        "kundig": false
+      },
+      {
+        "seg": "502.08",
+        "from": "BRBE",
+        "to": "SHAL",
+        "fromName": "Basel SBB RB Gr E",
+        "toName": "Schweizerhalle",
+        "kundig": false
+      },
+      {
+        "seg": "502.08",
+        "from": "SHAL",
+        "to": "BRBE",
+        "fromName": "Schweizerhalle",
+        "toName": "Basel SBB RB Gr E",
+        "kundig": false
+      }
+    ],
+    "511": [
+      {
+        "seg": "511.01",
+        "from": "PR",
+        "to": "STS",
+        "fromName": "Pratteln",
+        "toName": "Stein-Säckingen",
+        "kundig": false
+      },
+      {
+        "seg": "511.01",
+        "from": "STS",
+        "to": "PR",
+        "fromName": "Stein-Säckingen",
+        "toName": "Pratteln",
+        "kundig": false
+      },
+      {
+        "seg": "511.02",
+        "from": "BGN",
+        "to": "STS",
+        "fromName": "Brugg AG Nord (Abzw)",
+        "toName": "Stein-Säckingen",
+        "kundig": false
+      },
+      {
+        "seg": "511.02",
+        "from": "STS",
+        "to": "BGN",
+        "fromName": "Stein-Säckingen",
+        "toName": "Brugg AG Nord (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "511.03",
+        "from": "BG",
+        "to": "BGN",
+        "fromName": "Brugg AG",
+        "toName": "Brugg AG Nord (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "511.03",
+        "from": "BGN",
+        "to": "BG",
+        "fromName": "Brugg AG Nord (Abzw)",
+        "toName": "Brugg AG",
+        "kundig": false
+      }
+    ],
+    "521": [
+      {
+        "seg": "521.01",
+        "from": "BG",
+        "to": "BGS",
+        "fromName": "Brugg AG",
+        "toName": "Brugg AG Süd (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "521.01",
+        "from": "BGS",
+        "to": "BG",
+        "fromName": "Brugg AG Süd (Abzw)",
+        "toName": "Brugg AG",
+        "kundig": false
+      },
+      {
+        "seg": "521.02",
+        "from": "BGN",
+        "to": "BGS",
+        "fromName": "Brugg AG Nord (Abzw)",
+        "toName": "Brugg AG Süd (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "521.02",
+        "from": "BGS",
+        "to": "BGN",
+        "fromName": "Brugg AG Süd (Abzw)",
+        "toName": "Brugg AG Nord (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "521.03",
+        "from": "BGS",
+        "to": "OTH",
+        "fromName": "Brugg AG Süd (Abzw)",
+        "toName": "Othmarsingen",
+        "kundig": false
+      },
+      {
+        "seg": "521.03",
+        "from": "OTH",
+        "to": "BGS",
+        "fromName": "Othmarsingen",
+        "toName": "Brugg AG Süd (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "521.04",
+        "from": "HDK",
+        "to": "OTH",
+        "fromName": "Hendschiken",
+        "toName": "Othmarsingen",
+        "kundig": false
+      },
+      {
+        "seg": "521.04",
+        "from": "OTH",
+        "to": "HDK",
+        "fromName": "Othmarsingen",
+        "toName": "Hendschiken",
+        "kundig": false
+      },
+      {
+        "seg": "521.05",
+        "from": "GEXI",
+        "to": "HDK",
+        "fromName": "Gexi",
+        "toName": "Hendschiken",
+        "kundig": false
+      },
+      {
+        "seg": "521.05",
+        "from": "HDK",
+        "to": "GEXI",
+        "fromName": "Hendschiken",
+        "toName": "Gexi",
+        "kundig": false
+      },
+      {
+        "seg": "521.06",
+        "from": "HDK",
+        "to": "WO",
+        "fromName": "Hendschiken",
+        "toName": "Wohlen AG",
+        "kundig": false
+      },
+      {
+        "seg": "521.06",
+        "from": "WO",
+        "to": "HDK",
+        "fromName": "Wohlen AG",
+        "toName": "Hendschiken",
+        "kundig": false
+      },
+      {
+        "seg": "521.07",
+        "from": "RK",
+        "to": "WO",
+        "fromName": "Rotkreuz",
+        "toName": "Wohlen AG",
+        "kundig": false
+      },
+      {
+        "seg": "521.07",
+        "from": "WO",
+        "to": "RK",
+        "fromName": "Wohlen AG",
+        "toName": "Rotkreuz",
+        "kundig": false
+      }
+    ],
+    "531": [
+      {
+        "seg": "531.01",
+        "from": "IM",
+        "to": "RK",
+        "fromName": "Immensee",
+        "toName": "Rotkreuz",
+        "kundig": false
+      },
+      {
+        "seg": "531.01",
+        "from": "RK",
+        "to": "IM",
+        "fromName": "Rotkreuz",
+        "toName": "Immensee",
+        "kundig": false
+      },
+      {
+        "seg": "531.02",
+        "from": "GD",
+        "to": "IM",
+        "fromName": "Arth-Goldau",
+        "toName": "Immensee",
+        "kundig": false
+      },
+      {
+        "seg": "531.02",
+        "from": "IM",
+        "to": "GD",
+        "fromName": "Immensee",
+        "toName": "Arth-Goldau",
+        "kundig": false
+      },
+      {
+        "seg": "531.03",
+        "from": "GD",
+        "to": "RYAB",
+        "fromName": "Arth-Goldau",
+        "toName": "Rynächt (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "531.03",
+        "from": "RYAB",
+        "to": "GD",
+        "fromName": "Rynächt (Abzw)",
+        "toName": "Arth-Goldau",
+        "kundig": false
+      },
+      {
+        "seg": "531.06",
+        "from": "ER",
+        "to": "RYAB",
+        "fromName": "Erstfeld",
+        "toName": "Rynächt (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "531.06",
+        "from": "RYAB",
+        "to": "ER",
+        "fromName": "Rynächt (Abzw)",
+        "toName": "Erstfeld",
+        "kundig": false
+      },
+      {
+        "seg": "531.07",
+        "from": "ER",
+        "to": "GOE",
+        "fromName": "Erstfeld",
+        "toName": "Göschenen",
+        "kundig": false
+      },
+      {
+        "seg": "531.07",
+        "from": "GOE",
+        "to": "ER",
+        "fromName": "Göschenen",
+        "toName": "Erstfeld",
+        "kundig": false
+      }
+    ],
+    "532": [
+      {
+        "seg": "532.01",
+        "from": "GTS",
+        "to": "IM",
+        "fromName": "Gütsch (Abzw)",
+        "toName": "Immensee",
+        "kundig": false
+      },
+      {
+        "seg": "532.01",
+        "from": "IM",
+        "to": "GTS",
+        "fromName": "Immensee",
+        "toName": "Gütsch (Abzw)",
+        "kundig": false
+      }
+    ],
+    "533": [
+      {
+        "seg": "533.01",
+        "from": "POZZ",
+        "to": "RYN",
+        "fromName": "Pozzo Negro (dira)",
+        "toName": "Rynächt (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "533.01",
+        "from": "RYN",
+        "to": "POZZ",
+        "fromName": "Rynächt (Abzw)",
+        "toName": "Pozzo Negro (dira)",
+        "kundig": false
+      },
+      {
+        "seg": "533.02",
+        "from": "GIDI",
+        "to": "POZZ",
+        "fromName": "Giustizia (dira)",
+        "toName": "Pozzo Negro (dira)",
+        "kundig": false
+      },
+      {
+        "seg": "533.02",
+        "from": "POZZ",
+        "to": "GIDI",
+        "fromName": "Pozzo Negro (dira)",
+        "toName": "Giustizia (dira)",
+        "kundig": false
+      },
+      {
+        "seg": "533.03",
+        "from": "GIDI",
+        "to": "POLN",
+        "fromName": "Giustizia (dira)",
+        "toName": "Pollegio Nord (dira)",
+        "kundig": false
+      },
+      {
+        "seg": "533.03",
+        "from": "POLN",
+        "to": "GIDI",
+        "fromName": "Pollegio Nord (dira)",
+        "toName": "Giustizia (dira)",
+        "kundig": false
+      },
+      {
+        "seg": "533.04",
+        "from": "GIDI",
+        "to": "SPAO",
+        "fromName": "Giustizia (dira)",
+        "toName": "Bellinzona S. Paolo",
+        "kundig": false
+      },
+      {
+        "seg": "533.04",
+        "from": "SPAO",
+        "to": "GIDI",
+        "fromName": "Bellinzona S. Paolo",
+        "toName": "Giustizia (dira)",
+        "kundig": false
+      },
+      {
+        "seg": "533.05",
+        "from": "BEL",
+        "to": "SPAO",
+        "fromName": "Bellinzona",
+        "toName": "Bellinzona S. Paolo",
+        "kundig": false
+      },
+      {
+        "seg": "533.05",
+        "from": "SPAO",
+        "to": "BEL",
+        "fromName": "Bellinzona S. Paolo",
+        "toName": "Bellinzona",
+        "kundig": false
+      }
+    ],
+    "541": [
+      {
+        "seg": "541.01",
+        "from": "AI",
+        "to": "GOE",
+        "fromName": "Airolo",
+        "toName": "Göschenen",
+        "kundig": false
+      },
+      {
+        "seg": "541.01",
+        "from": "GOE",
+        "to": "AI",
+        "fromName": "Göschenen",
+        "toName": "Airolo",
+        "kundig": false
+      },
+      {
+        "seg": "541.02",
+        "from": "AI",
+        "to": "BO",
+        "fromName": "Airolo",
+        "toName": "Bodio TI",
+        "kundig": false
+      },
+      {
+        "seg": "541.02",
+        "from": "BO",
+        "to": "AI",
+        "fromName": "Bodio TI",
+        "toName": "Airolo",
+        "kundig": false
+      },
+      {
+        "seg": "541.03",
+        "from": "BO",
+        "to": "POLN",
+        "fromName": "Bodio TI",
+        "toName": "Pollegio Nord (dira)",
+        "kundig": false
+      },
+      {
+        "seg": "541.03",
+        "from": "POLN",
+        "to": "BO",
+        "fromName": "Pollegio Nord (dira)",
+        "toName": "Bodio TI",
+        "kundig": false
+      }
+    ],
+    "542": [
+      {
+        "seg": "542.01",
+        "from": "BEL",
+        "to": "GIU",
+        "fromName": "Bellinzona",
+        "toName": "Giubiasco",
+        "kundig": false
+      },
+      {
+        "seg": "542.01",
+        "from": "GIU",
+        "to": "BEL",
+        "fromName": "Giubiasco",
+        "toName": "Bellinzona",
+        "kundig": false
+      },
+      {
+        "seg": "542.02",
+        "from": "GIU",
+        "to": "GIUO",
+        "fromName": "Giubiasco",
+        "toName": "Giubiasco Ovest",
+        "kundig": false
+      },
+      {
+        "seg": "542.02",
+        "from": "GIUO",
+        "to": "GIU",
+        "fromName": "Giubiasco Ovest",
+        "toName": "Giubiasco",
+        "kundig": false
+      },
+      {
+        "seg": "542.02",
+        "from": "GIU",
+        "to": "TAV",
+        "fromName": "Giubiasco",
+        "toName": "Taverne-Torricella",
+        "kundig": false
+      },
+      {
+        "seg": "542.02",
+        "from": "TAV",
+        "to": "GIU",
+        "fromName": "Taverne-Torricella",
+        "toName": "Giubiasco",
+        "kundig": false
+      },
+      {
+        "seg": "542.03",
+        "from": "CAMO",
+        "to": "GIUO/SAD",
+        "fromName": "Camorino (dira)",
+        "toName": "Giubiasco Ovest",
+        "kundig": false
+      },
+      {
+        "seg": "542.03",
+        "from": "GIUO/SAD",
+        "to": "CAMO",
+        "fromName": "Giubiasco Ovest",
+        "toName": "Camorino (dira)",
+        "kundig": false
+      },
+      {
+        "seg": "542.03",
+        "from": "MEN",
+        "to": "STAF",
+        "fromName": "Mendrisio",
+        "toName": "Stabio",
+        "kundig": false
+      },
+      {
+        "seg": "542.03",
+        "from": "STAF",
+        "to": "MEN",
+        "fromName": "Stabio",
+        "toName": "Mendrisio",
+        "kundig": false
+      },
+      {
+        "seg": "542.04",
+        "from": "CAMO",
+        "to": "VEZB",
+        "fromName": "Camorino (dira)",
+        "toName": "Vezia (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "542.04",
+        "from": "VEZB",
+        "to": "CAMO",
+        "fromName": "Vezia (bif)",
+        "toName": "Camorino (dira)",
+        "kundig": false
+      },
+      {
+        "seg": "542.05",
+        "from": "LG",
+        "to": "VEZB",
+        "fromName": "Lugano",
+        "toName": "Vezia (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "542.05",
+        "from": "VEZB",
+        "to": "LG",
+        "fromName": "Vezia (bif)",
+        "toName": "Lugano",
+        "kundig": false
+      },
+      {
+        "seg": "542.06",
+        "from": "LG",
+        "to": "MEN",
+        "fromName": "Lugano",
+        "toName": "Mendrisio",
+        "kundig": false
+      },
+      {
+        "seg": "542.06",
+        "from": "MEN",
+        "to": "LG",
+        "fromName": "Mendrisio",
+        "toName": "Lugano",
+        "kundig": false
+      },
+      {
+        "seg": "542.07",
+        "from": "BASM",
+        "to": "MEN",
+        "fromName": "Balerna per Smistamento (bif)",
+        "toName": "Mendrisio",
+        "kundig": false
+      },
+      {
+        "seg": "542.07",
+        "from": "MEN",
+        "to": "BASM",
+        "fromName": "Mendrisio",
+        "toName": "Balerna per Smistamento (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "542.08",
+        "from": "BASM",
+        "to": "CHI",
+        "fromName": "Balerna per Smistamento (bif)",
+        "toName": "Chiasso",
+        "kundig": false
+      },
+      {
+        "seg": "542.08",
+        "from": "CHI",
+        "to": "BASM",
+        "fromName": "Chiasso",
+        "toName": "Balerna per Smistamento (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "542.09",
+        "from": "BASM",
+        "to": "CHSU",
+        "fromName": "Balerna per Smistamento (bif)",
+        "toName": "Chiasso SM Fascio U",
+        "kundig": false
+      },
+      {
+        "seg": "542.21",
+        "from": "TAV",
+        "to": "VEZB",
+        "fromName": "Taverne-Torricella",
+        "toName": "Vezia (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "542.21",
+        "from": "VEZB",
+        "to": "TAV",
+        "fromName": "Vezia (bif)",
+        "toName": "Taverne-Torricella",
+        "kundig": false
+      },
+      {
+        "seg": "542.22",
+        "from": "TAV",
+        "to": "LGV",
+        "fromName": "Taverne-Torricella",
+        "toName": "Lugano Vedeggio",
+        "kundig": false
+      },
+      {
+        "seg": "542.31",
+        "from": "GAGO",
+        "to": "STAF",
+        "fromName": "ce4123dc-1e05-4234-9a64-72d019bd2173",
+        "toName": "Stabio",
+        "kundig": false
+      },
+      {
+        "seg": "542.31",
+        "from": "STAF",
+        "to": "GAGO",
+        "fromName": "Stabio",
+        "toName": "ce4123dc-1e05-4234-9a64-72d019bd2173",
+        "kundig": false
+      }
+    ],
+    "551": [
+      {
+        "seg": "551.01",
+        "from": "CDO",
+        "to": "LO",
+        "fromName": "Cadenazzo Ovest (bif)",
+        "toName": "Locarno",
+        "kundig": false
+      },
+      {
+        "seg": "551.01",
+        "from": "LO",
+        "to": "CDO",
+        "fromName": "Locarno",
+        "toName": "Cadenazzo Ovest (bif)",
+        "kundig": false
+      }
+    ],
+    "552": [
+      {
+        "seg": "552.01",
+        "from": "GIUO",
+        "to": "SAD",
+        "fromName": "Giubiasco Ovest",
+        "toName": "S. Antonino (dira)",
+        "kundig": false
+      },
+      {
+        "seg": "552.01",
+        "from": "SAD",
+        "to": "GIUO",
+        "fromName": "S. Antonino (dira)",
+        "toName": "Giubiasco Ovest",
+        "kundig": false
+      },
+      {
+        "seg": "552.02",
+        "from": "CDO",
+        "to": "SAD",
+        "fromName": "Cadenazzo Ovest (bif)",
+        "toName": "S. Antonino (dira)",
+        "kundig": false
+      },
+      {
+        "seg": "552.02",
+        "from": "SAD",
+        "to": "CDO",
+        "fromName": "S. Antonino (dira)",
+        "toName": "Cadenazzo Ovest (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "552.03",
+        "from": "CDO",
+        "to": "PINC",
+        "fromName": "Cadenazzo Ovest (bif)",
+        "toName": "Pino confine",
+        "kundig": false
+      },
+      {
+        "seg": "552.03",
+        "from": "PINC",
+        "to": "CDO",
+        "fromName": "Pino confine",
+        "toName": "Cadenazzo Ovest (bif)",
+        "kundig": false
+      },
+      {
+        "seg": "552.04",
+        "from": "PINC",
+        "to": "CMA",
+        "fromName": "Pino confine",
+        "toName": "Colmegna",
+        "kundig": false
+      }
+    ],
+    "601": [
+      {
+        "seg": "601.01",
+        "from": "KB",
+        "to": "STS",
+        "fromName": "Koblenz",
+        "toName": "Stein-Säckingen",
+        "kundig": false
+      },
+      {
+        "seg": "601.01",
+        "from": "STS",
+        "to": "KB",
+        "fromName": "Stein-Säckingen",
+        "toName": "Koblenz",
+        "kundig": false
+      },
+      {
+        "seg": "601.02",
+        "from": "KB",
+        "to": "TG",
+        "fromName": "Koblenz",
+        "toName": "Turgi",
+        "kundig": false
+      },
+      {
+        "seg": "601.02",
+        "from": "TG",
+        "to": "KB",
+        "fromName": "Turgi",
+        "toName": "Koblenz",
+        "kundig": false
+      }
+    ],
+    "602": [
+      {
+        "seg": "602.01",
+        "from": "KB",
+        "to": "REK",
+        "fromName": "Koblenz",
+        "toName": "Rekingen AG",
+        "kundig": false
+      },
+      {
+        "seg": "602.01",
+        "from": "REK",
+        "to": "RB",
+        "fromName": "Rekingen AG",
+        "toName": "Koblenz",
+        "kundig": false
+      },
+      {
+        "seg": "602.02",
+        "from": "KAAG",
+        "to": "REK",
+        "fromName": "Kaiserstuhl AG",
+        "toName": "Rekingen AG",
+        "kundig": false
+      },
+      {
+        "seg": "602.02",
+        "from": "REK",
+        "to": "KAAG",
+        "fromName": "Rekingen AG",
+        "toName": "Kaiserstuhl AG",
+        "kundig": false
+      },
+      {
+        "seg": "602.03",
+        "from": "KAAG",
+        "to": "ZWD",
+        "fromName": "Kaiserstuhl AG",
+        "toName": "Zweidlen",
+        "kundig": false
+      },
+      {
+        "seg": "602.03",
+        "from": "ZWD",
+        "to": "KAAG",
+        "fromName": "Zweidlen",
+        "toName": "Kaiserstuhl AG",
+        "kundig": false
+      },
+      {
+        "seg": "602.04",
+        "from": "EGL",
+        "to": "ZWD",
+        "fromName": "Eglisau",
+        "toName": "Zweidlen",
+        "kundig": false
+      },
+      {
+        "seg": "602.04",
+        "from": "ZWD",
+        "to": "EGL",
+        "fromName": "Zweidlen",
+        "toName": "Eglisau",
+        "kundig": false
+      },
+      {
+        "seg": "602.05",
+        "from": "BUE",
+        "to": "WWE",
+        "fromName": "Bülach",
+        "toName": "Winterthur West (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "602.05",
+        "from": "WWE",
+        "to": "BUE",
+        "fromName": "Winterthur West (Abzw)",
+        "toName": "Bülach",
+        "kundig": false
+      }
+    ],
+    "611": [
+      {
+        "seg": "611.01",
+        "from": "SH",
+        "to": "SHNO",
+        "fromName": "Schaffhausen",
+        "toName": "Schaffhausen Nord",
+        "kundig": false
+      },
+      {
+        "seg": "611.01",
+        "from": "SHNO",
+        "to": "SH",
+        "fromName": "Schaffhausen Nord",
+        "toName": "Schaffhausen",
+        "kundig": false
+      },
+      {
+        "seg": "611.02",
+        "from": "NE",
+        "to": "SH",
+        "fromName": "Neuhausen",
+        "toName": "Schaffhausen",
+        "kundig": false
+      },
+      {
+        "seg": "611.02",
+        "from": "SH",
+        "to": "NE",
+        "fromName": "Schaffhausen",
+        "toName": "Neuhausen",
+        "kundig": false
+      },
+      {
+        "seg": "611.03",
+        "from": "EGL",
+        "to": "NE",
+        "fromName": "Eglisau",
+        "toName": "Neuhausen",
+        "kundig": false
+      },
+      {
+        "seg": "611.03",
+        "from": "NE",
+        "to": "EGL",
+        "fromName": "Neuhausen",
+        "toName": "Eglisau",
+        "kundig": false
+      },
+      {
+        "seg": "611.04",
+        "from": "BUE",
+        "to": "EGL",
+        "fromName": "Bülach",
+        "toName": "Eglisau",
+        "kundig": false
+      },
+      {
+        "seg": "611.04",
+        "from": "EGL",
+        "to": "BUE",
+        "fromName": "Eglisau",
+        "toName": "Bülach",
+        "kundig": false
+      },
+      {
+        "seg": "611.05",
+        "from": "BUE",
+        "to": "OGL",
+        "fromName": "Bülach",
+        "toName": "Oberglatt ZH",
+        "kundig": false
+      },
+      {
+        "seg": "611.05",
+        "from": "OGL",
+        "to": "BUE",
+        "fromName": "Oberglatt ZH",
+        "toName": "Bülach",
+        "kundig": false
+      },
+      {
+        "seg": "611.06",
+        "from": "GLB",
+        "to": "OGL",
+        "fromName": "Glattbrugg",
+        "toName": "Oberglatt ZH",
+        "kundig": false
+      },
+      {
+        "seg": "611.06",
+        "from": "OGL",
+        "to": "GLB",
+        "fromName": "Oberglatt ZH",
+        "toName": "Glattbrugg",
+        "kundig": false
+      },
+      {
+        "seg": "611.07",
+        "from": "GLB",
+        "to": "ZOEN",
+        "fromName": "Glattbrugg",
+        "toName": "Zürich Oerlikon Nord (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "611.07",
+        "from": "ZOEN",
+        "to": "GLB",
+        "fromName": "Zürich Oerlikon Nord (Abzw)",
+        "toName": "Glattbrugg",
+        "kundig": false
+      },
+      {
+        "seg": "611.08",
+        "from": "ZOEN",
+        "to": "ZOER",
+        "fromName": "Zürich Oerlikon Nord (Abzw)",
+        "toName": "Zürich Oerlikon",
+        "kundig": false
+      },
+      {
+        "seg": "611.08",
+        "from": "ZOER",
+        "to": "ZOEN",
+        "fromName": "Zürich Oerlikon",
+        "toName": "Zürich Oerlikon Nord (Abzw)",
+        "kundig": false
+      }
+    ],
+    "612": [
+      {
+        "seg": "612.01",
+        "from": "NW",
+        "to": "OGL",
+        "fromName": "Niederweningen",
+        "toName": "Oberglatt ZH",
+        "kundig": false
+      },
+      {
+        "seg": "612.01",
+        "from": "OGL",
+        "to": "NW",
+        "fromName": "Oberglatt ZH",
+        "toName": "Niederweningen",
+        "kundig": false
+      }
+    ],
+    "631": [
+      {
+        "seg": "631.01",
+        "from": "ZAU",
+        "to": "ZLST",
+        "fromName": "Zürich Aussersihl (Abzw)",
+        "toName": "Zürich Langstrasse",
+        "kundig": false
+      },
+      {
+        "seg": "631.01",
+        "from": "ZLST",
+        "to": "ZAU",
+        "fromName": "Zürich Langstrasse",
+        "toName": "Zürich Aussersihl (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "631.02",
+        "from": "ZAU",
+        "to": "ZVB",
+        "fromName": "Zürich Aussersihl (Abzw)",
+        "toName": "Zürich Vorbahnhof",
+        "kundig": false
+      },
+      {
+        "seg": "631.02",
+        "from": "ZVB",
+        "to": "ZAU",
+        "fromName": "Zürich Vorbahnhof",
+        "toName": "Zürich Aussersihl (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "631.03",
+        "from": "TWNO",
+        "to": "ZAU",
+        "fromName": "Thalwil Nord (Abzw)",
+        "toName": "Zürich Aussersihl (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "631.03",
+        "from": "ZAU",
+        "to": "TWNO",
+        "fromName": "Zürich Aussersihl (Abzw)",
+        "toName": "Thalwil Nord (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "631.04",
+        "from": "ZAU",
+        "to": "ZWIE",
+        "fromName": "Zürich Aussersihl (Abzw)",
+        "toName": "Zürich Wiedikon",
+        "kundig": false
+      },
+      {
+        "seg": "631.04",
+        "from": "ZWIE",
+        "to": "ZAU",
+        "fromName": "Zürich Wiedikon",
+        "toName": "Zürich Aussersihl (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "631.05",
+        "from": "TWNO",
+        "to": "ZWIE",
+        "fromName": "Thalwil Nord (Abzw)",
+        "toName": "Zürich Wiedikon",
+        "kundig": false
+      },
+      {
+        "seg": "631.05",
+        "from": "ZWIE",
+        "to": "TWNO",
+        "fromName": "Zürich Wiedikon",
+        "toName": "Thalwil Nord (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "631.06",
+        "from": "TW",
+        "to": "TWNO",
+        "fromName": "Thalwil",
+        "toName": "Thalwil Nord (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "631.06",
+        "from": "TWNO",
+        "to": "TW",
+        "fromName": "Thalwil Nord (Abzw)",
+        "toName": "Thalwil",
+        "kundig": false
+      },
+      {
+        "seg": "631.07",
+        "from": "TW",
+        "to": "WAE",
+        "fromName": "Thalwil",
+        "toName": "Wädenswil",
+        "kundig": false
+      },
+      {
+        "seg": "631.08",
+        "from": "PF",
+        "to": "WAE",
+        "fromName": "Pfäffikon SZ",
+        "toName": "Wädenswil",
+        "kundig": false
+      },
+      {
+        "seg": "631.08",
+        "from": "WAE",
+        "to": "PF",
+        "fromName": "Wädenswil",
+        "toName": "Pfäffikon SZ",
+        "kundig": false
+      }
+    ],
+    "632": [
+      {
+        "seg": "632.01",
+        "from": "AF",
+        "to": "KOLM",
+        "fromName": "Affoltern am Albis",
+        "toName": "Kollermühle (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "632.01",
+        "from": "KOLM",
+        "to": "AF",
+        "fromName": "Kollermühle (Abzw)",
+        "toName": "Affoltern am Albis",
+        "kundig": false
+      },
+      {
+        "seg": "632.02",
+        "from": "AF",
+        "to": "ZAS",
+        "fromName": "Affoltern am Albis",
+        "toName": "Zürich Altstetten",
+        "kundig": false
+      },
+      {
+        "seg": "632.02",
+        "from": "ZAS",
+        "to": "AF",
+        "fromName": "Zürich Altstetten",
+        "toName": "Affoltern am Albis",
+        "kundig": false
+      }
+    ],
+    "641": [
+      {
+        "seg": "641.01",
+        "from": "PF",
+        "to": "ZB",
+        "fromName": "Pfäffikon SZ",
+        "toName": "Ziegelbrücke",
+        "kundig": false
+      },
+      {
+        "seg": "641.01",
+        "from": "ZB",
+        "to": "PF",
+        "fromName": "Ziegelbrücke",
+        "toName": "Pfäffikon SZ",
+        "kundig": false
+      },
+      {
+        "seg": "641.02",
+        "from": "SA",
+        "to": "ZB",
+        "fromName": "Sargans",
+        "toName": "Ziegelbrücke",
+        "kundig": false
+      },
+      {
+        "seg": "641.02",
+        "from": "ZB",
+        "to": "SA",
+        "fromName": "Ziegelbrücke",
+        "toName": "Sargans",
+        "kundig": false
+      }
+    ],
+    "642": [
+      {
+        "seg": "642.01",
+        "from": "TRUE",
+        "to": "BU",
+        "fromName": "Trübbach Süd",
+        "toName": "Buchs SG",
+        "kundig": false
+      },
+      {
+        "seg": "642.02",
+        "from": "SA",
+        "to": "TRUE",
+        "fromName": "Sargans",
+        "toName": "Trübbach Süd",
+        "kundig": false
+      },
+      {
+        "seg": "642.02",
+        "from": "TRUE",
+        "to": "SA",
+        "fromName": "Trübbach Süd",
+        "toName": "Sargans",
+        "kundig": false
+      },
+      {
+        "seg": "642.03",
+        "from": "SA",
+        "to": "SASL",
+        "fromName": "Sargans",
+        "toName": "Trübbach Süd",
+        "kundig": false
+      },
+      {
+        "seg": "642.03",
+        "from": "TRUE",
+        "to": "SASL",
+        "fromName": "Trübbach Süd",
+        "toName": "Sargans",
+        "kundig": false
+      },
+      {
+        "seg": "642.04",
+        "from": "LQ",
+        "to": "SA",
+        "fromName": "Landquart",
+        "toName": "Sargans",
+        "kundig": false
+      },
+      {
+        "seg": "642.04",
+        "from": "SA",
+        "to": "LQ",
+        "fromName": "Sargans",
+        "toName": "Landquart",
+        "kundig": false
+      },
+      {
+        "seg": "642.05",
+        "from": "LQ",
+        "to": "ZIZS",
+        "fromName": "Landquart",
+        "toName": "Zizers",
+        "kundig": false
+      },
+      {
+        "seg": "642.05",
+        "from": "ZIZS",
+        "to": "LQ",
+        "fromName": "Zizers",
+        "toName": "Landquart",
+        "kundig": false
+      },
+      {
+        "seg": "642.06",
+        "from": "CH",
+        "to": "ZIZS",
+        "fromName": "Chur",
+        "toName": "Zizers",
+        "kundig": false
+      },
+      {
+        "seg": "642.06",
+        "from": "ZIZS",
+        "to": "CH",
+        "fromName": "Zizers",
+        "toName": "Chur",
+        "kundig": false
+      },
+      {
+        "seg": "642.07",
+        "from": "CH",
+        "to": "CHGB",
+        "fromName": "Chur",
+        "toName": "Chur GB",
+        "kundig": false
+      },
+      {
+        "seg": "642.07",
+        "from": "CHGB",
+        "to": "CH",
+        "fromName": "Chur GB",
+        "toName": "Chur",
+        "kundig": false
+      }
+    ],
+    "651": [
+      {
+        "seg": "651.01",
+        "from": "ZSTH",
+        "to": "ZUE",
+        "fromName": "Zürich Stadelhofen",
+        "toName": "Zürich HB",
+        "kundig": false
+      },
+      {
+        "seg": "651.01",
+        "from": "ZUE",
+        "to": "ZSTH",
+        "fromName": "Zürich HB",
+        "toName": "Zürich Stadelhofen",
+        "kundig": false
+      },
+      {
+        "seg": "651.02",
+        "from": "RW",
+        "to": "ZSTH",
+        "fromName": "Rapperswil SG",
+        "toName": "Zürich Stadelhofen",
+        "kundig": false
+      },
+      {
+        "seg": "651.02",
+        "from": "ZSTH",
+        "to": "RW",
+        "fromName": "Zürich Stadelhofen",
+        "toName": "Rapperswil SG",
+        "kundig": false
+      }
+    ],
+    "652": [
+      {
+        "seg": "652.01",
+        "from": "CHRI",
+        "to": "WS",
+        "fromName": "Chriesbach (Abzw)",
+        "toName": "Wallisellen",
+        "kundig": false
+      },
+      {
+        "seg": "652.01",
+        "from": "WS",
+        "to": "CHRI",
+        "fromName": "Wallisellen",
+        "toName": "Chriesbach (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "652.02",
+        "from": "CHRI",
+        "to": "NGUT",
+        "fromName": "Chriesbach (Abzw)",
+        "toName": "Neugut (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "652.02",
+        "from": "NGUT",
+        "to": "CHRI",
+        "fromName": "Neugut (Abzw)",
+        "toName": "Chriesbach (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "652.03",
+        "from": "CHRI",
+        "to": "WZ",
+        "fromName": "Chriesbach (Abzw)",
+        "toName": "Wetzikon ZH",
+        "kundig": false
+      },
+      {
+        "seg": "652.03",
+        "from": "WZ",
+        "to": "CHRI",
+        "fromName": "Wetzikon ZH",
+        "toName": "Chriesbach (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "652.04",
+        "from": "RUE",
+        "to": "WZ",
+        "fromName": "Rüti ZH",
+        "toName": "Wetzikon ZH",
+        "kundig": false
+      },
+      {
+        "seg": "652.04",
+        "from": "WZ",
+        "to": "RUE",
+        "fromName": "Wetzikon ZH",
+        "toName": "Rüti ZH",
+        "kundig": false
+      },
+      {
+        "seg": "652.05",
+        "from": "RUE",
+        "to": "RW",
+        "fromName": "Rüti ZH",
+        "toName": "Rapperswil SG",
+        "kundig": false
+      },
+      {
+        "seg": "652.05",
+        "from": "RW",
+        "to": "RUE",
+        "fromName": "Rapperswil SG",
+        "toName": "Rüti ZH",
+        "kundig": false
+      }
+    ],
+    "661": [
+      {
+        "seg": "661.01",
+        "from": "STET",
+        "to": "ZSTH",
+        "fromName": "Neugut (Abzw)",
+        "toName": "Zürich Stadelhofen",
+        "kundig": false
+      },
+      {
+        "seg": "661.01",
+        "from": "ZSTH",
+        "to": "STET",
+        "fromName": "Zürich Stadelhofen",
+        "toName": "Neugut (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "661.02",
+        "from": "DTL",
+        "to": "NGUT",
+        "fromName": "Dietlikon",
+        "toName": "Neugut (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "661.02",
+        "from": "NGUT",
+        "to": "DTL",
+        "fromName": "Neugut (Abzw)",
+        "toName": "Dietlikon",
+        "kundig": false
+      },
+      {
+        "seg": "661.04",
+        "from": "EF",
+        "to": "WZ",
+        "fromName": "Effretikon",
+        "toName": "Wetzikon ZH",
+        "kundig": false
+      },
+      {
+        "seg": "661.04",
+        "from": "WZ",
+        "to": "EF",
+        "fromName": "Wetzikon ZH",
+        "toName": "Effretikon",
+        "kundig": false
+      },
+      {
+        "seg": "661.05",
+        "from": "HI",
+        "to": "WZ",
+        "fromName": "Hinwil",
+        "toName": "Wetzikon ZH",
+        "kundig": false
+      },
+      {
+        "seg": "661.05",
+        "from": "WZ",
+        "to": "HI",
+        "fromName": "Wetzikon ZH",
+        "toName": "Hinwil",
+        "kundig": false
+      }
+    ],
+    "701": [
+      {
+        "seg": "701.01",
+        "from": "ZAS",
+        "to": "HRD",
+        "fromName": "Zürich Altstetten",
+        "toName": "Hard Käferberg (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "701.01",
+        "from": "ZLST",
+        "to": "ZHDB",
+        "fromName": "Zürich Langstrasse",
+        "toName": "Zürich Hardbrücke",
+        "kundig": false
+      },
+      {
+        "seg": "701.02",
+        "from": "HRD",
+        "to": "ZBST",
+        "fromName": "Hard Käferberg (Abzw)",
+        "toName": "Zürich Birchsteg (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "701.02",
+        "from": "ZBST",
+        "to": "HRD",
+        "fromName": "Zürich Birchsteg (Abzw)",
+        "toName": "Hard Käferberg (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "701.02",
+        "from": "ZBST",
+        "to": "ZLST",
+        "fromName": "Zürich Birchsteg (Abzw)",
+        "toName": "Zürich Langstrasse",
+        "kundig": false
+      },
+      {
+        "seg": "701.02",
+        "from": "ZLST",
+        "to": "ZBST",
+        "fromName": "Zürich Langstrasse",
+        "toName": "Zürich Birchsteg (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "701.03",
+        "from": "ZBST",
+        "to": "ZOER",
+        "fromName": "Zürich Birchsteg (Abzw)",
+        "toName": "Zürich Oerlikon",
+        "kundig": false
+      },
+      {
+        "seg": "701.03",
+        "from": "ZOER",
+        "to": "ZBST",
+        "fromName": "Zürich Oerlikon",
+        "toName": "Zürich Birchsteg (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "701.03",
+        "from": "ZBST",
+        "to": "ZUE",
+        "fromName": "Zürich Birchsteg (Abzw)",
+        "toName": "Zürich HB",
+        "kundig": false
+      },
+      {
+        "seg": "701.03",
+        "from": "ZUE",
+        "to": "ZBST",
+        "fromName": "Zürich HB",
+        "toName": "Zürich Birchsteg (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "701.11",
+        "from": "HRD",
+        "to": "ZHBD",
+        "fromName": "Hard Käferberg (Abzw)",
+        "toName": "Zürich Hardbrücke",
+        "kundig": false
+      },
+      {
+        "seg": "701.11",
+        "from": "ZHDB",
+        "to": "HRD",
+        "fromName": "Zürich Hardbrücke",
+        "toName": "Hard Käferberg (Abzw)",
+        "kundig": false
+      }
+    ],
+    "702": [
+      {
+        "seg": "702.01",
+        "from": "WS",
+        "to": "ZOER",
+        "fromName": "Wallisellen",
+        "toName": "Zürich Oerlikon",
+        "kundig": false
+      },
+      {
+        "seg": "702.01",
+        "from": "ZOER",
+        "to": "WS",
+        "fromName": "Zürich Oerlikon",
+        "toName": "Wallisellen",
+        "kundig": false
+      },
+      {
+        "seg": "702.01",
+        "from": "OPS",
+        "to": "ZOEN",
+        "fromName": "Opfikon Süd",
+        "toName": "Zürich Oerlikon Nord (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "702.01",
+        "from": "ZOEN",
+        "to": "OPS",
+        "fromName": "Zürich Oerlikon Nord (Abzw)",
+        "toName": "Opfikon Süd",
+        "kundig": false
+      },
+      {
+        "seg": "702.02",
+        "from": "DTL",
+        "to": "WS",
+        "fromName": "Dietlikon",
+        "toName": "Wallisellen",
+        "kundig": false
+      },
+      {
+        "seg": "702.02",
+        "from": "WS",
+        "to": "DTL",
+        "fromName": "Wallisellen",
+        "toName": "Dietlikon",
+        "kundig": false
+      },
+      {
+        "seg": "702.02",
+        "from": "DORF",
+        "to": "OP",
+        "fromName": "Dorfnest (Abzw)",
+        "toName": "Opfikon",
+        "kundig": false
+      },
+      {
+        "seg": "702.02",
+        "from": "OP",
+        "to": "DORF",
+        "fromName": "Opfikon",
+        "toName": "Dorfnest (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "702.03",
+        "from": "DTL",
+        "to": "HUER",
+        "fromName": "Dietlikon",
+        "toName": "Hürlistein (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "702.03",
+        "from": "HUER",
+        "to": "DTL",
+        "fromName": "Hürlistein (Abzw)",
+        "toName": "Dietlikon",
+        "kundig": false
+      },
+      {
+        "seg": "702.04",
+        "from": "EF",
+        "to": "HUER",
+        "fromName": "Effretikon",
+        "toName": "Hürlistein (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "702.04",
+        "from": "HUER",
+        "to": "EF",
+        "fromName": "Hürlistein (Abzw)",
+        "toName": "Effretikon",
+        "kundig": false
+      },
+      {
+        "seg": "702.05",
+        "from": "EF",
+        "to": "WWE",
+        "fromName": "Effretikon",
+        "toName": "Winterthur West (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "702.05",
+        "from": "WWE",
+        "to": "EF",
+        "fromName": "Winterthur West (Abzw)",
+        "toName": "Effretikon",
+        "kundig": false
+      },
+      {
+        "seg": "702.06",
+        "from": "W",
+        "to": "WWE",
+        "fromName": "Winterthur",
+        "toName": "Winterthur West (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "702.06",
+        "from": "WWE",
+        "to": "W",
+        "fromName": "Winterthur West (Abzw)",
+        "toName": "Winterthur",
+        "kundig": false
+      },
+      {
+        "seg": "702.11",
+        "from": "OP",
+        "to": "OPS",
+        "fromName": "Opfikon",
+        "toName": "Opfikon Süd",
+        "kundig": false
+      },
+      {
+        "seg": "702.11",
+        "from": "OPS",
+        "to": "OP",
+        "fromName": "Opfikon Süd",
+        "toName": "Opfikon",
+        "kundig": false
+      },
+      {
+        "seg": "702.12",
+        "from": "DORF",
+        "to": "OP",
+        "fromName": "Dorfnest (Abzw)",
+        "toName": "Opfikon",
+        "kundig": false
+      },
+      {
+        "seg": "702.12",
+        "from": "OP",
+        "to": "DORF",
+        "fromName": "Opfikon",
+        "toName": "Dorfnest (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "702.13",
+        "from": "DORF",
+        "to": "HUER",
+        "fromName": "Dorfnest (Abzw)",
+        "toName": "Hürlistein (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "702.13",
+        "from": "HUER",
+        "to": "DORF",
+        "fromName": "Hürlistein (Abzw)",
+        "toName": "Dorfnest (Abzw)",
+        "kundig": false
+      }
+    ],
+    "711": [
+      {
+        "seg": "711.01",
+        "from": "SCAL",
+        "to": "W",
+        "fromName": "Schwalmenacker (Spw)",
+        "toName": "Winterthur",
+        "kundig": false
+      },
+      {
+        "seg": "711.01",
+        "from": "W",
+        "to": "SCAL",
+        "fromName": "Winterthur",
+        "toName": "Schwalmenacker (Spw)",
+        "kundig": false
+      },
+      {
+        "seg": "711.02",
+        "from": "SCAL",
+        "to": "WGR",
+        "fromName": "Schwalmenacker (Spw)",
+        "toName": "Winterthur Grüze",
+        "kundig": false
+      },
+      {
+        "seg": "711.02",
+        "from": "WGR",
+        "to": "SCAL",
+        "fromName": "Winterthur Grüze",
+        "toName": "Schwalmenacker (Spw)",
+        "kundig": false
+      },
+      {
+        "seg": "711.03",
+        "from": "WGR",
+        "to": "WIL",
+        "fromName": "Winterthur Grüze",
+        "toName": "Wil SG",
+        "kundig": false
+      },
+      {
+        "seg": "711.03",
+        "from": "WIL",
+        "to": "WGR",
+        "fromName": "Wil SG",
+        "toName": "Winterthur Grüze",
+        "kundig": false
+      },
+      {
+        "seg": "711.04",
+        "from": "WIL",
+        "to": "WILM",
+        "fromName": "Wil SG",
+        "toName": "Wil Matt (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "711.04",
+        "from": "WILM",
+        "to": "WIL",
+        "fromName": "Wil Matt (Abzw)",
+        "toName": "Wil SG",
+        "kundig": false
+      },
+      {
+        "seg": "711.05",
+        "from": "GSS",
+        "to": "WILM",
+        "fromName": "Gossau SG",
+        "toName": "Wil Matt (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "711.05",
+        "from": "WILM",
+        "to": "GSS",
+        "fromName": "Wil Matt (Abzw)",
+        "toName": "Gossau SG",
+        "kundig": false
+      },
+      {
+        "seg": "711.06",
+        "from": "GSS",
+        "to": "SGW",
+        "fromName": "Gossau SG",
+        "toName": "St. Gallen West (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "711.06",
+        "from": "SGW",
+        "to": "GSS",
+        "fromName": "St. Gallen West (Abzw)",
+        "toName": "Gossau SG",
+        "kundig": false
+      },
+      {
+        "seg": "711.07",
+        "from": "SG",
+        "to": "SGW",
+        "fromName": "St. Gallen",
+        "toName": "St. Gallen West (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "711.07",
+        "from": "SGW",
+        "to": "SG",
+        "fromName": "St. Gallen West (Abzw)",
+        "toName": "St. Gallen",
+        "kundig": false
+      }
+    ],
+    "721": [
+      {
+        "seg": "721.01",
+        "from": "SG",
+        "to": "SGFN",
+        "fromName": "St. Gallen",
+        "toName": "St. Gallen St. Fiden Nord",
+        "kundig": false
+      },
+      {
+        "seg": "721.01",
+        "from": "SGFN",
+        "to": "SG",
+        "fromName": "St. Gallen St. Fiden Nord",
+        "toName": "St. Gallen",
+        "kundig": false
+      },
+      {
+        "seg": "721.02",
+        "from": "RH",
+        "to": "SGFN",
+        "fromName": "Rorschach",
+        "toName": "St. Gallen St. Fiden Nord",
+        "kundig": false
+      },
+      {
+        "seg": "721.02",
+        "from": "SGFN",
+        "to": "RH",
+        "fromName": "St. Gallen St. Fiden Nord",
+        "toName": "Rorschach",
+        "kundig": false
+      },
+      {
+        "seg": "721.03",
+        "from": "RH",
+        "to": "SMG",
+        "fromName": "Rorschach",
+        "toName": "St. Margrethen SG",
+        "kundig": false
+      },
+      {
+        "seg": "721.03",
+        "from": "SMG",
+        "to": "RH",
+        "fromName": "St. Margrethen SG",
+        "toName": "Rorschach",
+        "kundig": false
+      },
+      {
+        "seg": "721.04",
+        "from": "SAS",
+        "to": "SMG",
+        "fromName": "Salez-Sennwald",
+        "toName": "St. Margrethen SG",
+        "kundig": false
+      },
+      {
+        "seg": "721.04",
+        "from": "SMG",
+        "to": "SAS",
+        "fromName": "St. Margrethen SG",
+        "toName": "Salez-Sennwald",
+        "kundig": false
+      },
+      {
+        "seg": "721.05",
+        "from": "BU",
+        "to": "SAS",
+        "fromName": "Buchs SG",
+        "toName": "Salez-Sennwald",
+        "kundig": false
+      },
+      {
+        "seg": "721.05",
+        "from": "SAS",
+        "to": "BU",
+        "fromName": "Salez-Sennwald",
+        "toName": "Buchs SG",
+        "kundig": false
+      }
+    ],
+    "731": [
+      {
+        "seg": "731.01",
+        "from": "NH",
+        "to": "W",
+        "fromName": "Neuhausen",
+        "toName": "Winterthur",
+        "kundig": false
+      },
+      {
+        "seg": "731.01",
+        "from": "W",
+        "to": "NH",
+        "fromName": "Winterthur",
+        "toName": "Neuhausen",
+        "kundig": false
+      }
+    ],
+    "732": [
+      {
+        "seg": "732.01",
+        "from": "EW",
+        "to": "OWT",
+        "fromName": "Etzwilen",
+        "toName": "Oberwinterthur",
+        "kundig": false
+      },
+      {
+        "seg": "732.01",
+        "from": "OWT",
+        "to": "EW",
+        "fromName": "Oberwinterthur",
+        "toName": "Etzwilen",
+        "kundig": false
+      }
+    ],
+    "741": [
+      {
+        "seg": "741.01",
+        "from": "OWT",
+        "to": "SCAL",
+        "fromName": "Oberwinterthur",
+        "toName": "Schwalmenacker (Spw)",
+        "kundig": false
+      },
+      {
+        "seg": "741.01",
+        "from": "SCAL",
+        "to": "OWT",
+        "fromName": "Schwalmenacker (Spw)",
+        "toName": "Oberwinterthur",
+        "kundig": false
+      },
+      {
+        "seg": "741.01",
+        "from": "OWTO",
+        "to": "OWTP",
+        "fromName": "Oberwinterthur Ost",
+        "toName": "Oberwinterthur SA Pünten",
+        "kundig": false
+      },
+      {
+        "seg": "741.02",
+        "from": "OWT",
+        "to": "OWTO",
+        "fromName": "Oberwinterthur",
+        "toName": "Oberwinterthur Ost",
+        "kundig": false
+      },
+      {
+        "seg": "741.02",
+        "from": "OWTO",
+        "to": "OWT",
+        "fromName": "Oberwinterthur Ost",
+        "toName": "Oberwinterthur",
+        "kundig": false
+      },
+      {
+        "seg": "741.02",
+        "from": "FF",
+        "to": "FFPP",
+        "fromName": "Frauenfeld",
+        "toName": "Frauenfeld Paketpost",
+        "kundig": false
+      },
+      {
+        "seg": "741.03",
+        "from": "FF",
+        "to": "OWTO",
+        "fromName": "Frauenfeld",
+        "toName": "Oberwinterthur Ost",
+        "kundig": false
+      },
+      {
+        "seg": "741.03",
+        "from": "OWTO",
+        "to": "FF",
+        "fromName": "Oberwinterthur Ost",
+        "toName": "Frauenfeld",
+        "kundig": false
+      },
+      {
+        "seg": "741.04",
+        "from": "FF",
+        "to": "WF",
+        "fromName": "Frauenfeld",
+        "toName": "Weinfelden",
+        "kundig": false
+      },
+      {
+        "seg": "741.04",
+        "from": "WF",
+        "to": "FF",
+        "fromName": "Weinfelden",
+        "toName": "Frauenfeld",
+        "kundig": false
+      },
+      {
+        "seg": "741.05",
+        "from": "SLG",
+        "to": "WF",
+        "fromName": "Sulgen",
+        "toName": "Weinfelden",
+        "kundig": false
+      },
+      {
+        "seg": "741.05",
+        "from": "WF",
+        "to": "SLG",
+        "fromName": "Weinfelden",
+        "toName": "Sulgen",
+        "kundig": false
+      },
+      {
+        "seg": "741.06",
+        "from": "RHW",
+        "to": "SLG",
+        "fromName": "Romanshorn West (Abzw)",
+        "toName": "Sulgen",
+        "kundig": false
+      },
+      {
+        "seg": "741.06",
+        "from": "SLG",
+        "to": "RHW",
+        "fromName": "Sulgen",
+        "toName": "Romanshorn West (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "741.07",
+        "from": "RH",
+        "to": "RHW",
+        "fromName": "Romanshorn",
+        "toName": "Romanshorn West (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "741.07",
+        "from": "RHW",
+        "to": "RH",
+        "fromName": "Romanshorn West (Abzw)",
+        "toName": "Romanshorn",
+        "kundig": false
+      },
+      {
+        "seg": "741.08",
+        "from": "RHS",
+        "to": "RHW",
+        "fromName": "Romanshorn Süd (Abzw)",
+        "toName": "Romanshorn West (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "741.08",
+        "from": "RHW",
+        "to": "RHS",
+        "fromName": "Romanshorn West (Abzw)",
+        "toName": "Romanshorn Süd (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "741.11",
+        "from": "OWTO",
+        "to": "OWTU",
+        "fromName": "Oberwinterthur Ost",
+        "toName": "Oberwinterthur Unterhaltanlage",
+        "kundig": false
+      }
+    ],
+    "742": [
+      {
+        "seg": "742.01",
+        "from": "SLG",
+        "to": "BZN",
+        "fromName": "Sulgen",
+        "toName": "Bischofszell Nord",
+        "kundig": false
+      },
+      {
+        "seg": "742.02",
+        "from": "BZN",
+        "to": "GSS",
+        "fromName": "Bischofszell Nord",
+        "toName": "Gossau SG",
+        "kundig": false
+      },
+      {
+        "seg": "742.02",
+        "from": "BZN",
+        "to": "SLG",
+        "fromName": "Bischofszell Nord",
+        "toName": "Sulgen",
+        "kundig": false
+      },
+      {
+        "seg": "742.02",
+        "from": "GSS",
+        "to": "BZN",
+        "fromName": "Gossau SG",
+        "toName": "Bischofszell Nord",
+        "kundig": false
+      }
+    ],
+    "751": [
+      {
+        "seg": "751.01",
+        "from": "UZ",
+        "to": "ZB",
+        "fromName": "Uznach",
+        "toName": "Ziegelbrücke",
+        "kundig": false
+      },
+      {
+        "seg": "751.01",
+        "from": "ZB",
+        "to": "UZ",
+        "fromName": "Ziegelbrücke",
+        "toName": "Uznach",
+        "kundig": false
+      },
+      {
+        "seg": "751.02",
+        "from": "LIN",
+        "to": "ZB",
+        "fromName": "Linthal",
+        "toName": "Ziegelbrücke",
+        "kundig": false
+      },
+      {
+        "seg": "751.02",
+        "from": "ZB",
+        "to": "LIN",
+        "fromName": "Ziegelbrücke",
+        "toName": "Linthal",
+        "kundig": false
+      }
+    ],
+    "752": [
+      {
+        "seg": "752.01",
+        "from": "PF",
+        "to": "RW",
+        "fromName": "Pfäffikon SZ",
+        "toName": "Rapperswil SG",
+        "kundig": false
+      },
+      {
+        "seg": "752.01",
+        "from": "RW",
+        "to": "PF",
+        "fromName": "Rapperswil SG",
+        "toName": "Pfäffikon SZ",
+        "kundig": false
+      },
+      {
+        "seg": "752.02",
+        "from": "RW",
+        "to": "UZ",
+        "fromName": "Rapperswil SG",
+        "toName": "Uznach",
+        "kundig": false
+      },
+      {
+        "seg": "752.02",
+        "from": "UZ",
+        "to": "RW",
+        "fromName": "Uznach",
+        "toName": "Rapperswil SG",
+        "kundig": false
+      },
+      {
+        "seg": "752.03",
+        "from": "UZ",
+        "to": "WA",
+        "fromName": "Uznach",
+        "toName": "Wattwil",
+        "kundig": false
+      },
+      {
+        "seg": "752.03",
+        "from": "WA",
+        "to": "UZ",
+        "fromName": "Wattwil",
+        "toName": "Uznach",
+        "kundig": false
+      }
+    ],
+    "753": [
+      {
+        "seg": "753.01",
+        "from": "NL",
+        "to": "WA",
+        "fromName": "Nesslau-Neu St. Joh. Gleisende",
+        "toName": "Wattwil",
+        "kundig": false
+      },
+      {
+        "seg": "753.01",
+        "from": "WA",
+        "to": "NL",
+        "fromName": "Wattwil",
+        "toName": "Nesslau-Neu St. Joh. Gleisende",
+        "kundig": false
+      },
+      {
+        "seg": "753.02",
+        "from": "LSG",
+        "to": "WA",
+        "fromName": "Lichtensteig",
+        "toName": "Wattwil",
+        "kundig": false
+      },
+      {
+        "seg": "753.02",
+        "from": "WA",
+        "to": "LSG",
+        "fromName": "Wattwil",
+        "toName": "Lichtensteig",
+        "kundig": false
+      },
+      {
+        "seg": "753.03",
+        "from": "LSG",
+        "to": "WILM",
+        "fromName": "Lichtensteig",
+        "toName": "Wil Matt (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "753.03",
+        "from": "WILM",
+        "to": "LSG",
+        "fromName": "Wil Matt (Abzw)",
+        "toName": "Lichtensteig",
+        "kundig": false
+      }
+    ],
+    "754": [
+      {
+        "seg": "754.01",
+        "from": "BMA",
+        "to": "WGR",
+        "fromName": "Bauma",
+        "toName": "Winterthur Grüze",
+        "kundig": false
+      },
+      {
+        "seg": "754.01",
+        "from": "WGR",
+        "to": "BMA",
+        "fromName": "Winterthur Grüze",
+        "toName": "Bauma",
+        "kundig": false
+      },
+      {
+        "seg": "754.02",
+        "from": "BMA",
+        "to": "RUE",
+        "fromName": "Bauma",
+        "toName": "Rüti ZH",
+        "kundig": false
+      },
+      {
+        "seg": "754.02",
+        "from": "RUE",
+        "to": "RMA",
+        "fromName": "Rüti ZH",
+        "toName": "Bauma",
+        "kundig": false
+      }
+    ],
+    "761": [
+      {
+        "seg": "761.01",
+        "from": "KOGA",
+        "to": "KR",
+        "fromName": "Konstanz Grenze (Abzw)",
+        "toName": "Kreuzlingen",
+        "kundig": false
+      },
+      {
+        "seg": "761.01",
+        "from": "KR",
+        "to": "KOGA",
+        "fromName": "Kreuzlingen",
+        "toName": "Konstanz Grenze (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "761.02",
+        "from": "KR",
+        "to": "TAMO",
+        "fromName": "Kreuzlingen",
+        "toName": "Tägermoos (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "761.02",
+        "from": "TAMO",
+        "to": "KR",
+        "fromName": "Tägermoos (Abzw)",
+        "toName": "Kreuzlingen",
+        "kundig": false
+      },
+      {
+        "seg": "761.03",
+        "from": "TAMO",
+        "to": "WF",
+        "fromName": "Tägermoos (Abzw)",
+        "toName": "Weinfelden",
+        "kundig": false
+      },
+      {
+        "seg": "761.03",
+        "from": "WF",
+        "to": "TAMO",
+        "fromName": "Weinfelden",
+        "toName": "Tägermoos (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "761.04",
+        "from": "BTW",
+        "to": "WF",
+        "fromName": "Bettwiesen",
+        "toName": "Weinfelden",
+        "kundig": false
+      },
+      {
+        "seg": "761.04",
+        "from": "WF",
+        "to": "BTW",
+        "fromName": "Weinfelden",
+        "toName": "Bettwiesen",
+        "kundig": false
+      },
+      {
+        "seg": "761.05",
+        "from": "BET",
+        "to": "WIL",
+        "fromName": "Bettwiesen",
+        "toName": "Wil SG",
+        "kundig": false
+      },
+      {
+        "seg": "761.05",
+        "from": "WIL",
+        "to": "BET",
+        "fromName": "Wil SG",
+        "toName": "Bettwiesen",
+        "kundig": false
+      }
+    ],
+    "771": [
+      {
+        "seg": "771.01",
+        "from": "EW",
+        "to": "SH",
+        "fromName": "Etzwilen",
+        "toName": "Schaffhausen",
+        "kundig": false
+      },
+      {
+        "seg": "771.01",
+        "from": "SH",
+        "to": "EW",
+        "fromName": "Schaffhausen",
+        "toName": "Etzwilen",
+        "kundig": false
+      },
+      {
+        "seg": "771.02",
+        "from": "EW",
+        "to": "TAMO",
+        "fromName": "Etzwilen",
+        "toName": "Tägermoos (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "771.02",
+        "from": "TAMO",
+        "to": "EW",
+        "fromName": "Tägermoos (Abzw)",
+        "toName": "Etzwilen",
+        "kundig": false
+      }
+    ],
+    "772": [
+      {
+        "seg": "772.01",
+        "from": "KOGA",
+        "to": "KRH",
+        "fromName": "Konstanz Grenze (Abzw)",
+        "toName": "Kreuzlingen Hafen",
+        "kundig": false
+      },
+      {
+        "seg": "772.01",
+        "from": "KRH",
+        "to": "KOGA",
+        "fromName": "Kreuzlingen Hafen",
+        "toName": "Konstanz Grenze (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "772.02",
+        "from": "KR",
+        "to": "KRH",
+        "fromName": "Kreuzlingen",
+        "toName": "Kreuzlingen Hafen",
+        "kundig": false
+      },
+      {
+        "seg": "772.02",
+        "from": "KRH",
+        "to": "KR",
+        "fromName": "Kreuzlingen Hafen",
+        "toName": "Kreuzlingen",
+        "kundig": false
+      },
+      {
+        "seg": "772.03",
+        "from": "KRH",
+        "to": "RH",
+        "fromName": "Kreuzlingen Hafen",
+        "toName": "Romanshorn",
+        "kundig": false
+      },
+      {
+        "seg": "772.03",
+        "from": "RH",
+        "to": "KRH",
+        "fromName": "Romanshorn",
+        "toName": "Kreuzlingen Hafen",
+        "kundig": false
+      },
+      {
+        "seg": "772.04",
+        "from": "RH",
+        "to": "RHS",
+        "fromName": "Romanshorn",
+        "toName": "Romanshorn Süd (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "772.04",
+        "from": "RHS",
+        "to": "RH",
+        "fromName": "Romanshorn Süd (Abzw)",
+        "toName": "Romanshorn",
+        "kundig": false
+      },
+      {
+        "seg": "772.05",
+        "from": "RHS",
+        "to": "RHSE",
+        "fromName": "Romanshorn Süd (Abzw)",
+        "toName": "Romanshorn Seewiesen",
+        "kundig": false
+      },
+      {
+        "seg": "772.05",
+        "from": "RHSE",
+        "to": "RHS",
+        "fromName": "Romanshorn Seewiesen",
+        "toName": "Romanshorn Süd (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "772.06",
+        "from": "RHSE",
+        "to": "RS",
+        "fromName": "Romanshorn Seewiesen",
+        "toName": "Rorschach",
+        "kundig": false
+      },
+      {
+        "seg": "772.06",
+        "from": "RS",
+        "to": "RHSE",
+        "fromName": "Rorschach",
+        "toName": "Romanshorn Seewiesen",
+        "kundig": false
+      }
+    ],
+    "781": [
+      {
+        "seg": "781.01",
+        "from": "PF",
+        "to": "SAM",
+        "fromName": "Pfäffikon SZ",
+        "toName": "Samstagern",
+        "kundig": false
+      },
+      {
+        "seg": "781.01",
+        "from": "SAM",
+        "to": "PF",
+        "fromName": "Samstagern",
+        "toName": "Pfäffikon SZ",
+        "kundig": false
+      },
+      {
+        "seg": "781.02",
+        "from": "BIB",
+        "to": "SAM",
+        "fromName": "Biberbrugg",
+        "toName": "Samstagern",
+        "kundig": false
+      },
+      {
+        "seg": "781.02",
+        "from": "SAM",
+        "to": "BIB",
+        "fromName": "Samstagern",
+        "toName": "Biberbrugg",
+        "kundig": false
+      },
+      {
+        "seg": "781.03",
+        "from": "BIB",
+        "to": "RTT",
+        "fromName": "Biberbrugg",
+        "toName": "Rothenthurm",
+        "kundig": false
+      },
+      {
+        "seg": "781.03",
+        "from": "RTT",
+        "to": "BIB",
+        "fromName": "Rothenthurm",
+        "toName": "Biberbrugg",
+        "kundig": false
+      },
+      {
+        "seg": "781.04",
+        "from": "GD",
+        "to": "RTT",
+        "fromName": "Arth-Goldau",
+        "toName": "Rothenthurm",
+        "kundig": false
+      },
+      {
+        "seg": "781.04",
+        "from": "RTT",
+        "to": "GD",
+        "fromName": "Rothenthurm",
+        "toName": "Arth-Goldau",
+        "kundig": false
+      }
+    ],
+    "782": [
+      {
+        "seg": "782.01",
+        "from": "SAM",
+        "to": "WA",
+        "fromName": "Samstagern",
+        "toName": "Wädenswil",
+        "kundig": false
+      },
+      {
+        "seg": "782.01",
+        "from": "WA",
+        "to": "SAM",
+        "fromName": "Wädenswil",
+        "toName": "Samstagern",
+        "kundig": false
+      },
+      {
+        "seg": "782.02",
+        "from": "EIS",
+        "to": "SAM",
+        "fromName": "Einsiedeln",
+        "toName": "Biberbrugg",
+        "kundig": false
+      },
+      {
+        "seg": "782.02",
+        "from": "SAM",
+        "to": "EIS",
+        "fromName": "Biberbrugg",
+        "toName": "Einsiedeln",
+        "kundig": false
+      }
+    ],
+    "791": [
+      {
+        "seg": "791.01",
+        "from": "HE",
+        "to": "LSG",
+        "fromName": "Herisau",
+        "toName": "Lichtensteig",
+        "kundig": false
+      },
+      {
+        "seg": "791.01",
+        "from": "LSG",
+        "to": "HE",
+        "fromName": "Lichtensteig",
+        "toName": "Herisau",
+        "kundig": false
+      },
+      {
+        "seg": "791.02",
+        "from": "HE",
+        "to": "SGW",
+        "fromName": "Herisau",
+        "toName": "St. Gallen West (Abzw)",
+        "kundig": false
+      },
+      {
+        "seg": "791.02",
+        "from": "SGW",
+        "to": "HE",
+        "fromName": "St. Gallen West (Abzw)",
+        "toName": "Herisau",
+        "kundig": false
+      },
+      {
+        "seg": "791.03",
+        "from": "RHSE",
+        "to": "SGFN",
+        "fromName": "Romanshorn Seewiesen",
+        "toName": "St. Gallen St. Fiden Nord",
+        "kundig": false
+      },
+      {
+        "seg": "791.03",
+        "from": "SGFN",
+        "to": "RHSE",
+        "fromName": "St. Gallen St. Fiden Nord",
+        "toName": "Romanshorn Seewiesen",
+        "kundig": false
+      }
+    ]
+  },
+  "ortskunde": {
+    "Altishausen Tanklager Carbura": {
+      "kundig": false,
+      "linien": [
+        "761"
+      ]
+    },
+    "Avenches Nespresso": {
+      "kundig": false,
+      "linien": [
+        "252"
+      ]
+    },
+    "Basel Bad A-Gruppe": {
+      "kundig": false,
+      "linien": [
+        "502"
+      ]
+    },
+    "Basel Bad F-Gruppe": {
+      "kundig": true,
+      "linien": [
+        "502"
+      ]
+    },
+    "Basel Birsfelden Hafen": {
+      "kundig": false,
+      "linien": [
+        "502"
+      ]
+    },
+    "Basel Dreispitz": {
+      "kundig": false,
+      "linien": [
+        "341"
+      ]
+    },
+    "Basel GB": {
+      "kundig": true,
+      "linien": [
+        "341",
+        "401",
+        "501"
+      ]
+    },
+    "Basel Kleinhüningen Hafen": {
+      "kundig": false,
+      "linien": [
+        "502"
+      ]
+    },
+    "Basel RB": {
+      "kundig": false,
+      "linien": [
+        "411",
+        "502"
+      ]
+    },
+    "Bellinzona San Paolo": {
+      "kundig": false,
+      "linien": [
+        "533",
+        "541",
+        "542",
+        "551",
+        "552"
+      ]
+    },
+    "Bettwiesen Tanklager Tägerschen": {
+      "kundig": false,
+      "linien": [
+        "761"
+      ]
+    },
+    "Biel RB": {
+      "kundig": false,
+      "linien": [
+        "281",
+        "282",
+        "291",
+        "301",
+        "311",
+        "321"
+      ]
+    },
+    "Chiasso Smistamento": {
+      "kundig": false,
+      "linien": [
+        "542",
+        "5425"
+      ]
+    },
+    "Cornaux Tanklager Varo": {
+      "kundig": false,
+      "linien": [
+        "301"
+      ]
+    },
+    "Däniken RB": {
+      "kundig": false,
+      "linien": [
+        "151"
+      ]
+    },
+    "Frenkendorf Swissterminal": {
+      "kundig": false,
+      "linien": [
+        "411"
+      ]
+    },
+    "Glattbrugg Tanklager Rümlang": {
+      "kundig": false,
+      "linien": [
+        "611"
+      ]
+    },
+    "Häggenschwil Tanklager Osterwalder - Avia": {
+      "kundig": false,
+      "linien": [
+        "791"
+      ]
+    },
+    "Haltingen EOW": {
+      "kundig": false,
+      "linien": [
+        "502"
+      ]
+    },
+    "Landquardt Tanklager": {
+      "kundig": false,
+      "linien": [
+        "642"
+      ]
+    },
+    "Limmattal Rangierbahnhof (RBL)": {
+      "kundig": false,
+      "linien": [
+        "151",
+        "601"
+      ]
+    },
+    "Mellingen": {
+      "kundig": false,
+      "linien": [
+        "436"
+      ]
+    },
+    "Niederglatt Tanklager": {
+      "kundig": false,
+      "linien": [
+        "611"
+      ]
+    },
+    "Oensingen-Balsthal-Bahn": {
+      "kundig": false,
+      "linien": [
+        "311"
+      ]
+    },
+    "Olten RB": {
+      "kundig": false,
+      "linien": [
+        "311",
+        "411",
+        "421",
+        "422"
+      ]
+    },
+    "Salez-Sennwald Tanklager Osterwalder - Avia": {
+      "kundig": false,
+      "linien": [
+        "642"
+      ]
+    },
+    "Schaffhausen RB": {
+      "kundig": false,
+      "linien": [
+        "611"
+      ]
+    },
+    "Siggenthal Holcim": {
+      "kundig": false,
+      "linien": [
+        "601"
+      ]
+    },
+    "Spiez Depot": {
+      "kundig": false,
+      "linien": [
+        "322"
+      ]
+    },
+    "St-Triphon Tanklager Tamoil - Carbura": {
+      "kundig": false,
+      "linien": [
+        "211"
+      ]
+    },
+    "Stabio Tanklager ENI": {
+      "kundig": false,
+      "linien": [
+        "542"
+      ]
+    },
+    "Vernier-Meyrin Tanklager SOGEP": {
+      "kundig": false,
+      "linien": [
+        "101"
+      ]
+    },
+    "Ziszers SBB": {
+      "kundig": false,
+      "linien": [
+        "642"
+      ]
+    }
+  },
+  "overrides": {
+    "station_eow_haltingen": "unkundig",
+    "station_a_gruppe": "kundig",
+    "station_f_gruppe": "kundig",
+    "station_basel_birsfelden_hafen": "unkundig",
+    "station_basel_rb_west": "kundig",
+    "station_muttenz": "kundig",
+    "station_pratteln": "kundig",
+    "station_pratteln_salina_raurica": "kundig",
+    "station_kaiseraugst": "kundig",
+    "station_frenkendorf_füllinsdorf": "kundig",
+    "station_gik": "kundig",
+    "station_bellinzona": "kundig",
+    "station_castione_arbedo": "kundig",
+    "station_osogne_cresciano": "kundig",
+    "station_claro": "kundig",
+    "station_biasca": "kundig",
+    "station_pollegio": "kundig",
+    "station_bodio": "kundig",
+    "station_giornico": "kundig",
+    "station_pionotondo": "kundig",
+    "station_luzern": "unkundig",
+    "station_malters": "unkundig",
+    "path2059": "unkundig",
+    "station_wolhusen": "unkundig",
+    "station_escholzmatt": "unkundig",
+    "station_entlebuch": "unkundig",
+    "station_inkwil": "unkundig",
+    "station_subingen": "unkundig",
+    "station_busswil": "kundig",
+    "station_lyss": "kundig",
+    "station_langenthal": "kundig",
+    "station_biel_mett": "kundig",
+    "station_balsthal": "unkundig",
+    "station_basel_sbb": "unkundig",
+    "station_schweizerhalle": "unkundig",
+    "station_dulliken": "kundig",
+    "station_däniken": "kundig",
+    "station_schönenwerd": "kundig",
+    "station_wöschnau": "kundig",
+    "station_aarau": "kundig",
+    "station_rupperswil": "kundig",
+    "station_turgi": "kundig",
+    "station_baden": "kundig",
+    "station_wettingen": "kundig",
+    "station_neuenhof": "kundig",
+    "station_killwangen_spreitenbach": "kundig",
+    "station_rbl_west": "kundig"
+  }
 }
