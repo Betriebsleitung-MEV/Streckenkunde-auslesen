@@ -3,31 +3,72 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>Streckenkunde – Vorgabe vergleichen</title>
+<title>Streckenkunde – Vorgabe vergleichen (v2.1)</title>
 <style>
-body{margin:0;font-family:Arial,Helvetica,sans-serif;display:flex;height:100vh;overflow:hidden}
-#toolbar{position:fixed;top:0;left:0;right:0;height:42px;background:#f2f2f2;border-bottom:1px solid #ccc;display:flex;align-items:center;gap:10px;padding:0 10px;z-index:10}
-#container{display:flex;margin-top:42px;width:100%}
-#mapContainer{flex:3;overflow:hidden;cursor:grab}
-#sidebar{flex:1;border-left:1px solid #ccc;padding:10px;overflow:auto}
-svg{user-select:none}
-.kundig{fill:#1e90ff !important}
-.un kundig{fill:#ccc !important}
-.auffrischung{fill:#e53935 !important}
-.vorgabe-fehlt{fill:#f4d03f !important}
-.tooltip{position:absolute;background:#fff;border:1px solid #333;padding:6px;font-size:12px;pointer-events:none;z-index:20;max-width:260px}
+@page { size: A3 landscape; margin: 15mm; }
+
+html, body { height: 100%; margin: 0; }
+body { font-family: Arial, Helvetica, sans-serif; display: flex; flex-direction: column; overflow: hidden; }
+
+#toolbar {
+  height: 44px;
+  background: #f2f2f2;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 10px;
+}
+
+#container { flex: 1; display: flex; overflow: hidden; }
+#mapContainer { flex: 3; overflow: hidden; cursor: grab; }
+#mapContainer svg { width: 100%; height: 100%; }
+#sidebar { flex: 1; border-left: 1px solid #ccc; padding: 10px; }
+
+.legend span { display:inline-block;width:14px;height:14px;margin-right:6px }
+.kundig{fill:#1e90ff!important}
+.auffrischung{fill:#e53935!important}
+.vorgabe-fehlt{fill:#f4d03f!important}
+.unkundig{fill:#ccc!important}
+
+.pdf-title { display:none; text-align:center; font-size:18px; margin-bottom:10px; }
+
+@media print {
+  #toolbar, #sidebar { display:none; }
+  .pdf-title { display:block; }
+}
 </style>
 </head>
 <body>
+
 <div id="toolbar">
+<strong>Titel:</strong>
+<select id="titleSelect">
+  <option value="">kein Titel</option>
+  <option value="Streckenkunde – Vergleich mit Vorgabe">Standard Vergleich</option>
+</select>
 <strong>Vorgabe:</strong>
 <select id="vorgabeSelect"></select>
 <span id="vorgabeInfo"></span>
+<label>Streckenkunde: <input type="file" id="streckenkundeInput" accept=".json"></label>
+<button onclick="window.print()">PDF A3</button>
 </div>
+
 <div id="container">
-<div id="mapContainer"></div>
-<div id="sidebar"><h3>Ortskunde</h3><div id="list"></div></div>
+  <div id="mapContainer">
+    <div class="pdf-title" id="pdfTitle"></div>
+  </div>
+  <div id="sidebar">
+    <h3>Legende</h3>
+    <div class="legend">
+      <div><span style="background:#1e90ff"></span>kundig</div>
+      <div><span style="background:#e53935"></span>Auffrischung</div>
+      <div><span style="background:#f4d03f"></span>Vorgabe fehlt</div>
+      <div><span style="background:#ccc"></span>unkundig</div>
+    </div>
+  </div>
 </div>
+
 <script src="viewer.js"></script>
 </body>
 </html>
