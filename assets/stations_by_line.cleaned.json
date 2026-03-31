@@ -159,17 +159,17 @@
       "line": "612"
     },
     {
-      "id": "station_steinmaur",
-      "label": "Steinmaur",
-      "code": "STMR",
+      "id": "statîon_niederhasli",
+      "label": "statîon_niederhasli",
+      "code": "NIE",
       "data-typ": "Station",
       "Tanklager": null,
       "line": "612"
     },
     {
-      "id": "statîon_niederhasli",
-      "label": "statîon_niederhasli",
-      "code": "NIE",
+      "id": "station_steinmaur",
+      "label": "Steinmaur",
+      "code": "STMR",
       "data-typ": "Station",
       "Tanklager": null,
       "line": "612"
@@ -289,19 +289,19 @@
       "line": "611"
     },
     {
+      "id": "station_rümlang",
+      "label": "station_rümlang",
+      "code": "RUEM",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "611"
+    },
+    {
       "id": "Station_schaffhausen_rb",
       "label": "Station_schaffhausen_rb",
       "code": null,
       "data-typ": "unoccupied_station",
       "Tanklager": "Schaffhausen RB",
-      "line": "611"
-    },
-    {
-      "id": "station_tarl",
-      "label": "TARL",
-      "code": null,
-      "data-typ": "unoccupied_station",
-      "Tanklager": "Glattbrugg Tanklager Rümlang",
       "line": "611"
     },
     {
@@ -313,11 +313,11 @@
       "line": "611"
     },
     {
-      "id": "station_rümlang",
-      "label": "station_rümlang",
-      "code": "RUEM",
-      "data-typ": "Station",
-      "Tanklager": null,
+      "id": "station_tarl",
+      "label": "TARL",
+      "code": null,
+      "data-typ": "unoccupied_station",
+      "Tanklager": "Glattbrugg Tanklager Rümlang",
       "line": "611"
     }
   ],
@@ -355,9 +355,25 @@
       "line": "632"
     },
     {
+      "id": "stattion_mettmenstetten",
+      "label": "stattion_mettmenstetten",
+      "code": "MTM",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "632"
+    },
+    {
       "id": "station_steinhausen",
       "label": "Steinhausen",
       "code": "STE",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "632"
+    },
+    {
+      "id": "sttion_knonau",
+      "label": "sttion_knonau",
+      "code": "KNO",
       "data-typ": "Station",
       "Tanklager": null,
       "line": "632"
@@ -391,22 +407,6 @@
       "label": "Zürich Vorbahnhof",
       "code": null,
       "data-typ": "unoccupied_station",
-      "Tanklager": null,
-      "line": "632"
-    },
-    {
-      "id": "stattion_mettmenstetten",
-      "label": "stattion_mettmenstetten",
-      "code": "MTM",
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "632"
-    },
-    {
-      "id": "sttion_knonau",
-      "label": "sttion_knonau",
-      "code": "KNO",
-      "data-typ": "Station",
       "Tanklager": null,
       "line": "632"
     }
@@ -477,6 +477,14 @@
       "line": "631"
     },
     {
+      "id": "station-freienbach",
+      "label": "station-freienbach",
+      "code": null,
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "631"
+    },
+    {
       "id": "station_thalwil",
       "label": "Thalwil",
       "code": "TW",
@@ -520,14 +528,6 @@
       "id": "station_zürich_hb",
       "label": "Zürich HB",
       "code": "ZUE",
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "631"
-    },
-    {
-      "id": "station-freienbach",
-      "label": "station-freienbach",
-      "code": null,
       "data-typ": "Station",
       "Tanklager": null,
       "line": "631"
@@ -973,6 +973,14 @@
       "line": "661"
     },
     {
+      "id": "path2661",
+      "label": "path2661",
+      "code": null,
+      "data-typ": "unoccupied_station",
+      "Tanklager": null,
+      "line": "661"
+    },
+    {
       "id": "station_pfäffikon_zh",
       "label": "Pfäffikon ZH",
       "code": "PFZ",
@@ -985,14 +993,6 @@
       "label": "Stadelhofen",
       "code": "ZSTH",
       "data-typ": "Station",
-      "Tanklager": null,
-      "line": "661"
-    },
-    {
-      "id": "path2661",
-      "label": "path2661",
-      "code": null,
-      "data-typ": "unoccupied_station",
       "Tanklager": null,
       "line": "661"
     }
@@ -1333,6 +1333,14 @@
       "line": "701"
     },
     {
+      "id": "path2661",
+      "label": "path2661",
+      "code": null,
+      "data-typ": "unoccupied_station",
+      "Tanklager": null,
+      "line": "701"
+    },
+    {
       "id": "station_wipkingen",
       "label": "Wipkingen",
       "code": "ZWIP",
@@ -1359,14 +1367,6 @@
     {
       "id": "station_zürich_vorbahnhof",
       "label": "Zürich Vorbahnhof",
-      "code": null,
-      "data-typ": "unoccupied_station",
-      "Tanklager": null,
-      "line": "701"
-    },
-    {
-      "id": "path2661",
-      "label": "path2661",
       "code": null,
       "data-typ": "unoccupied_station",
       "Tanklager": null,
@@ -1627,6 +1627,14 @@
       "line": "601"
     },
     {
+      "id": "station_baden",
+      "label": "baden",
+      "code": "BD",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "601"
+    },
+    {
       "id": "station_beznau",
       "label": "Beznau",
       "code": null,
@@ -1739,6 +1747,14 @@
       "line": "601"
     },
     {
+      "id": "station_full",
+      "label": "station_full",
+      "code": null,
+      "data-typ": "unoccupied_station",
+      "Tanklager": null,
+      "line": "601"
+    },
+    {
       "id": "station_turgi",
       "label": "Turgi",
       "code": "TG",
@@ -1749,22 +1765,6 @@
     {
       "id": "station_wettingen",
       "label": "Wettingen",
-      "code": null,
-      "data-typ": "unoccupied_station",
-      "Tanklager": null,
-      "line": "601"
-    },
-    {
-      "id": "station_baden",
-      "label": "baden",
-      "code": "BD",
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "601"
-    },
-    {
-      "id": "station_full",
-      "label": "station_full",
       "code": null,
       "data-typ": "unoccupied_station",
       "Tanklager": null,
@@ -1845,19 +1845,19 @@
       "line": "642"
     },
     {
-      "id": "station_tl-häggenschwil_winden-7",
-      "label": "TL Landquart",
-      "code": null,
-      "data-typ": "unoccupied_station",
-      "Tanklager": "Landquardt Tanklager",
-      "line": "642"
-    },
-    {
       "id": "station_tanklager_sennwald",
       "label": "Tanklager Sennwald",
       "code": "SAS",
       "data-typ": "unoccupied_station",
       "Tanklager": "Salez-Sennwald",
+      "line": "642"
+    },
+    {
+      "id": "station_tl-häggenschwil_winden-7",
+      "label": "TL Landquart",
+      "code": null,
+      "data-typ": "unoccupied_station",
+      "Tanklager": "Landquardt Tanklager",
       "line": "642"
     },
     {
@@ -1983,6 +1983,14 @@
       "line": "741"
     },
     {
+      "id": "path2060",
+      "label": "path2060",
+      "code": "RIK",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "741"
+    },
+    {
       "id": "station_rickenbach_attikon",
       "label": "Rickenbach-Attikon",
       "code": "RIK",
@@ -2027,14 +2035,6 @@
       "label": "Winterthur RB",
       "code": null,
       "data-typ": "unoccupied_station",
-      "Tanklager": null,
-      "line": "741"
-    },
-    {
-      "id": "path2060",
-      "label": "path2060",
-      "code": "RIK",
-      "data-typ": "Station",
       "Tanklager": null,
       "line": "741"
     }
@@ -2627,6 +2627,14 @@
       "line": "461"
     },
     {
+      "id": "station-ebikon",
+      "label": "station-ebikon",
+      "code": "EBI",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "461"
+    },
+    {
       "id": "station_zug",
       "label": "Zug",
       "code": "ZG",
@@ -2654,14 +2662,6 @@
       "id": "station_zythus",
       "label": "Zythus",
       "code": null,
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "461"
-    },
-    {
-      "id": "station-ebikon",
-      "label": "station-ebikon",
-      "code": "EBI",
       "data-typ": "Station",
       "Tanklager": null,
       "line": "461"
@@ -2919,17 +2919,17 @@
       "line": "521"
     },
     {
-      "id": "station_wohlen",
-      "label": "Wohlen",
-      "code": "WO",
+      "id": "station-oberrüti",
+      "label": "station-oberrüti",
+      "code": "OI",
       "data-typ": "Station",
       "Tanklager": null,
       "line": "521"
     },
     {
-      "id": "station-oberrüti",
-      "label": "station-oberrüti",
-      "code": "OI",
+      "id": "station_wohlen",
+      "label": "Wohlen",
+      "code": "WO",
       "data-typ": "Station",
       "Tanklager": null,
       "line": "521"
@@ -3669,6 +3669,14 @@
       "line": "641"
     },
     {
+      "id": "ststion_unterterzen",
+      "label": "ststion_unterterzen",
+      "code": "UNT",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "641"
+    },
+    {
       "id": "station_walenstadt",
       "label": "Walenstadt",
       "code": "WAL",
@@ -3688,14 +3696,6 @@
       "id": "station_ziegelbrücke",
       "label": "Ziegelbrücke",
       "code": "ZB",
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "641"
-    },
-    {
-      "id": "ststion_unterterzen",
-      "label": "ststion_unterterzen",
-      "code": "UNT",
       "data-typ": "Station",
       "Tanklager": null,
       "line": "641"
@@ -4117,6 +4117,14 @@
       "line": "761"
     },
     {
+      "id": "station-kehlhof",
+      "label": "station-kehlhof",
+      "code": "KHF",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "761"
+    },
+    {
       "id": "station_tlt",
       "label": "TLT",
       "code": null,
@@ -4144,14 +4152,6 @@
       "id": "station_tägherwilen_dorf",
       "label": "Tägerwilen Dorf",
       "code": "TAEM",
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "761"
-    },
-    {
-      "id": "station-kehlhof",
-      "label": "station-kehlhof",
-      "code": "KHF",
       "data-typ": "Station",
       "Tanklager": null,
       "line": "761"
@@ -4281,6 +4281,14 @@
       "line": "332"
     },
     {
+      "id": "path2059",
+      "label": "path2059",
+      "code": "SCH",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "332"
+    },
+    {
       "id": "station_schüpfheim",
       "label": "Schüpfheim",
       "code": "SCHH",
@@ -4316,14 +4324,6 @@
       "id": "station_wolhusen",
       "label": "Wolhusen",
       "code": "WH",
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "332"
-    },
-    {
-      "id": "path2059",
-      "label": "path2059",
-      "code": "SCH",
       "data-typ": "Station",
       "Tanklager": null,
       "line": "332"
@@ -4941,17 +4941,17 @@
       "line": "452"
     },
     {
-      "id": "station_sarnen",
-      "label": "Sarnen",
-      "code": "SAR",
+      "id": "path2056",
+      "label": "path2056",
+      "code": "KAAG",
       "data-typ": "Station",
       "Tanklager": null,
       "line": "452"
     },
     {
-      "id": "path2056",
-      "label": "path2056",
-      "code": "KAAG",
+      "id": "station_sarnen",
+      "label": "Sarnen",
+      "code": "SAR",
       "data-typ": "Station",
       "Tanklager": null,
       "line": "452"
@@ -5205,19 +5205,19 @@
   ],
   "252": [
     {
-      "id": "station_ang_nespresso",
-      "label": "ANG Nespresso",
-      "code": null,
-      "data-typ": "unoccupied_station",
-      "Tanklager": "Avenches Nespresso",
-      "line": "252"
-    },
-    {
       "id": "station_aarberg",
       "label": "Aarberg",
       "code": "ABE",
       "data-typ": "Station",
       "Tanklager": null,
+      "line": "252"
+    },
+    {
+      "id": "station_ang_nespresso",
+      "label": "ANG Nespresso",
+      "code": null,
+      "data-typ": "unoccupied_station",
+      "Tanklager": "Avenches Nespresso",
       "line": "252"
     },
     {
@@ -5447,17 +5447,17 @@
       "line": "421"
     },
     {
-      "id": "station_trimbach",
-      "label": "Trimbach",
-      "code": "TRI",
+      "id": "station_somerau",
+      "label": "station_somerau",
+      "code": "SOM",
       "data-typ": "Station",
       "Tanklager": null,
       "line": "421"
     },
     {
-      "id": "station_somerau",
-      "label": "station_somerau",
-      "code": "SOM",
+      "id": "station_trimbach",
+      "label": "Trimbach",
+      "code": "TRI",
       "data-typ": "Station",
       "Tanklager": null,
       "line": "421"
@@ -5789,6 +5789,14 @@
       "line": "341"
     },
     {
+      "id": "path12859",
+      "label": "path12859",
+      "code": "DSPZ",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "341"
+    },
+    {
       "id": "station_soyhières",
       "label": "Soyhières",
       "code": null,
@@ -5800,14 +5808,6 @@
       "id": "station_zwingen",
       "label": "Zwingen",
       "code": "ZWG",
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "341"
-    },
-    {
-      "id": "path12859",
-      "label": "path12859",
-      "code": "DSPZ",
       "data-typ": "Station",
       "Tanklager": null,
       "line": "341"
@@ -6739,6 +6739,14 @@
       "line": "121"
     },
     {
+      "id": "station_conversion",
+      "label": "station_conversion",
+      "code": "CVN",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "121"
+    },
+    {
       "id": "station_thörishaus",
       "label": "Thörishaus",
       "code": "THO",
@@ -6782,14 +6790,6 @@
       "id": "station_wünnewil",
       "label": "Wünnewil",
       "code": "WUE",
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "121"
-    },
-    {
-      "id": "station_conversion",
-      "label": "station_conversion",
-      "code": "CVN",
       "data-typ": "Station",
       "Tanklager": null,
       "line": "121"
@@ -6959,6 +6959,14 @@
       "line": "211"
     },
     {
+      "id": "path13054",
+      "label": "path13054",
+      "code": "PU",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "211"
+    },
+    {
       "id": "station_riddes",
       "label": "Riddes",
       "code": "RID",
@@ -7015,6 +7023,22 @@
       "line": "211"
     },
     {
+      "id": "station_saxon",
+      "label": "station_saxon",
+      "code": "SAX",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "211"
+    },
+    {
+      "id": "station_tl_st_triphon",
+      "label": "station_tl_st_triphon",
+      "code": "ST",
+      "data-typ": "unoccupied_station",
+      "Tanklager": "St-Triphon Tanklager Tamoil - Carbura",
+      "line": "211"
+    },
+    {
       "id": "station_territet",
       "label": "Territet",
       "code": "TER",
@@ -7060,30 +7084,6 @@
       "code": "VTE",
       "data-typ": "Station",
       "Tanklager": null,
-      "line": "211"
-    },
-    {
-      "id": "path13054",
-      "label": "path13054",
-      "code": "PU",
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "211"
-    },
-    {
-      "id": "station_saxon",
-      "label": "station_saxon",
-      "code": "SAX",
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "211"
-    },
-    {
-      "id": "station_tl_st_triphon",
-      "label": "station_tl_st_triphon",
-      "code": "ST",
-      "data-typ": "unoccupied_station",
-      "Tanklager": "St-Triphon Tanklager Tamoil - Carbura",
       "line": "211"
     }
   ],
@@ -7265,6 +7265,14 @@
       "line": "111"
     },
     {
+      "id": "path12945",
+      "label": "path12945",
+      "code": "CHY",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "111"
+    },
+    {
       "id": "station_perroy",
       "label": "Perroy",
       "code": "PER",
@@ -7332,14 +7340,6 @@
       "id": "station_versoix",
       "label": "Versoix",
       "code": "VSX",
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "111"
-    },
-    {
-      "id": "path12945",
-      "label": "path12945",
-      "code": "CHY",
       "data-typ": "Station",
       "Tanklager": null,
       "line": "111"
@@ -7597,6 +7597,30 @@
       "line": "301"
     },
     {
+      "id": "statiom_st_aubin",
+      "label": "statiom_st_aubin",
+      "code": "GOR",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "301"
+    },
+    {
+      "id": "station_ligerz",
+      "label": "station_ligerz",
+      "code": "LIG",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "301"
+    },
+    {
+      "id": "station_tl_cornaux",
+      "label": "station_tl_cornaux",
+      "code": null,
+      "data-typ": "unoccupied_station",
+      "Tanklager": "Cornaux Tanklager Varo",
+      "line": "301"
+    },
+    {
       "id": "station_twann",
       "label": "Twann",
       "code": "TWN",
@@ -7634,30 +7658,6 @@
       "code": "YV",
       "data-typ": "Station",
       "Tanklager": null,
-      "line": "301"
-    },
-    {
-      "id": "statiom_st_aubin",
-      "label": "statiom_st_aubin",
-      "code": "GOR",
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "301"
-    },
-    {
-      "id": "station_ligerz",
-      "label": "station_ligerz",
-      "code": "LIG",
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "301"
-    },
-    {
-      "id": "station_tl_cornaux",
-      "label": "station_tl_cornaux",
-      "code": null,
-      "data-typ": "unoccupied_station",
-      "Tanklager": "Cornaux Tanklager Varo",
       "line": "301"
     }
   ],
@@ -7935,22 +7935,6 @@
       "line": "101"
     },
     {
-      "id": "station_vernier_meyrin",
-      "label": "Vernier-Meyrin",
-      "code": "VM",
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "101"
-    },
-    {
-      "id": "station_zimeysa",
-      "label": "Zimeysa",
-      "code": "ZIM",
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "101"
-    },
-    {
       "id": "statiion_cointrin",
       "label": "statiion_cointrin",
       "code": "COI",
@@ -7964,6 +7948,22 @@
       "code": "VMC",
       "data-typ": "unoccupied_station",
       "Tanklager": "Vernier-Meyrin Tanklager SOGEP",
+      "line": "101"
+    },
+    {
+      "id": "station_vernier_meyrin",
+      "label": "Vernier-Meyrin",
+      "code": "VM",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "101"
+    },
+    {
+      "id": "station_zimeysa",
+      "label": "Zimeysa",
+      "code": "ZIM",
+      "data-typ": "Station",
+      "Tanklager": null,
       "line": "101"
     }
   ],
@@ -8245,6 +8245,14 @@
       "line": "261"
     },
     {
+      "id": "station_estvayer_le_lac",
+      "label": "station_estvayer_le_lac",
+      "code": "EST",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "261"
+    },
+    {
       "id": "station_yverdon_champittet",
       "label": "Yverdon Champittet",
       "code": "CHP",
@@ -8256,14 +8264,6 @@
       "id": "station_yvonand",
       "label": "Yvonand",
       "code": "YND",
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "261"
-    },
-    {
-      "id": "station_estvayer_le_lac",
-      "label": "station_estvayer_le_lac",
-      "code": "EST",
       "data-typ": "Station",
       "Tanklager": null,
       "line": "261"
@@ -8387,9 +8387,33 @@
       "line": "272"
     },
     {
+      "id": "g16630",
+      "label": "g16630",
+      "code": null,
+      "data-typ": "unoccupied_station",
+      "Tanklager": null,
+      "line": "272"
+    },
+    {
+      "id": "station_km_25_8",
+      "label": "km 25.8",
+      "code": null,
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "272"
+    },
+    {
       "id": "station_la_chaux_de_fonds",
       "label": "La Chaux-de-Fonds",
       "code": "CF",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "272"
+    },
+    {
+      "id": "station_le_crêt_du_locle",
+      "label": "Le crêt du Locle",
+      "code": "CRET",
       "data-typ": "Station",
       "Tanklager": null,
       "line": "272"
@@ -8406,14 +8430,6 @@
       "id": "station_le_locle_col_des_roches",
       "label": "Le Locle Col-des-Roches",
       "code": "COL",
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "272"
-    },
-    {
-      "id": "station_le_crêt_du_locle",
-      "label": "Le crêt du Locle",
-      "code": "CRET",
       "data-typ": "Station",
       "Tanklager": null,
       "line": "272"
@@ -8463,22 +8479,6 @@
       "label": "Neuchâtel-Vauseyon",
       "code": null,
       "data-typ": "unoccupied_station",
-      "Tanklager": null,
-      "line": "272"
-    },
-    {
-      "id": "g16630",
-      "label": "g16630",
-      "code": null,
-      "data-typ": "unoccupied_station",
-      "Tanklager": null,
-      "line": "272"
-    },
-    {
-      "id": "station_km_25_8",
-      "label": "km 25.8",
-      "code": null,
-      "data-typ": "Station",
       "Tanklager": null,
       "line": "272"
     },
@@ -8673,6 +8673,14 @@
       "line": "551"
     },
     {
+      "id": "path13288",
+      "label": "path13288",
+      "code": null,
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "551"
+    },
+    {
       "id": "station_riazzino",
       "label": "Riazzino",
       "code": "RIAZ",
@@ -8692,14 +8700,6 @@
       "id": "station_tenero",
       "label": "Tenero",
       "code": "TEN",
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "551"
-    },
-    {
-      "id": "path13288",
-      "label": "path13288",
-      "code": null,
       "data-typ": "Station",
       "Tanklager": null,
       "line": "551"
@@ -9201,6 +9201,38 @@
       "line": "542"
     },
     {
+      "id": "path12458",
+      "label": "path12458",
+      "code": "MAR",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "542"
+    },
+    {
+      "id": "path13288",
+      "label": "path13288",
+      "code": null,
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "542"
+    },
+    {
+      "id": "path13338",
+      "label": "path13338",
+      "code": "LAM",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "542"
+    },
+    {
+      "id": "path2055",
+      "label": "path2055",
+      "code": "CHI",
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "542"
+    },
+    {
       "id": "station_rivera_bironico",
       "label": "Rivera-Bironico",
       "code": "RIB",
@@ -9245,38 +9277,6 @@
       "label": "Vigana",
       "code": null,
       "data-typ": "unoccupied_station",
-      "Tanklager": null,
-      "line": "542"
-    },
-    {
-      "id": "path12458",
-      "label": "path12458",
-      "code": "MAR",
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "542"
-    },
-    {
-      "id": "path13288",
-      "label": "path13288",
-      "code": null,
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "542"
-    },
-    {
-      "id": "path13338",
-      "label": "path13338",
-      "code": "LAM",
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "542"
-    },
-    {
-      "id": "path2055",
-      "label": "path2055",
-      "code": "CHI",
-      "data-typ": "Station",
       "Tanklager": null,
       "line": "542"
     }
@@ -9351,6 +9351,14 @@
       "line": "552"
     },
     {
+      "id": "path13288",
+      "label": "path13288",
+      "code": null,
+      "data-typ": "Station",
+      "Tanklager": null,
+      "line": "552"
+    },
+    {
       "id": "station_pino_tronzano",
       "label": "Pino-Tronzano",
       "code": "PINT",
@@ -9370,14 +9378,6 @@
       "id": "station_san_nazzaro",
       "label": "San Nazzaro",
       "code": "SANA",
-      "data-typ": "Station",
-      "Tanklager": null,
-      "line": "552"
-    },
-    {
-      "id": "path13288",
-      "label": "path13288",
-      "code": null,
       "data-typ": "Station",
       "Tanklager": null,
       "line": "552"
