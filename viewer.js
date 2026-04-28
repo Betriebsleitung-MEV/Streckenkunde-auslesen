@@ -73,7 +73,7 @@ function buildVorgabeStationSet(v){
 
 function setupVorgaben(){
   const sel = document.getElementById('vorgabeSelect');
-  const files = ['Vorgabe_BLS_Basel.json','Vorgabe_BLS_Avences.json','Vorgabe_BLS_Spiez.json','Vorgabe_BLS_Bellinzona.json'];
+  const files = ['Vorgabe_BLS_Basel.json'];
   sel.innerHTML = '<option value="">keine Vorgabe</option>';
   files.forEach(f=> sel.innerHTML += `<option value="${f}">${f.replace('Vorgabe_','').replace('.json','')}</option>`);
   sel.onchange = async ()=>{
