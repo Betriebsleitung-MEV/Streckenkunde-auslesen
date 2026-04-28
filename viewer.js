@@ -12,6 +12,10 @@ const VORGABEN_DIR = ASSETS + 'vorgaben/';
 let svg, viewBox, dragging = false, start = {x:0,y:0};
 let vorgabe = null, streckenkunde = null;
 let vorgabeStationSet = new Set(); // normalisierte Stationsnamen aus der Vorgabe
+let initialViewBox = null;
+let streckenkundeFileBase = '';
+let vorgabeKey = '';
+let viewBoxBeforePrint = null;
 
 async function loadJSON(p){ const r = await fetch(p, {cache:'no-store'}); if(!r.ok) throw new Error(p+' HTTP '+r.status); return r.json(); }
 async function loadText(p){ const r = await fetch(p, {cache:'no-store'}); if(!r.ok) throw new Error(p+' HTTP '+r.status); return r.text(); }
@@ -24,10 +28,12 @@ async function init(){
     if(!svg){ console.error('Keine SVG gefunden'); return; }
     svg.setAttribute('preserveAspectRatio','xMidYMid meet');
     viewBox = svg.viewBox.baseVal;
+    initialViewBox = {x:viewBox.x, y:viewBox.y, width:viewBox.width, height:viewBox.height};
     setupZoomPan();
     setupVorgaben();
     setupStreckenkunde();
     setupTitle();
+    setupPrintHandling();
   }catch(e){ console.error(e); alert('SVG konnte nicht geladen werden: '+e.message); }
 }
 
@@ -54,6 +60,43 @@ function setupZoomPan(){
   }, {passive:false});
 }
 
+function resetView(){
+  if(!viewBox || !initialViewBox) return;
+  viewBox.x = initialViewBox.x;
+  viewBox.y = initialViewBox.y;
+  viewBox.width = initialViewBox.width;
+  viewBox.height = initialViewBox.height;
+}
+
+function doPrint(){
+  // Druckt immer die Gesamtkarte (aktueller Ausschnitt wird danach wiederhergestellt)
+  if(!viewBox || !initialViewBox){ window.print(); return; }
+  viewBoxBeforePrint = {x:viewBox.x, y:viewBox.y, width:viewBox.width, height:viewBox.height};
+  resetView();
+  setTimeout(()=>window.print(), 0);
+}
+
+function setupPrintHandling(){
+  window.resetView = resetView;
+  window.doPrint = doPrint;
+  window.addEventListener('beforeprint', ()=>{
+    if(!viewBox || !initialViewBox) return;
+    if(!viewBoxBeforePrint){
+      viewBoxBeforePrint = {x:viewBox.x, y:viewBox.y, width:viewBox.width, height:viewBox.height};
+    }
+    resetView();
+  });
+  window.addEventListener('afterprint', ()=>{
+    if(!viewBox || !viewBoxBeforePrint) return;
+    viewBox.x = viewBoxBeforePrint.x;
+    viewBox.y = viewBoxBeforePrint.y;
+    viewBox.width = viewBoxBeforePrint.width;
+    viewBox.height = viewBoxBeforePrint.height;
+    viewBoxBeforePrint = null;
+  });
+}
+
+
 function normName(s){
   return String(s||'')
     .toLowerCase()
@@ -73,12 +116,13 @@ function buildVorgabeStationSet(v){
 
 function setupVorgaben(){
   const sel = document.getElementById('vorgabeSelect');
-  const files = ['Vorgabe_BLS_Basel.json','Vorgabe_BLS_Avences.json','Vorgabe_BLS_Spiez.json','Vorgabe_BLS_Bellinzona.json'];
+  const files = ['Vorgabe_BLS_Basel.json'];
   sel.innerHTML = '<option value="">keine Vorgabe</option>';
   files.forEach(f=> sel.innerHTML += `<option value="${f}">${f.replace('Vorgabe_','').replace('.json','')}</option>`);
   sel.onchange = async ()=>{
     try{
       vorgabe = sel.value ? await loadJSON(VORGABEN_DIR + sel.value) : null;
+      vorgabeKey = sel.value ? sel.value.replace(/^Vorgabe_/, '').replace(/\.json$/i,'') : '';
       vorgabeStationSet = buildVorgabeStationSet(vorgabe);
       const info = document.getElementById('vorgabeInfo'); if(info) info.textContent = vorgabe ? `Aktive Vorgabe: ${vorgabe.name}` : '';
       updateTitle();
@@ -92,9 +136,12 @@ function setupStreckenkunde(){
   const inp = document.getElementById('streckenkundeInput'); if(!inp) return;
   inp.onchange = (e)=>{
     const f = e.target.files && e.target.files[0]; if(!f) return;
+    streckenkundeFileBase = String(f.name||'').replace(/\.[^.]+$/,'');
+    const fi = document.getElementById('fileInfo');
+    if(fi) fi.textContent = streckenkundeFileBase ? ('Datei: ' + streckenkundeFileBase) : '';
     const r = new FileReader();
     r.onload = ()=>{
-      try{ streckenkunde = JSON.parse(String(r.result||'')); applyStatus(); renderOrtskunde(); }
+      try{ streckenkunde = JSON.parse(String(r.result||'')); updateTitle(); applyStatus(); renderOrtskunde(); }
       catch(err){ alert('Fehler beim Einlesen der JSON: '+err.message); }
     };
     r.onerror = ()=> alert('Datei konnte nicht gelesen werden');
@@ -105,14 +152,37 @@ function setupStreckenkunde(){
 function setupTitle(){
   const sel = document.getElementById('titleSelect');
   const out = document.getElementById('pdfTitle');
-  function update(){
-    const base = sel ? sel.value : '';
-    if(!out) return;
-    if(!base){ out.textContent=''; return; }
-    out.textContent = (vorgabe && vorgabe.name) ? `${base}: ${vorgabe.name}` : base;
+
+  function vorgabeSuffix(){
+    if(!vorgabe) return '';
+    const key = String(vorgabeKey || vorgabe.name || '').trim();
+    // Wunsch: bei BLS-Auswahl als fixer Zusatz "Vorgabe BLS Abgleich"
+    const tag = /BLS/i.test(key) ? 'BLS' : (key || '');
+    return tag ? ` – Vorgabe ${tag} Abgleich` : ' – Vorgabe Abgleich';
   }
+
+  function update(){
+    const base = sel ? String(sel.value||'') : '';
+    const suffix = vorgabeSuffix();
+
+    // sichtbarer Titel (im PDF)
+    if(out){
+      if(!base){
+        out.textContent = '';
+      }else{
+        const mid = streckenkundeFileBase ? streckenkundeFileBase : '';
+        out.textContent = mid ? `${base}: ${mid}${suffix}` : `${base}${suffix}`;
+      }
+    }
+
+    // Dateiname-Vorschlag beim „Drucken als PDF“ (Browser übernimmt oft document.title)
+    const docBase = streckenkundeFileBase || base || 'Streckenkunde';
+    document.title = `${docBase}${suffix}`.trim();
+  }
+
   if(sel) sel.addEventListener('change', update);
   window.updateTitle = update; // für Alt-Code kompatibel
+  update();
 }
 
 // ==== Helpers ====
